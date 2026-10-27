@@ -1,9 +1,10 @@
-// 离线缓存：先用缓存秒开，同时在后台更新
-const CACHE = 'wordbuddy-v1';
+// 离线缓存
+const CACHE = 'wordbuddy-v2';
 const SHELL = [
   './', 'index.html', 'manifest.webmanifest', 'css/app.css',
   'js/main.js', 'js/app.js', 'js/store.js', 'js/speech.js', 'js/data.js',
   'js/core/content.js', 'js/core/text.js', 'js/core/srs.js', 'js/core/scoring.js', 'js/core/generator.js',
+  'js/core/dict.js', 'js/core/scenegen.js', 'js/ocr.js', 'data/dict.json',
   'icons/apple-touch-icon.png', 'icons/icon-192.png', 'icons/icon-512.png',
 ];
 
@@ -17,6 +18,7 @@ self.addEventListener('activate', e => {
     .then(() => self.clients.claim()));
 });
 
+// 联网时优先取最新版本（3 秒超时），离线或超时时用缓存
 self.addEventListener('fetch', e => {
   const req = e.request;
   if (req.method !== 'GET' || new URL(req.url).origin !== location.origin) return;
@@ -25,7 +27,9 @@ self.addEventListener('fetch', e => {
     const network = fetch(req).then(res => {
       if (res.ok) cache.put(req, res.clone());
       return res;
-    }).catch(() => cached);
-    return cached || network;
+    });
+    if (!cached) return network;
+    const timeout = new Promise(r => setTimeout(() => r(cached), 3000));
+    return Promise.race([network.catch(() => cached), timeout]);
   }));
 });

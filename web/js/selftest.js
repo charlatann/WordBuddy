@@ -93,7 +93,7 @@ export async function runSelfTest() {
   Speech.muted = true;
 
   // ---------- 2. 逻辑单元测试 ----------
-  for (const r of runSuites()) results.push({ group: '逻辑：' + r.suite, name: r.name, ok: r.ok, detail: r.error || '', ms: r.ms });
+  for (const r of await runSuites()) results.push({ group: '逻辑：' + r.suite, name: r.name, ok: r.ok, detail: r.error || '', ms: r.ms });
 
   // ---------- 3. 界面流程 ----------
   const G3 = '界面流程';
@@ -253,6 +253,99 @@ export async function runSelfTest() {
     const data = JSON.parse(raw);
     expect(Object.keys(data.progress).length === 12, `保存的单词数应为 12，实际 ${Object.keys(data.progress).length}`);
     expect(data.records.length === 4, '练习记录没有保存');
+  });
+
+
+  // ---------- 我的单词 ----------
+  const G4 = '我的单词';
+  const setValue = (el, v) => { el.value = v; el.dispatchEvent(new Event('input', { bubbles: true })); };
+
+  await flow(G4, '首页有“添加我要背的单词”入口', async () => {
+    await nav('#/learn');
+    expect($('[data-test="add-words"]'), '缺少添加单词入口');
+    await tap('[data-test="add-words"]');
+    expect($('[data-test="mode-type"]') && $('[data-test="mode-photo"]'), '缺少手动输入/拍照识别切换');
+  });
+
+  await flow(G4, '手动输入：查词、选义项、补填生词意思、生成场景', async () => {
+    await nav('#/add');
+    setValue(await waitFor(() => $('[data-test="add-text"]')), 'giraffe, swimming, Beautiful, coffee, qwertyx, library');
+    await tap('[data-test="add-lookup"]');
+    await waitFor(() => $('[data-test="cand-giraffe"]'), 15000, '查词结果没有出现（词典加载失败？）');
+    expect(/长颈鹿/.test($('[data-test="cand-giraffe"]').textContent), 'giraffe 没有查到中文意思');
+    expect($('[data-test="cand-coffee"]').classList.contains('locked'), '已在课程里的 coffee 应标记为已在词库');
+    expect(/词典里没有/.test($('[data-test="cand-qwertyx"]').textContent), '生词 qwertyx 应提示词典里没有');
+    expect($('[data-test="add-generate"]').disabled, '生词没填意思时不应允许生成');
+    await shot('30-添加单词-查词');
+    setValue($('[data-test="cand-qwertyx"] .mean-input'), '测试词');
+    await sleep(50);
+    expect(!$('[data-test="add-generate"]').disabled, '填好意思后应可生成');
+    const sense = $$('[data-test="cand-swimming"] .chip.sense')[0];
+    if (sense) await tap(sense);
+    await tap('[data-test="add-generate"]');
+    await waitFor(() => $('[data-test="add-done"]'), 20000, '没有生成场景');
+    const mine = Store.customScenes();
+    expect(mine.length === 2, `应生成 2 个场景（4+1 个词），实际 ${mine.length}`);
+    expect(mine.reduce((n, sc) => n + sc.words.length, 0) === 5, '添加的单词数不是 5');
+    expect(mine.every(sc => sc.words.every(w => sc.lines.some(l => l.en.toLowerCase().includes(w.id)))), '有单词没出现在生成的场景里');
+    expect(mine[0].words.find(w => w.id === 'qwertyx').meaning === '测试词', '手动填写的意思没有保存');
+    await shot('31-添加单词-生成完成');
+    return mine.map(sc => sc.title).join('；');
+  });
+
+  await flow(G4, '学习新加的单词：单词卡 → 场景 → 换场景 → 小测验 → 进入复习计划', async () => {
+    const sc = Store.customScenes()[0];
+    await nav('#/learn');
+    expect($(`[data-test="scene-${sc.id}"]`), '首页“我的单词”里没有新场景');
+    await nav('#/lesson/' + sc.id);
+    for (let i = 0; i < sc.words.length; i++) await tap('[data-test="lesson-next"]');
+    await waitFor(() => $('[data-test="scene"]'), 3000, '没有进入场景页');
+    const before = $('[data-test="scene"]').textContent;
+    await shot('32-我的单词-场景');
+    await tap('[data-test="regen"]');
+    await waitFor(() => !S.regen, 20000, '换场景超时');
+    await sleep(100);
+    await tap('[data-test="to-quiz"]');
+    for (let q = 0; q < sc.words.length; q++) {
+      await waitFor(() => $('[data-test="quiz-card"]'), 3000, '没有进入小测验');
+      const item = S.lesson.quiz[S.lesson.qi];
+      expect(new Set(item.options).size === item.options.length, '小测验选项有重复');
+      await tap($$('.opt').find(b => b.dataset.opt === item.word.meaning));
+      await tap('[data-test="quiz-next"]');
+    }
+    await waitFor(() => $('[data-test="lesson-done"]'), 3000, '没有完成页');
+    expect(sc.words.every(w => Store.progress(w.id)?.sceneID === sc.id), '新单词没有加入复习计划');
+  });
+
+  await flow(G4, '拍照识别：从图片中识别英文单词', async () => {
+    const canvas = document.createElement('canvas');
+    canvas.width = 1200; canvas.height = 420;
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#111'; ctx.font = 'bold 64px Helvetica, Arial, sans-serif';
+    ctx.fillText('The yellow banana', 60, 150);
+    ctx.fillText('is on the window.', 60, 270);
+    const blob = await new Promise(r => canvas.toBlob(r, 'image/png'));
+    await nav('#/add');
+    await tap('[data-test="mode-photo"]');
+    const { runOCR } = _internals;
+    const t0 = Date.now();
+    await runOCR(blob);
+    const A = S.add;
+    expect(A.ocr.phase === 'done', `识别失败：${A.ocr.error || A.ocr.phase}`);
+    const ids = A.cands.filter(c => c.entry).map(c => c.id);
+    for (const w of ['yellow', 'banana', 'window']) expect(ids.includes(w), `没有识别出 ${w}（识别到：${ids.join(', ')}）`);
+    expect(!ids.includes('the') && !ids.includes('is'), '虚词应被过滤');
+    await shot('33-拍照识别');
+    return `识别出 ${ids.join(', ')}，用时 ${((Date.now() - t0) / 1000).toFixed(1)} 秒（含首次下载识别组件）`;
+  });
+
+  await flow(G4, '删除我的单词后进度一并清除', async () => {
+    const sc = Store.customScenes()[0];
+    Store.deleteCustomScene(sc.id);
+    expect(!Store.customScenes().some(x => x.id === sc.id), '场景没有删除');
+    expect(sc.words.every(w => !Store.progress(w.id)), '进度没有清除');
+    expect(WORDS.length === 48 + Store.customScenes().reduce((n, x) => n + x.words.length, 0), '单词总数不对');
   });
 
   // ---------- 4. 汇总 ----------

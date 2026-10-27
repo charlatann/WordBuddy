@@ -259,3 +259,22 @@ mark { background: none; color: var(--accent); font-weight: 700; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } }
 .check-row { display: grid; grid-template-columns: 26px 1fr; gap: 8px; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
 .check-row:last-child { border-bottom: 0; }
+
+/* ---------- 添加单词 ---------- */
+textarea, input[type="text"], input[type="password"], .mean-input {
+  width: 100%; font: inherit; font-size: 17px; color: var(--text); background: var(--card-2);
+  border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; -webkit-appearance: none; appearance: none;
+}
+textarea { resize: vertical; min-height: 84px; }
+.mean-input { margin-top: 10px; font-size: 16px; }
+.cand { border: 2px solid transparent; transition: border-color .15s; }
+.cand.on { border-color: var(--accent); }
+.check {
+  width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--line); flex: none;
+  display: grid; place-items: center; color: #fff; font-weight: 800; font-size: 15px;
+}
+.check.on { background: var(--accent); border-color: var(--accent); }
+.chip.sense { background: var(--card-2); border: 1.5px solid transparent; font-weight: 500; }
+.chip.sense.on { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); font-weight: 650; }
+.add-card { border: 2px dashed var(--accent-soft); box-shadow: none; }
+label.btn { cursor: pointer; }

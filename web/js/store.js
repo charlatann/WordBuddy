@@ -1,22 +1,25 @@
 // 本地存储（localStorage）：学习进度、练习记录、设置
 import { newProgress, apply } from './core/srs.js';
+import { setCustom } from './core/content.js';
 
 let KEY = 'wordbuddy.v1';
 let memoryFallback = null;   // 私密浏览等不能写 localStorage 时退回内存
 let state = null;
 
-const empty = () => ({ progress: {}, records: [], settings: { remindTime: '20:00' } });
+const empty = () => ({ progress: {}, records: [], custom: [], settings: { remindTime: '20:00', apiKey: '', model: '' } });
 
-export function useNamespace(ns) { KEY = ns; state = null; }
+export function useNamespace(ns) { KEY = ns; state = null; read(); }
 
 function read() {
   if (state) return state;
   try {
     const raw = localStorage.getItem(KEY);
-    state = raw ? { ...empty(), ...JSON.parse(raw) } : empty();
+    const saved = raw ? JSON.parse(raw) : {};
+    state = { ...empty(), ...saved, settings: { ...empty().settings, ...(saved.settings || {}) } };
   } catch {
     state = memoryFallback || empty();
   }
+  setCustom(state.custom);
   return state;
 }
 
@@ -65,10 +68,28 @@ export const Store = {
   },
   records() { return read().records; },
 
+  // ---- 我的单词（用户添加的场景）----
+  customScenes() { return read().custom; },
+  saveCustomScene(scene) {
+    const s = read();
+    const i = s.custom.findIndex(x => x.id === scene.id);
+    if (i >= 0) s.custom[i] = scene; else s.custom.push(scene);
+    setCustom(s.custom); write();
+  },
+  deleteCustomScene(id) {
+    const s = read();
+    const scene = s.custom.find(x => x.id === id);
+    if (!scene) return;
+    s.custom = s.custom.filter(x => x.id !== id);
+    for (const w of scene.words) if (s.progress[w.id]?.sceneID === id) delete s.progress[w.id];
+    setCustom(s.custom); write();
+  },
+  newCustomID() { return 'my-' + Date.now().toString(36) + Math.floor(Math.random() * 1e4).toString(36); },
+
   settings() { return read().settings; },
   setSetting(k, v) { read().settings[k] = v; write(); },
 
   /** 仅测试使用 */
   _mutate(fn) { fn(read()); write(); },
-  reset() { state = empty(); write(); },
+  reset() { state = empty(); setCustom([]); write(); },
 };

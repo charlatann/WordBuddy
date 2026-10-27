@@ -1,9 +1,11 @@
-import { UNITS, STORIES, SCENES, WORDS, wordByID, sceneByID, sceneByWordID, KIND_LABEL,
+import { UNITS, STORIES, SCENES, WORDS, wordByID, sceneByID, sceneByWordID, KIND_LABEL, CUSTOM_UNIT, isKnownWord,
          voiceIndex, linesContaining, keyPhrase } from './core/content.js';
 import { highlight, blank, escapeHTML as h, shuffle, relativeCN } from './core/text.js';
 import { INTERVALS, LABELS, interval, isMastered, isDue } from './core/srs.js';
 import { evaluate, level } from './core/scoring.js';
 import { remix } from './core/generator.js';
+import { loadDictionary, lookup, extractWords, normalizeWord } from './core/dict.js';
+import { generateScene, chunkWords, emojiFor, MAX_WORDS_PER_SCENE, DEFAULT_MODEL } from './core/scenegen.js';
 import { Store } from './store.js';
 import { Speech, speak, speakAll, stopSpeaking, startTake, playURL, stopPlaying,
          recordingSupported, recognitionSupported, ttsSupported, voiceCount, pickMime } from './speech.js';
@@ -25,9 +27,9 @@ export function go(hash) { location.hash = hash; }
 
 const VIEWS = {
   learn: viewLearn, lesson: viewLesson, review: viewReview, run: viewReviewRun,
-  story: viewStory, play: viewPlay, speak: viewSpeak, practice: viewPractice, check: viewCheck,
+  story: viewStory, play: viewPlay, speak: viewSpeak, practice: viewPractice, check: viewCheck, add: viewAdd,
 };
-const TAB_OF = { learn: 'learn', lesson: 'learn', review: 'review', run: 'review', story: 'story', play: 'story',
+const TAB_OF = { learn: 'learn', lesson: 'learn', add: 'learn', review: 'review', run: 'review', story: 'story', play: 'story',
                  speak: 'speak', practice: 'speak', check: 'speak' };
 
 export function render({ keepScroll = false } = {}) {
@@ -67,10 +69,10 @@ function renderTabbar(active) {
 const sayBtn = (text, { slow = false, voice = 0, size = '' } = {}) =>
   `<button class="speak ${size}" data-act="say" data-say="${h(text)}" data-voice="${voice}" ${slow ? 'data-slow="1"' : ''} aria-label="${slow ? '慢速朗读' : '朗读'}">${slow ? '🐢' : '🔊'}</button>`;
 
-const topbar = (title, back = '') => `
+const topbar = (title, back = '', right = '<span></span>') => `
   <div class="topbar">
     <button class="back" data-act="back" data-to="${h(back)}" aria-label="返回">‹</button>
-    <h1>${h(title)}</h1><span></span>
+    <h1>${h(title)}</h1>${right}
   </div>`;
 
 const chip = (w, learned) => `<span class="chip">${w.emoji} ${h(w.id)}${learned ? '<span class="ok">✓</span>' : ''}</span>`;
@@ -122,6 +124,16 @@ function toast(msg) {
 
 // ============ 学习 ============
 
+function sceneCard(s, learned) {
+  const done = s.words.every(w => learned.has(w.id));
+  return `<a class="card scene-card" href="#/lesson/${s.id}" style="text-decoration:none;color:inherit" data-test="scene-${s.id}">
+      <div class="head"><span class="emoji">${s.emoji}</span>
+        <div><h3>${h(s.title)}</h3><span class="tiny muted">${KIND_LABEL[s.kind] || '对话'}${s.custom ? (s.source === 'ai' ? ' · AI 生成' : ' · 模板生成') : ''}</span></div>
+        ${done ? '<span class="done-badge">✓ 已学</span>' : ''}</div>
+      <div class="chips">${s.words.map(w => chip(w, learned.has(w.id))).join('')}</div>
+    </a>`;
+}
+
 function viewLearn() {
   const learned = Store.learnedIDs();
   const list = Store.progressList();
@@ -141,6 +153,14 @@ function viewLearn() {
         <div><p class="small">下一课</p><h2>${h(next.title)}</h2><p>${next.words.map(w => h(w.id)).join(' · ')}</p></div>
         <div class="play">▶︎</div>
       </a>` : `<div class="card">🎉 全部 ${WORDS.length} 个单词都学完了！去复习和剧场巩固吧。</div>`}
+    <div class="section-title">${CUSTOM_UNIT.emoji} ${CUSTOM_UNIT.title}</div>
+    <div class="grid">
+      <a class="card scene-card add-card" href="#/add" style="text-decoration:none;color:inherit" data-test="add-words">
+        <div class="head"><span class="emoji">➕</span><div><h3>添加我要背的单词</h3>
+          <span class="tiny muted">拍照识别或手动输入，自动生成使用场景</span></div></div>
+      </a>
+      ${CUSTOM_UNIT.scenes.map(s => sceneCard(s, learned)).join('')}
+    </div>
     ${UNITS.map(u => `
       <div class="section-title">${u.emoji} 第${u.id}单元 · ${h(u.title)}</div>
       <div class="grid">
@@ -162,10 +182,12 @@ function viewLesson([id]) {
   if (fresh || !S.lesson || S.lesson.id !== id) {
     S.lesson = { id, phase: 'words', wi: 0, qi: 0, picked: null, correct: 0, showZh: true,
       quiz: shuffle(scene.words).map(w => ({ word: w,
-        options: shuffle([w.meaning, ...shuffle(WORDS.filter(x => x.id !== w.id)).slice(0, 3).map(x => x.meaning)]) })) };
+        options: shuffle([w.meaning, ...[...new Set(shuffle(WORDS.filter(x => x.id !== w.id)).map(x => x.meaning))]
+          .filter(m => m && m !== w.meaning).slice(0, 3)]) })) };
   }
   const L = S.lesson;
-  const pct = { words: (L.wi + 1) / 4 * 35, scene: 50, quiz: 60 + L.qi / 4 * 35, done: 100 }[L.phase];
+  const n = scene.words.length;
+  const pct = { words: (L.wi + 1) / n * 35, scene: 50, quiz: 60 + L.qi / n * 35, done: 100 }[L.phase];
   let body = '';
 
   if (L.phase === 'words') {
@@ -195,6 +217,8 @@ function viewLesson([id]) {
         <div style="color:var(--orange);font-weight:700;margin-bottom:6px">💬 今日日常用语</div>
         <div class="row"><div class="spacer"><b style="font-size:19px">${h(kp.en)}</b><div class="small muted">${h(kp.zh)}</div></div>${sayBtn(kp.en)}</div>
       </div>
+      ${scene.custom ? `<button class="btn gray" data-act="regenScene" data-scene="${scene.id}" ${S.regen ? 'disabled' : ''} data-test="regen">
+        ${S.regen ? '正在生成新场景…' : '🔄 换一个场景'}</button>` : ''}
       <button class="btn" data-act="lessonQuiz" data-test="to-quiz">小测验 ▶︎</button>`;
   } else if (L.phase === 'quiz') {
     const item = L.quiz[L.qi];
@@ -222,9 +246,209 @@ function viewLesson([id]) {
       <a class="btn orange" href="#/practice?s=${scene.id}&l=${scene.keyLine}" style="text-decoration:none">🎙️ 跟读今日用语</a>
       <a class="btn gray" href="#/learn" style="text-decoration:none">返回</a>`;
   }
-  return `${topbar(`${scene.emoji} ${scene.title}`, '#/learn')}
+  const del = scene.custom ? `<button class="back" data-act="deleteScene" data-scene="${scene.id}" aria-label="删除这组单词" style="font-size:17px">🗑</button>` : '<span></span>';
+  return `${topbar(`${scene.emoji} ${scene.title}`, '#/learn', del)}
     <div class="progress"><i style="width:${pct}%"></i></div>
     <div class="stack">${body}</div>`;
+}
+
+// ============ 添加我的单词 ============
+
+const addState = () => (S.add ||= { mode: 'type', text: '', cands: [], dictError: '', ocr: { phase: 'idle' },
+  gen: { phase: 'idle', done: [], errors: [] }, showUnknown: false, showSettings: false });
+
+function candHTML(c, i, aiOn) {
+  const known = isKnownWord(c.id);
+  const where = known ? sceneByWordID[c.id] : null;
+  const senses = c.entry?.senses || [];
+  return `<div class="card cand ${c.sel ? 'on' : ''} ${known ? 'locked' : ''}" data-test="cand-${c.id}">
+    <div class="row">
+      <button class="check ${c.sel ? 'on' : ''}" data-act="candToggle" data-i="${i}" ${known ? 'disabled' : ''} aria-label="选择 ${h(c.id)}">${c.sel ? '✓' : ''}</button>
+      <div class="spacer"><b style="font-size:19px">${h(c.id)}</b>
+        <span class="small muted">${h(c.entry?.phonetic || '')}</span>
+        ${c.raw && c.raw !== c.id ? `<span class="tiny muted">（${h(c.raw)} 的原形）</span>` : ''}</div>
+      ${sayBtn(c.id, { size: 'sm' })}
+    </div>
+    ${known ? `<div class="tiny muted" style="margin-top:6px">已在词库中：${where ? `${where.emoji} ${h(where.title)}` : ''}</div>` : `
+      ${senses.length ? `<div class="chips" style="margin-top:10px">${senses.map((sn, k) => `
+        <button class="chip sense ${c.sense === k ? 'on' : ''}" data-act="candSense" data-i="${i}" data-k="${k}">${h(sn.pos)} ${h(sn.meaning)}</button>`).join('')}</div>`
+        : `<div class="tiny" style="color:var(--orange);margin-top:6px">词典里没有这个词，请确认拼写${aiOn ? '；中文意思可留空，由 AI 补全' : '并填写中文意思'}</div>`}
+      <input class="mean-input" data-i="${i}" value="${h(c.meaning || '')}" placeholder="中文意思${aiOn && !senses.length ? '（可留空）' : ''}" aria-label="${h(c.id)} 的中文意思">`}
+  </div>`;
+}
+
+function viewAdd() {
+  const A = addState();
+  const st = Store.settings();
+  const aiOn = !!st.apiKey;
+  const mode = A.mode;
+  const visible = A.cands.filter(c => A.showUnknown || c.entry || c.manual);
+  const hiddenUnknown = A.cands.filter(c => !c.entry && !c.manual).length;
+  const selected = A.cands.filter(c => c.sel && !isKnownWord(c.id));
+
+  let input = '';
+  if (mode === 'type') {
+    input = `<div class="card stack">
+      <b>✍️ 输入要背的单词</b>
+      <textarea id="add-text" rows="3" placeholder="例如：apple, swim, happy&#10;多个单词用空格、逗号或换行分开；也可以直接粘贴一段英文" data-test="add-text">${h(A.text)}</textarea>
+      <button class="btn" data-act="addLookup" data-test="add-lookup">🔍 查词</button>
+    </div>`;
+  } else {
+    const o = A.ocr;
+    input = `<div class="card stack">
+      <b>📷 拍下课本、单词表或任何英文</b>
+      <p class="small muted" style="margin:0">尽量拍正、拍清楚、光线充足。第一次使用需要联网下载识别组件（约 3 MB）。</p>
+      <div class="btn-row">
+        <label class="btn"><input type="file" accept="image/*" capture="environment" data-act="photo" hidden>📷 拍照</label>
+        <label class="btn gray"><input type="file" accept="image/*" data-act="photo" hidden>🖼 从相册选</label>
+      </div>
+      ${o.preview ? `<img src="${o.preview}" alt="待识别的照片" style="width:100%;max-height:260px;object-fit:contain;border-radius:12px;background:var(--card-2)">` : ''}
+      ${o.phase === 'working' ? `<div><div class="small muted">${h(o.stage || '准备中')} ${Math.round((o.progress || 0) * 100)}%</div>
+        <div class="progress" style="margin:6px 0 0"><i style="width:${Math.round((o.progress || 0) * 100)}%"></i></div></div>` : ''}
+      ${o.phase === 'done' ? `<div class="small muted">识别出 ${A.cands.filter(c => c.entry).length} 个单词，点选你想背的。</div>` : ''}
+      ${o.phase === 'error' ? `<div class="notice err">${h(o.error)}</div>` : ''}
+    </div>`;
+  }
+
+  const g = A.gen;
+  const results = g.done.length ? `<div class="card stack fade-in" data-test="add-done">
+      <b>✅ 已添加 ${g.done.reduce((n, id) => n + (sceneByID[id]?.words.length || 0), 0)} 个单词，生成 ${g.done.length} 个场景</b>
+      ${g.errors.length ? `<div class="notice">AI 生成没成功，已改用内置模板：${h(g.errors[0])}</div>` : ''}
+      ${g.done.map(id => sceneByID[id]).filter(Boolean).map(sc => `<div class="card" style="background:var(--card-2);box-shadow:none">
+          ${sceneHTML(sc)}
+          <div style="height:10px"></div>
+          <a class="btn" href="#/lesson/${sc.id}" style="text-decoration:none" data-test="learn-${sc.id}">▶︎ 开始学习</a></div>`).join('')}
+    </div>` : '';
+
+  const settings = `<div class="card">
+      <button class="row" style="width:100%" data-act="addSettings"><b>⚙️ 场景生成方式</b><span class="spacer"></span>
+        <span class="small" style="color:${aiOn ? 'var(--green)' : 'var(--text-2)'}">${aiOn ? 'AI（Claude）' : '内置模板'}</span><span class="muted">${A.showSettings ? '▴' : '▾'}</span></button>
+      ${A.showSettings ? `<div class="stack" style="margin-top:12px">
+        <p class="small muted" style="margin:0">默认用内置模板生成，离线、免费。填入你自己的 Anthropic API 密钥后改用 AI 生成，场景更有趣，并能补全词典里没有的词。
+          密钥只保存在这台设备的浏览器里，费用由你的 Anthropic 账户支付（每个场景约几分钱）。在 <a href="https://console.anthropic.com/" target="_blank" rel="noopener">console.anthropic.com</a> 获取密钥。</p>
+        <input id="api-key" type="password" autocomplete="off" placeholder="sk-ant-..." value="${h(st.apiKey || '')}" aria-label="API 密钥">
+        <input id="api-model" type="text" autocomplete="off" placeholder="模型（默认 ${DEFAULT_MODEL}）" value="${h(st.model || '')}" aria-label="模型">
+        <div class="btn-row"><button class="btn-sm primary" style="flex:1;justify-content:center" data-act="saveAI">保存</button>
+          <button class="btn-sm" style="flex:1;justify-content:center" data-act="clearAI">清除密钥</button></div>
+      </div>` : ''}
+    </div>`;
+
+  return `${topbar('添加单词', '#/learn')}
+    <div class="seg" style="grid-template-columns:1fr 1fr">${[['type', '✍️ 手动输入'], ['photo', '📷 拍照识别']].map(([m, l]) =>
+      `<button class="${mode === m ? 'on' : ''}" data-act="addMode" data-m="${m}" data-test="mode-${m}">${l}</button>`).join('')}</div>
+    <div class="stack ${selected.length ? 'has-sticky' : ''}">
+      ${input}
+      ${A.dictError ? `<div class="notice err">${h(A.dictError)}</div>` : ''}
+      ${visible.length ? `<div class="row"><b>选择要背的单词</b><span class="spacer"></span>
+        <button class="link" data-act="candAll">全选新词</button></div>` : ''}
+      ${visible.map(c => candHTML(c, A.cands.indexOf(c), aiOn)).join('')}
+      ${hiddenUnknown && !A.showUnknown ? `<button class="link" data-act="showUnknown">显示另外 ${hiddenUnknown} 个词典里没有的词（可能是识别错误）</button>` : ''}
+      ${results}
+      ${settings}
+    </div>
+    <div id="add-bar">${addBarHTML()}</div>`;
+}
+
+function addBarHTML() {
+  const A = addState();
+  const aiOn = !!Store.settings().apiKey;
+  const selected = A.cands.filter(c => c.sel && !isKnownWord(c.id));
+  const missing = selected.filter(c => !c.meaning?.trim() && !aiOn);
+  const g = A.gen;
+  if (g.phase === 'working') return `<div class="sticky-bottom"><div><button class="btn" disabled>正在生成场景 ${g.step}/${g.total}…</button></div></div>`;
+  if (!selected.length) return '';
+  return `<div class="sticky-bottom"><div>
+      ${missing.length ? `<div class="tiny" style="color:var(--orange);margin-bottom:6px">请填写 ${missing.map(c => h(c.id)).join('、')} 的中文意思</div>` : ''}
+      <button class="btn" data-act="addGenerate" ${missing.length ? 'disabled' : ''} data-test="add-generate">
+        ✨ 生成场景并添加（${selected.length} 个词 → ${Math.ceil(selected.length / MAX_WORDS_PER_SCENE)} 个场景）</button></div></div>`;
+}
+
+function mergeCands(found, { manual = false } = {}) {
+  const A = addState();
+  const old = Object.fromEntries(A.cands.map(c => [c.id, c]));
+  A.cands = found.map(f => {
+    const prev = old[f.id];
+    if (prev) return { ...prev, manual: prev.manual || manual };
+    return { id: f.id, raw: f.raw, entry: f.entry, sense: f.entry ? 0 : -1, meaning: f.entry?.senses[0]?.meaning || '',
+             sel: manual && !isKnownWord(f.id) && !!f.entry, manual };
+  });
+}
+
+async function addLookup() {
+  const A = addState();
+  A.text = document.getElementById('add-text')?.value ?? A.text;
+  A.dictError = '';
+  try { await loadDictionary(); } catch (e) { A.dictError = `${e.message}。仍可手动填写中文意思。`; }
+  const found = extractWords(A.text, { keepUnknown: true, minLength: 1, stop: false, prefer: false });
+  if (!found.length) A.dictError ||= '没有找到英文单词，请检查输入。';
+  mergeCands(found, { manual: true });
+  A.cands.filter(c => !c.entry).forEach(c => { c.sel = true; });
+  refresh();
+}
+
+async function runOCR(file) {
+  const A = addState();
+  A.ocr = { phase: 'working', stage: '准备识别组件', progress: 0, preview: URL.createObjectURL(file) };
+  refresh();
+  let lastPaint = 0;
+  try {
+    const [{ recognize }] = await Promise.all([import('./ocr.js'), loadDictionary()]);
+    const { text } = await recognize(file, { onProgress: (stage, p) => {
+      A.ocr.stage = stage; A.ocr.progress = p;
+      if (Date.now() - lastPaint > 250 && $app.dataset.view === 'add') { lastPaint = Date.now(); refresh(); }
+    } });
+    A.ocr.phase = 'done';
+    A.ocr.text = text;
+    mergeCands(extractWords(text, { keepUnknown: true }));
+    if (!A.cands.some(c => c.entry)) { A.ocr.phase = 'error'; A.ocr.error = '没有识别出英文单词，换个角度、靠近一点再拍一次吧。'; }
+  } catch (e) {
+    A.ocr.phase = 'error';
+    A.ocr.error = e.message || String(e);
+  }
+  if ($app.dataset.view === 'add') refresh();
+}
+
+async function addGenerate() {
+  const A = addState();
+  const st = Store.settings();
+  const picked = A.cands.filter(c => c.sel && !isKnownWord(c.id));
+  if (!picked.length) return;
+  const words = picked.map(c => {
+    const sn = c.entry?.senses[c.sense] || null;
+    const pos = sn?.pos || '';
+    return { id: c.id, phonetic: c.entry?.phonetic || '', pos, meaning: (c.meaning || '').trim(), emoji: emojiFor(c.id, pos) };
+  });
+  const groups = chunkWords(words);
+  A.gen = { phase: 'working', step: 1, total: groups.length, done: [], errors: [] };
+  refresh();
+  for (const [k, group] of groups.entries()) {
+    A.gen.step = k + 1; refresh();
+    const { scene, error } = await generateScene(group, { id: Store.newCustomID(), apiKey: st.apiKey, model: st.model || DEFAULT_MODEL });
+    scene.words.forEach(w => { w.meaning ||= '（未填写）'; });
+    Store.saveCustomScene(scene);
+    A.gen.done.push(scene.id);
+    if (error) A.gen.errors.push(error);
+  }
+  A.gen.phase = 'idle';
+  A.cands = A.cands.filter(c => !isKnownWord(c.id));
+  A.text = '';
+  refresh();
+  requestAnimationFrame(() => document.querySelector('[data-test="add-done"]')?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+}
+
+async function regenScene(id) {
+  const old = sceneByID[id];
+  if (!old?.custom || S.regen) return;
+  S.regen = true; refresh();
+  const st = Store.settings();
+  const words = old.words.map(w => ({ ...w, emojiFixed: true }));
+  const { scene, error } = await generateScene(words, { id, apiKey: st.apiKey, model: st.model || DEFAULT_MODEL });
+  scene.words = old.words;
+  Store.saveCustomScene(scene);
+  S.regen = false;
+  if (S.lesson?.id === id) S.lesson.showZh = true;
+  refresh();
+  toast(error ? `AI 生成失败，已用模板生成：${error}` : '已换成新场景');
 }
 
 // ============ 复习 ============
@@ -688,6 +912,31 @@ const ACTIONS = {
     requestAnimationFrame(() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }));
   },
   speakMode: d => { S.speakMode = d.m; render(); },
+  addMode: d => { addState().mode = d.m; refresh(); },
+  addLookup: () => addLookup(),
+  candToggle: d => { const c = addState().cands[Number(d.i)]; c.sel = !c.sel; refresh(); },
+  candSense: d => {
+    const c = addState().cands[Number(d.i)]; const k = Number(d.k);
+    c.sense = k; c.meaning = c.entry.senses[k].meaning; c.sel = true; refresh();
+  },
+  candAll: () => { const A = addState(); A.cands.forEach(c => { if (!isKnownWord(c.id) && (c.entry || c.manual || A.showUnknown)) c.sel = true; }); refresh(); },
+  showUnknown: () => { addState().showUnknown = true; refresh(); },
+  addSettings: () => { const A = addState(); A.showSettings = !A.showSettings; refresh(); },
+  saveAI: () => {
+    Store.setSetting('apiKey', (document.getElementById('api-key')?.value || '').trim());
+    Store.setSetting('model', (document.getElementById('api-model')?.value || '').trim());
+    toast(Store.settings().apiKey ? '已保存，之后用 AI 生成场景' : '已保存，使用内置模板');
+    refresh();
+  },
+  clearAI: () => { Store.setSetting('apiKey', ''); toast('已清除密钥，使用内置模板'); refresh(); },
+  addGenerate: () => addGenerate(),
+  regenScene: d => regenScene(d.scene),
+  deleteScene: d => {
+    const sc = sceneByID[d.scene];
+    if (!sc || !confirm(`删除「${sc.title}」？这组单词的学习进度也会一起删除。`)) return;
+    Store.deleteCustomScene(sc.id);
+    go('#/learn');
+  },
   rec: d => toggleRecord(d),
   playMine: d => { const P = panels[d.panel]; if (P?.url) playURL(P.url); },
   compare: async d => { const P = panels[d.panel]; await speak(d.text); if (P?.url) playURL(P.url); },
@@ -708,7 +957,24 @@ document.addEventListener('click', e => {
   const fn = ACTIONS[el.dataset.act];
   if (fn) { e.preventDefault(); fn(el.dataset, el); }
 });
+document.addEventListener('input', e => {
+  const el = e.target;
+  if (el.classList?.contains('mean-input') && S.add) {
+    const c = S.add.cands[Number(el.dataset.i)];
+    if (c) {
+      c.meaning = el.value;
+      if (el.value.trim() && !c.sel) {
+        c.sel = true;
+        const card = el.closest('.cand'); card?.classList.add('on');
+        const box = card?.querySelector('.check'); if (box) { box.classList.add('on'); box.textContent = '✓'; }
+      }
+      const bar = document.getElementById('add-bar'); if (bar) bar.innerHTML = addBarHTML();
+    }
+  }
+  if (el.id === 'add-text' && S.add) S.add.text = el.value;
+});
 document.addEventListener('change', e => {
+  if (e.target.dataset?.act === 'photo' && e.target.files?.[0]) { runOCR(e.target.files[0]); e.target.value = ''; return; }
   if (e.target.dataset?.act === 'remindTime') Store.setSetting('remindTime', e.target.value);
 });
 
@@ -732,6 +998,7 @@ function downloadICS(time) {
 // ============ 启动 ============
 
 export function start() {
+  Store.customScenes();          // 先载入“我的单词”，再渲染
   render();
   if ('serviceWorker' in navigator && !/selftest/.test(location.search)) {
     navigator.serviceWorker.register('sw.js').catch(() => {});
@@ -741,4 +1008,4 @@ export function start() {
   if (due && !location.hash.startsWith('#/run')) setTimeout(() => toast(`🧠 有 ${due} 个单词到了复习时间`), 600);
 }
 
-export const _internals = { S, panels, ACTIONS, render, go, Store };
+export const _internals = { S, panels, ACTIONS, render, go, Store, runOCR, addLookup };

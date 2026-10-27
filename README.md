@@ -62,3 +62,11 @@ WordBuddy/
 - 添加 App 图标（Assets.xcassets → AppIcon）
 - 修改 `project.yml` 中的 Bundle ID
 - 标准发音目前用系统 TTS；想要更自然的真人音，可替换为录音文件或云端 TTS
+
+## 网页版（iPhone Safari）
+
+`web/` 目录是网页版，无需安装：用 iPhone 的 Safari 打开 https://charlatann.github.io/WordBuddy/ ，点“分享 › 添加到主屏幕”。
+
+- 四大功能与 iOS 版相同；提醒改为打开时提示 + 添加到日历。
+- **我的单词**：首页“添加我要背的单词”，可手动输入或拍照识别（Tesseract.js），自动查离线词典（由 [ECDICT](https://github.com/skywind3000/ECDICT) 生成，`tools/build_dict.py`），并为新单词生成使用场景：默认内置模板；在“场景生成方式”里填入自己的 Anthropic API 密钥后改用 AI 生成。
+- 测试：`node web/tests/run-node.mjs`；在 Safari 中打开 `index.html?selftest` 运行界面自检；CI 在 iPhone 17 Pro Max / iPad 模拟器的 Safari 中运行（`.github/workflows/web.yml`）。
