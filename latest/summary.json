@@ -23,11 +23,11 @@
   "environmentDescription" : "WordBuddy · Built with macOS 26.6.2",
   "expectedFailures" : 0,
   "failedTests" : 0,
-  "finishTime" : 1793116367.99,
+  "finishTime" : 1793128813.443,
   "passedTests" : 41,
   "result" : "Passed",
   "skippedTests" : 0,
-  "startTime" : 1793115921.617,
+  "startTime" : 1793128268.498,
   "statistics" : [
 
   ],
@@ -38,8 +38,8 @@
   "topInsights" : [
     {
       "category" : "Longest Test Runs",
-      "impact" : "71% of duration",
-      "text" : "2 longest test runs with outlier durations exceeding 0.33s (three standard deviations)"
+      "impact" : "52% of duration",
+      "text" : "1 longest test run with outlier durations exceeding 0.67s (three standard deviations)"
     }
   ],
   "totalTestCount" : 41
