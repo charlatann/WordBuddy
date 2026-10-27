@@ -1,0 +1,300 @@
+Test Case '-[WordBuddyTests.ContentTests testVoiceIndexIsStablePerSpeaker]' passed (0.004 seconds).
+Test Case '-[WordBuddyTests.ContentTests testWordFieldsAreComplete]' started.
+Test Case '-[WordBuddyTests.ContentTests testWordFieldsAreComplete]' passed (0.001 seconds).
+Test Case '-[WordBuddyTests.ContentTests testWordIDsAreUniqueAndLowercase]' started.
+Test Case '-[WordBuddyTests.ContentTests testWordIDsAreUniqueAndLowercase]' passed (0.072 seconds).
+Test Suite 'ContentTests' passed at 2026-10-27 15:49:13.007.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.099 (0.110) seconds
+Test Suite 'EbbinghausTests' started at 2026-10-27 15:49:13.008.
+Test Case '-[WordBuddyTests.EbbinghausTests testEarlyReviewDoesNotAdvanceSchedule]' started.
+Test Case '-[WordBuddyTests.EbbinghausTests testEarlyReviewDoesNotAdvanceSchedule]' passed (0.014 seconds).
+Test Case '-[WordBuddyTests.EbbinghausTests testEarlyReviewForgotStillResets]' started.
+Test Case '-[WordBuddyTests.EbbinghausTests testEarlyReviewForgotStillResets]' passed (0.001 seconds).
+Test Case '-[WordBuddyTests.EbbinghausTests testForgotRestartsCurve]' started.
+Test Case '-[WordBuddyTests.EbbinghausTests testForgotRestartsCurve]' passed (0.003 seconds).
+Test Case '-[WordBuddyTests.EbbinghausTests testGoodWalksThroughEveryInterval]' started.
+Test Case '-[WordBuddyTests.EbbinghausTests testGoodWalksThroughEveryInterval]' passed (0.002 seconds).
+Test Case '-[WordBuddyTests.EbbinghausTests testHardKeepsCurrentInterval]' started.
+Test Case '-[WordBuddyTests.EbbinghausTests testHardKeepsCurrentInterval]' passed (0.385 seconds).
+Test Case '-[WordBuddyTests.EbbinghausTests testIntervalsMatchSpec]' started.
+Test Case '-[WordBuddyTests.EbbinghausTests testIntervalsMatchSpec]' passed (0.002 seconds).
+Test Case '-[WordBuddyTests.EbbinghausTests testNewWordIsDueAfterFiveMinutes]' started.
+Test Case '-[WordBuddyTests.EbbinghausTests testNewWordIsDueAfterFiveMinutes]' passed (0.034 seconds).
+Test Case '-[WordBuddyTests.EbbinghausTests testStageLabels]' started.
+Test Case '-[WordBuddyTests.EbbinghausTests testStageLabels]' passed (0.002 seconds).
+Test Suite 'EbbinghausTests' passed at 2026-10-27 15:49:13.459.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.443 (0.451) seconds
+Test Suite 'NotificationTimeTests' started at 2026-10-27 15:49:13.459.
+Test Case '-[WordBuddyTests.NotificationTimeTests testDaytimeUnchanged]' started.
+Test Case '-[WordBuddyTests.NotificationTimeTests testDaytimeUnchanged]' passed (0.002 seconds).
+Test Case '-[WordBuddyTests.NotificationTimeTests testNightTimeMovesToEightAM]' started.
+Test Case '-[WordBuddyTests.NotificationTimeTests testNightTimeMovesToEightAM]' passed (0.002 seconds).
+Test Suite 'NotificationTimeTests' passed at 2026-10-27 15:49:13.465.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.004 (0.006) seconds
+Test Suite 'ScoringTests' started at 2026-10-27 15:49:13.524.
+Test Case '-[WordBuddyTests.ScoringTests testAlignEmptyInputs]' started.
+Test Case '-[WordBuddyTests.ScoringTests testAlignEmptyInputs]' passed (0.004 seconds).
+Test Case '-[WordBuddyTests.ScoringTests testAlignFuzzyForLongWords]' started.
+Test Case '-[WordBuddyTests.ScoringTests testAlignFuzzyForLongWords]' passed (0.002 seconds).
+Test Case '-[WordBuddyTests.ScoringTests testAlignMissingAndExtraWords]' started.
+Test Case '-[WordBuddyTests.ScoringTests testAlignMissingAndExtraWords]' passed (0.001 seconds).
+Test Case '-[WordBuddyTests.ScoringTests testAlignPerfect]' started.
+Test Case '-[WordBuddyTests.ScoringTests testAlignPerfect]' passed (0.001 seconds).
+Test Case '-[WordBuddyTests.ScoringTests testCombinedScore]' started.
+Test Case '-[WordBuddyTests.ScoringTests testCombinedScore]' passed (0.001 seconds).
+Test Case '-[WordBuddyTests.ScoringTests testEveryPracticeSentenceIsScorable]' started.
+Test Case '-[WordBuddyTests.ScoringTests testEveryPracticeSentenceIsScorable]' passed (0.003 seconds).
+Test Case '-[WordBuddyTests.ScoringTests testNormalize]' started.
+Test Case '-[WordBuddyTests.ScoringTests testNormalize]' passed (0.002 seconds).
+Test Case '-[WordBuddyTests.ScoringTests testResultLevels]' started.
+Test Case '-[WordBuddyTests.ScoringTests testResultLevels]' passed (0.002 seconds).
+Test Suite 'ScoringTests' passed at 2026-10-27 15:49:13.548.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.018 (0.024) seconds
+Test Suite 'StoryTests' started at 2026-10-27 15:49:13.548.
+Test Case '-[WordBuddyTests.StoryTests testCuratedFillStepsAreValid]' started.
+Test Case '-[WordBuddyTests.StoryTests testCuratedFillStepsAreValid]' passed (0.016 seconds).
+Test Case '-[WordBuddyTests.StoryTests testCuratedStoriesHaveSpeakingAndFillSteps]' started.
+Test Case '-[WordBuddyTests.StoryTests testCuratedStoriesHaveSpeakingAndFillSteps]' passed (0.010 seconds).
+Test Case '-[WordBuddyTests.StoryTests testCuratedStoriesUseKnownWords]' started.
+Test Case '-[WordBuddyTests.StoryTests testCuratedStoriesUseKnownWords]' passed (0.007 seconds).
+Test Case '-[WordBuddyTests.StoryTests testRemixIsAlwaysValidAcrossManyRuns]' started.
+Test Case '-[WordBuddyTests.StoryTests testRemixIsAlwaysValidAcrossManyRuns]' passed (0.488 seconds).
+Test Case '-[WordBuddyTests.StoryTests testRemixNeedsAtLeastThreeWords]' started.
+Test Case '-[WordBuddyTests.StoryTests testRemixNeedsAtLeastThreeWords]' passed (0.007 seconds).
+Test Case '-[WordBuddyTests.StoryTests testRemixPrioritizesDueWords]' started.
+Test Case '-[WordBuddyTests.StoryTests testRemixPrioritizesDueWords]' passed (0.094 seconds).
+Test Case '-[WordBuddyTests.StoryTests testRemixWithThreeWordsPadsOptions]' started.
+Test Case '-[WordBuddyTests.StoryTests testRemixWithThreeWordsPadsOptions]' passed (0.016 seconds).
+Test Suite 'StoryTests' passed at 2026-10-27 15:49:14.243.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.638 (0.695) seconds
+Test Suite 'TextToolsTests' started at 2026-10-27 15:49:14.244.
+Test Case '-[WordBuddyTests.TextToolsTests testBlankKeepsPunctuationAndOnlyFirstOccurrence]' started.
+Test Case '-[WordBuddyTests.TextToolsTests testBlankKeepsPunctuationAndOnlyFirstOccurrence]' passed (0.003 seconds).
+Test Case '-[WordBuddyTests.TextToolsTests testContains]' started.
+Test Case '-[WordBuddyTests.TextToolsTests testContains]' passed (0.001 seconds).
+Test Case '-[WordBuddyTests.TextToolsTests testHighlightKeepsOriginalText]' started.
+Test Case '-[WordBuddyTests.TextToolsTests testHighlightKeepsOriginalText]' passed (0.011 seconds).
+Test Case '-[WordBuddyTests.TextToolsTests testTokenMatchesWordForms]' started.
+Test Case '-[WordBuddyTests.TextToolsTests testTokenMatchesWordForms]' passed (0.001 seconds).
+Test Suite 'TextToolsTests' passed at 2026-10-27 15:49:14.262.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.015 (0.018) seconds
+Test Suite 'WordBuddyTests.xctest' passed at 2026-10-27 15:49:14.263.
+	 Executed 38 tests, with 0 failures (0 unexpected) in 1.217 (1.366) seconds
+Test Suite 'All tests' passed at 2026-10-27 15:49:14.263.
+	 Executed 38 tests, with 0 failures (0 unexpected) in 1.217 (1.368) seconds
+2026-10-27 15:49:55.476988+0000 WordBuddyUITests-Runner[5211:21460] [Default] Running tests...
+2026-10-27 15:49:55.632441+0000 WordBuddyUITests-Runner[5211:21521] [General] Failed to send CA Event for app launch measurements for ca_event_type: 0 event_name: com.apple.app_launch_measurement.FirstFramePresentationMetric
+2026-10-27 15:49:55.676153+0000 WordBuddyUITests-Runner[5211:21521] [General] Failed to send CA Event for app launch measurements for ca_event_type: 1 event_name: com.apple.app_launch_measurement.ExtendedLaunchMetrics
+objc[5211]: Class UIAccessibilityLoaderWebShared is implemented in both /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x1092c4310) and /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x1091a8398). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'All tests' started at 2026-10-27 15:50:09.443.
+Test Suite 'WordBuddyUITests.xctest' started at 2026-10-27 15:50:09.444.
+Test Suite 'SmokeUITests' started at 2026-10-27 15:50:09.445.
+Test Case '-[WordBuddyUITests.SmokeUITests testFirstLessonFlow]' started.
+2026-10-27 15:50:13.456 xcodebuild[1442:7769] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-10-27 15:50:13.456 xcodebuild[1442:7769] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =     0.00s Start Test at 2026-10-27 15:50:09.448
+    t =     1.33s Set Up
+    t =     1.34s     Open com.example.wordbuddy
+    t =     1.34s         Launch com.example.wordbuddy
+    t =    28.93s             Setting up automation session
+    t =    31.34s             Wait for com.example.wordbuddy to idle
+    t =    36.28s Waiting 10.0s for "学新词" NavigationBar to exist
+    t =    37.28s     Checking `Expect predicate `existsNoRetry == 1` for object "学新词" NavigationBar`
+    t =    37.28s         Checking existence of `"学新词" NavigationBar`
+    t =    38.45s Waiting 5.0s for Button (First Match) to exist
+    t =    39.46s     Checking `Expect predicate `existsNoRetry == 1` for object Button (First Match)`
+    t =    39.46s         Checking existence of `Button (First Match)`
+    t =    40.04s Tap Button (First Match)
+    t =    40.04s     Wait for com.example.wordbuddy to idle
+    t =    40.05s     Find the Button (First Match)
+    t =    41.46s     Check for interrupting elements affecting "⏰, 下一课, 迟到的早晨, morning · coffee · late · hurry" Button
+    t =    41.57s         Wait for com.apple.springboard to idle
+    t =    41.95s     Found 1 interrupting element:
+    t =    41.95s         Find the "“单词伙伴” Would Like to Send You Notifications" Alert
+    t =    41.98s "“单词伙伴” Would Like to Send You Notifications" Alert from Application 'com.apple.springboard'
+    t =    41.99s     Invoking UI interruption monitors for "“单词伙伴” Would Like to Send You Notifications" Alert from Application 'com.apple.springboard'
+    t =    41.99s         Find the "“单词伙伴” Would Like to Send You Notifications" Alert
+    t =    42.02s         Checking existence of `Button (Elements matching predicate 'userTestingAttributes CONTAINS "cancel-button"')`
+    t =    42.06s         Get all elements bound by accessibility element for: Elements matching predicate 'userTestingAttributes CONTAINS "default-button"'
+    t =    42.11s         Checking existence of `"Allow" Button`
+    t =    42.15s Default interruption handler attempting to dismiss alert by tapping "Allow" Button.
+    t =    42.15s         Tap "Allow" Button
+    t =    42.15s             Wait for com.apple.springboard to idle
+    t =    42.15s             Find the "Allow" Button
+    t =    42.34s             Check for interrupting elements affecting "Allow" Button
+    t =    42.42s             Synthesize event
+    t =    42.97s             Wait for com.apple.springboard to idle
+    t =    43.80s         Waiting 1.0s for Alert to not exist
+    t =    44.80s             Checking `Expect predicate `existsNoRetry == 0` for object Alert`
+    t =    44.81s                 Checking existence of `Alert`
+    t =    44.87s             Checking existence of `Alert`
+    t =    44.93s         Verifying handling...
+    t =    45.22s             Wait for com.apple.springboard to idle
+    t =    45.27s Confirmed successful handling of interrupting element
+    t =    45.27s     Synthesize event
+    t =    45.62s     Wait for com.example.wordbuddy to idle
+    t =    47.66s Waiting 5.0s for "morning" StaticText to exist
+    t =    48.76s     Checking `Expect predicate `existsNoRetry == 1` for object "morning" StaticText`
+    t =    48.77s         Checking existence of `"morning" StaticText`
+    t =    50.12s Find the Target Application 'com.example.wordbuddy'
+    t =    51.65s Added attachment named '02-单词卡'
+    t =    51.66s Tap "下一个" Button
+    t =    51.66s     Wait for com.example.wordbuddy to idle
+    t =    51.72s     Find the "下一个" Button
+    t =    53.41s     Check for interrupting elements affecting "下一个" Button
+    t =    53.57s     Synthesize event
+    t =    53.88s     Wait for com.example.wordbuddy to idle
+    t =    54.07s Tap "下一个" Button
+    t =    54.07s     Wait for com.example.wordbuddy to idle
+    t =    54.10s     Find the "下一个" Button
+    t =    54.54s     Check for interrupting elements affecting "下一个" Button
+    t =    54.85s     Synthesize event
+    t =    55.30s     Wait for com.example.wordbuddy to idle
+    t =    55.37s Tap "下一个" Button
+    t =    55.37s     Wait for com.example.wordbuddy to idle
+    t =    55.46s     Find the "下一个" Button
+    t =    56.11s     Check for interrupting elements affecting "下一个" Button
+    t =    56.29s     Synthesize event
+    t =    56.65s     Wait for com.example.wordbuddy to idle
+    t =    56.69s Tap "进入场景 ▶︎" Button
+    t =    56.69s     Wait for com.example.wordbuddy to idle
+    t =    56.82s     Find the "进入场景 ▶︎" Button
+    t =    57.42s     Check for interrupting elements affecting "进入场景 ▶︎" Button
+    t =    57.56s     Synthesize event
+    t =    57.91s     Wait for com.example.wordbuddy to idle
+    t =    58.08s Waiting 5.0s for "播放全部" Button to exist
+    t =    59.15s     Checking `Expect predicate `existsNoRetry == 1` for object "播放全部" Button`
+    t =    59.15s         Checking existence of `"播放全部" Button`
+    t =    59.24s Checking existence of `"今日日常用语" StaticText`
+    t =    59.30s Find the Target Application 'com.example.wordbuddy'
+    t =    59.59s Added attachment named '03-场景'
+    t =    59.59s Swipe up Target Application 'com.example.wordbuddy'
+    t =    59.59s     Wait for com.example.wordbuddy to idle
+    t =    59.60s     Find the Target Application 'com.example.wordbuddy'
+    t =    59.67s     Check for interrupting elements affecting "单词伙伴" Application
+    t =    59.73s     Synthesize event
+    t =    60.16s     Wait for com.example.wordbuddy to idle
+    t =    60.66s Tap "小测验 ▶︎" Button
+    t =    60.67s     Wait for com.example.wordbuddy to idle
+    t =    60.67s     Find the "小测验 ▶︎" Button
+    t =    60.76s     Check for interrupting elements affecting "小测验 ▶︎" Button
+    t =    60.88s     Synthesize event
+    t =    61.20s     Wait for com.example.wordbuddy to idle
+    t =    61.20s Waiting 5.0s for StaticText (First Match) to exist
+    t =    62.21s     Checking `Expect predicate `existsNoRetry == 1` for object StaticText (First Match)`
+    t =    62.21s         Checking existence of `StaticText (First Match)`
+    t =    62.41s Find the Target Application 'com.example.wordbuddy'
+    t =    62.64s Added attachment named '04-小测验'
+    t =    62.64s Tear Down
+Test Case '-[WordBuddyUITests.SmokeUITests testFirstLessonFlow]' passed (63.855 seconds).
+Test Case '-[WordBuddyUITests.SmokeUITests testLaunchAndSwitchTabs]' started.
+    t =     0.00s Start Test at 2026-10-27 15:51:13.304
+    t =     0.07s Set Up
+    t =     0.07s     Open com.example.wordbuddy
+    t =     0.07s         Launch com.example.wordbuddy
+    t =     0.07s             Terminate com.example.wordbuddy:5844
+2026-10-27 15:51:14.557 xcodebuild[1442:7769] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-10-27 15:51:14.558 xcodebuild[1442:7769] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =     4.12s             Setting up automation session
+    t =     4.16s             Wait for com.example.wordbuddy to idle
+    t =     6.17s Waiting 10.0s for "学新词" NavigationBar to exist
+    t =     7.22s     Checking `Expect predicate `existsNoRetry == 1` for object "学新词" NavigationBar`
+    t =     7.22s         Checking existence of `"学新词" NavigationBar`
+    t =     7.37s Find the Target Application 'com.example.wordbuddy'
+    t =     7.63s Added attachment named '01-学习首页'
+    t =     7.64s Tap "复习" Button
+    t =     7.64s     Wait for com.example.wordbuddy to idle
+    t =     7.64s     Find the "复习" Button
+    t =     7.68s     Check for interrupting elements affecting "arrow.triangle.2.circlepath" Button
+    t =     7.74s     Synthesize event
+    t =     8.03s     Wait for com.example.wordbuddy to idle
+    t =     9.33s Waiting 5.0s for "复习" NavigationBar to exist
+    t =    10.35s     Checking `Expect predicate `existsNoRetry == 1` for object "复习" NavigationBar`
+    t =    10.35s         Checking existence of `"复习" NavigationBar`
+    t =    10.39s Find the Target Application 'com.example.wordbuddy'
+    t =    10.57s Added attachment named 'tab-复习'
+    t =    10.57s Tap "剧场" Button
+    t =    10.57s     Wait for com.example.wordbuddy to idle
+    t =    10.58s     Find the "剧场" Button
+    t =    10.61s     Check for interrupting elements affecting "theatermasks.fill" Button
+    t =    10.65s     Synthesize event
+    t =    10.96s     Wait for com.example.wordbuddy to idle
+    t =    13.02s Waiting 5.0s for "互动剧场" NavigationBar to exist
+    t =    14.07s     Checking `Expect predicate `existsNoRetry == 1` for object "互动剧场" NavigationBar`
+    t =    14.07s         Checking existence of `"互动剧场" NavigationBar`
+    t =    14.18s Find the Target Application 'com.example.wordbuddy'
+    t =    14.45s Added attachment named 'tab-剧场'
+    t =    14.45s Tap "发音" Button
+    t =    14.45s     Wait for com.example.wordbuddy to idle
+    t =    14.46s     Find the "发音" Button
+    t =    14.50s     Check for interrupting elements affecting "waveform" Button
+    t =    14.55s     Synthesize event
+    t =    14.87s     Wait for com.example.wordbuddy to idle
+    t =    16.81s Waiting 5.0s for "发音练习" NavigationBar to exist
+    t =    17.83s     Checking `Expect predicate `existsNoRetry == 1` for object "发音练习" NavigationBar`
+    t =    17.83s         Checking existence of `"发音练习" NavigationBar`
+    t =    17.91s Find the Target Application 'com.example.wordbuddy'
+    t =    18.14s Added attachment named 'tab-发音'
+    t =    18.14s Tap "学习" Button
+    t =    18.14s     Wait for com.example.wordbuddy to idle
+    t =    18.15s     Find the "学习" Button
+    t =    18.17s     Check for interrupting elements affecting "book.fill" Button
+    t =    18.22s     Synthesize event
+    t =    18.59s     Wait for com.example.wordbuddy to idle
+    t =    20.11s Waiting 5.0s for "学新词" NavigationBar to exist
+    t =    21.13s     Checking `Expect predicate `existsNoRetry == 1` for object "学新词" NavigationBar`
+    t =    21.13s         Checking existence of `"学新词" NavigationBar`
+    t =    21.20s Find the Target Application 'com.example.wordbuddy'
+    t =    21.47s Added attachment named 'tab-学习'
+    t =    21.48s Tear Down
+Test Case '-[WordBuddyUITests.SmokeUITests testLaunchAndSwitchTabs]' passed (22.116 seconds).
+Test Case '-[WordBuddyUITests.SmokeUITests testPronunciationScreenOpens]' started.
+    t =     0.00s Start Test at 2026-10-27 15:51:35.419
+    t =     0.04s Set Up
+    t =     0.04s     Open com.example.wordbuddy
+    t =     0.04s         Launch com.example.wordbuddy
+    t =     0.04s             Terminate com.example.wordbuddy:6035
+2026-10-27 15:51:36.510 xcodebuild[1442:7769] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-10-27 15:51:36.510 xcodebuild[1442:7769] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =     2.60s             Setting up automation session
+    t =     3.32s             Wait for com.example.wordbuddy to idle
+    t =     5.39s Tap "发音" Button
+    t =     5.39s     Wait for com.example.wordbuddy to idle
+    t =     5.39s     Find the "发音" Button
+    t =     5.71s     Check for interrupting elements affecting "发音" Button
+    t =     5.95s     Synthesize event
+    t =     6.27s     Wait for com.example.wordbuddy to idle
+    t =     7.90s Waiting 5.0s for "发音练习" NavigationBar to exist
+    t =     8.92s     Checking `Expect predicate `existsNoRetry == 1` for object "发音练习" NavigationBar`
+    t =     8.92s         Checking existence of `"发音练习" NavigationBar`
+    t =     8.99s Tap Button (First Match)
+    t =     8.99s     Wait for com.example.wordbuddy to idle
+    t =     9.00s     Find the Button (First Match)
+    t =     9.10s     Check for interrupting elements affecting "🌅, morning, /ˈmɔːrnɪŋ/, 未练习" Button
+    t =     9.16s     Synthesize event
+    t =     9.46s     Wait for com.example.wordbuddy to idle
+    t =    10.43s Waiting 5.0s for "跟读打分" NavigationBar to exist
+    t =    11.51s     Checking `Expect predicate `existsNoRetry == 1` for object "跟读打分" NavigationBar`
+    t =    11.51s         Checking existence of `"跟读打分" NavigationBar`
+    t =    11.57s Checking existence of `"开始录音" Button`
+    t =    11.61s Find the Target Application 'com.example.wordbuddy'
+    t =    11.81s Added attachment named '05-跟读打分'
+    t =    11.81s Tear Down
+Test Case '-[WordBuddyUITests.SmokeUITests testPronunciationScreenOpens]' passed (12.424 seconds).
+Test Suite 'SmokeUITests' passed at 2026-10-27 15:51:47.843.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 98.394 (98.398) seconds
+Test Suite 'WordBuddyUITests.xctest' passed at 2026-10-27 15:51:47.844.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 98.394 (98.400) seconds
+Test Suite 'All tests' passed at 2026-10-27 15:51:47.844.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 98.394 (98.402) seconds
+2026-10-27 15:52:47.199 xcodebuild[1442:7769] [MT] IDETestOperationsObserverDebug: 417.755 elapsed -- Testing started completed.
+2026-10-27 15:52:47.199 xcodebuild[1442:7769] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-27 15:52:47.199 xcodebuild[1442:7769] [MT] IDETestOperationsObserverDebug: 417.755 sec, +417.755 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/runner/work/WordBuddy/WordBuddy/TestResults.xcresult
+
+** TEST SUCCEEDED **
+
+Testing started

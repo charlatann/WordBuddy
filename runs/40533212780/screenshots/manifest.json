@@ -1,0 +1,101 @@
+[
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "E839A11B-51B4-4AD3-ACF4-A53B95B7C957",
+        "deviceName" : "iPhone 17 Pro",
+        "exportedFileName" : "16095603-D7C4-48B5-BAFD-E3FFB25D052A.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "04-小测验_0_C632AE26-6984-4FFC-BE86-E33AFB80E263.png",
+        "timestamp" : 1793116272.087
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "E839A11B-51B4-4AD3-ACF4-A53B95B7C957",
+        "deviceName" : "iPhone 17 Pro",
+        "exportedFileName" : "63D376E4-EA50-4ECC-A110-8431ABE4F105.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "03-场景_0_9C93314D-BACE-4913-9BCA-502DDD073FA5.png",
+        "timestamp" : 1793116269.037
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "E839A11B-51B4-4AD3-ACF4-A53B95B7C957",
+        "deviceName" : "iPhone 17 Pro",
+        "exportedFileName" : "6B9FD46F-8B59-474B-8199-CB4EA0FAE848.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "02-单词卡_0_7E07CFF4-7193-4789-90EB-893871CBD8D5.png",
+        "timestamp" : 1793116261.096
+      }
+    ],
+    "testIdentifier" : "SmokeUITests/testFirstLessonFlow()",
+    "testIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyUITests/SmokeUITests/testFirstLessonFlow"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "E839A11B-51B4-4AD3-ACF4-A53B95B7C957",
+        "deviceName" : "iPhone 17 Pro",
+        "exportedFileName" : "58FABFFF-674B-4171-8519-26A6DA5DDACC.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "tab-学习_0_0548AD4A-753F-42DB-BBA3-08D0A01A0920.png",
+        "timestamp" : 1793116294.777
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "E839A11B-51B4-4AD3-ACF4-A53B95B7C957",
+        "deviceName" : "iPhone 17 Pro",
+        "exportedFileName" : "69DEF267-C257-4B5C-B8C4-38ED2A2FB1C6.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "tab-发音_0_BC4803C3-9895-4CD5-AF50-C5F2B2FD1456.png",
+        "timestamp" : 1793116291.444
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "E839A11B-51B4-4AD3-ACF4-A53B95B7C957",
+        "deviceName" : "iPhone 17 Pro",
+        "exportedFileName" : "66B775A3-3FB4-4DD3-8212-F78091284C77.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "tab-剧场_0_1F5B759B-293C-4C5C-AA85-95BCA333C318.png",
+        "timestamp" : 1793116287.756
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "E839A11B-51B4-4AD3-ACF4-A53B95B7C957",
+        "deviceName" : "iPhone 17 Pro",
+        "exportedFileName" : "ECD93BF7-B401-4F4E-8379-720E7584F9CC.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "tab-复习_0_D123AFDA-5112-4700-BDA1-4BABBEA91DF7.png",
+        "timestamp" : 1793116283.876
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "E839A11B-51B4-4AD3-ACF4-A53B95B7C957",
+        "deviceName" : "iPhone 17 Pro",
+        "exportedFileName" : "4ECCBFD0-E592-4A35-9B7D-E98682D0026B.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "01-学习首页_0_A4BA981A-AB7B-4206-9254-6A32284E9D4A.png",
+        "timestamp" : 1793116280.936
+      }
+    ],
+    "testIdentifier" : "SmokeUITests/testLaunchAndSwitchTabs()",
+    "testIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyUITests/SmokeUITests/testLaunchAndSwitchTabs"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "E839A11B-51B4-4AD3-ACF4-A53B95B7C957",
+        "deviceName" : "iPhone 17 Pro",
+        "exportedFileName" : "A39628E5-FE38-45E3-A987-BD9146E747E0.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "05-跟读打分_0_152D97DE-1E38-4871-85F8-C2CCA0A494DC.png",
+        "timestamp" : 1793116307.231
+      }
+    ],
+    "testIdentifier" : "SmokeUITests/testPronunciationScreenOpens()",
+    "testIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyUITests/SmokeUITests/testPronunciationScreenOpens"
+  }
+]

@@ -1,449 +1,449 @@
 /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Services/Speaker.swift:13:89: warning: 'allowBluetooth' was deprecated in iOS 8.0: renamed to 'AVAudioSession.CategoryOptions.allowBluetoothHFP'
-2026-10-27 13:49:00.865 appintentsmetadataprocessor[1582:8292] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
-2026-10-27 13:49:01.794 appintentsmetadataprocessor[1596:8359] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
-2026-10-27 13:49:01.985 appintentsmetadataprocessor[1604:8376] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
-2026-10-27 13:49:58.591897+0000 WordBuddy[2602:13383] [error] CoreData: error: Failed to stat path '/Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data/Application/B537869D-7AF8-4D77-A35C-184E4F387BF6/Library/Application Support/default.store', errno 2 / No such file or directory.
-2026-10-27 13:49:58.592224+0000 WordBuddy[2602:13383] [error] CoreData: error: Executing as effective user 501
-2026-10-27 13:49:58.592458+0000 WordBuddy[2602:13383] [error] CoreData: error:   Sandbox access to file-write-create denied
-2026-10-27 13:49:58.592835+0000 WordBuddy[2602:13383] [error] CoreData: error: Failed to statfs file; errno 2 / No such file or directory.
-2026-10-27 13:49:58.667233+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for file system
-2026-10-27 13:49:58.667357+0000 WordBuddy[2602:13383] [error] CoreData: error: ---------------------------
-2026-10-27 13:49:58.667426+0000 WordBuddy[2602:13383] [error] CoreData: error:   File system type: 		0
-2026-10-27 13:49:58.667558+0000 WordBuddy[2602:13383] [error] CoreData: error:   File system flags: 		0
-2026-10-27 13:49:58.667642+0000 WordBuddy[2602:13383] [error] CoreData: error:   Total data blocks: 		0
-2026-10-27 13:49:58.667714+0000 WordBuddy[2602:13383] [error] CoreData: error:   Free data blocks: 		0
-2026-10-27 13:49:58.668280+0000 WordBuddy[2602:13383] [error] CoreData: error:   Free blocks for nonsuperuser:	0
-2026-10-27 13:49:58.668486+0000 WordBuddy[2602:13383] [error] CoreData: error:   Total i-nodes: 			0
-2026-10-27 13:49:58.668619+0000 WordBuddy[2602:13383] [error] CoreData: error:   File system ID: 		0, 0
-2026-10-27 13:49:58.668748+0000 WordBuddy[2602:13383] [error] CoreData: error:   Free i-nodes: 			0
-2026-10-27 13:49:58.668870+0000 WordBuddy[2602:13383] [error] CoreData: error:   Owner UID: 			0
-2026-10-27 13:49:58.668998+0000 WordBuddy[2602:13383] [error] CoreData: error:   Filesystem type name:
-2026-10-27 13:49:58.669120+0000 WordBuddy[2602:13383] [error] CoreData: error:   Mount on name:
-2026-10-27 13:49:58.669244+0000 WordBuddy[2602:13383] [error] CoreData: error:   Mount from name:
-2026-10-27 13:49:58.669438+0000 WordBuddy[2602:13383] [error] CoreData: error: Failed to stat path '/Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data/Application/B537869D-7AF8-4D77-A35C-184E4F387BF6/Library/Application Support', errno 2 / No such file or directory.
-2026-10-27 13:49:58.669577+0000 WordBuddy[2602:13383] [error] CoreData: error: Executing as effective user 501
-2026-10-27 13:49:58.669724+0000 WordBuddy[2602:13383] [error] CoreData: error:   Sandbox access to file-write-create denied
-2026-10-27 13:49:58.669882+0000 WordBuddy[2602:13383] [error] CoreData: error: Failed to statfs file; errno 2 / No such file or directory.
-2026-10-27 13:49:58.670039+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for file system
-2026-10-27 13:49:58.670194+0000 WordBuddy[2602:13383] [error] CoreData: error: ---------------------------
-2026-10-27 13:49:58.670322+0000 WordBuddy[2602:13383] [error] CoreData: error:   File system type: 		0
-2026-10-27 13:49:58.670423+0000 WordBuddy[2602:13383] [error] CoreData: error:   File system flags: 		0
-2026-10-27 13:49:58.670684+0000 WordBuddy[2602:13383] [error] CoreData: error:   Total data blocks: 		0
-2026-10-27 13:49:58.670833+0000 WordBuddy[2602:13383] [error] CoreData: error:   Free data blocks: 		0
-2026-10-27 13:49:58.670985+0000 WordBuddy[2602:13383] [error] CoreData: error:   Free blocks for nonsuperuser:	0
-2026-10-27 13:49:58.671125+0000 WordBuddy[2602:13383] [error] CoreData: error:   Total i-nodes: 			0
-2026-10-27 13:49:58.671210+0000 WordBuddy[2602:13383] [error] CoreData: error:   File system ID: 		0, 0
-2026-10-27 13:49:58.671278+0000 WordBuddy[2602:13383] [error] CoreData: error:   Free i-nodes: 			0
-2026-10-27 13:49:58.671348+0000 WordBuddy[2602:13383] [error] CoreData: error:   Owner UID: 			0
-2026-10-27 13:49:58.721780+0000 WordBuddy[2602:13383] [error] CoreData: error:   Filesystem type name:
-2026-10-27 13:49:58.722051+0000 WordBuddy[2602:13383] [error] CoreData: error:   Mount on name:
-2026-10-27 13:49:58.722151+0000 WordBuddy[2602:13383] [error] CoreData: error:   Mount from name:
-2026-10-27 13:49:58.722359+0000 WordBuddy[2602:13383] [error] CoreData: error: Executing as effective user 501
-2026-10-27 13:49:58.722427+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data/Application/B537869D-7AF8-4D77-A35C-184E4F387BF6/Library
-2026-10-27 13:49:58.881644+0000 WordBuddy[2602:13383] [error] CoreData: error: ---------------------------
-2026-10-27 13:49:58.881938+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:58.882091+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:58.882203+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		160 bytes
-2026-10-27 13:49:58.882272+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		2998003
-2026-10-27 13:49:58.882374+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		501
-2026-10-27 13:49:58.882463+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		20
-2026-10-27 13:49:58.882607+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:58.882795+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:58.882930+0000 WordBuddy[2602:13383] [error] CoreData: error:   755
-2026-10-27 13:49:58.883087+0000 WordBuddy[2602:13383] [error] CoreData: error:   file is not a symbolic link
-2026-10-27 13:49:58.883332+0000 WordBuddy[2602:13383] [error] CoreData: error:   Sandbox access to file-write-create allowed
-2026-10-27 13:49:58.883548+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for file system
-2026-10-27 13:49:58.883720+0000 WordBuddy[2602:13383] [error] CoreData: error: ---------------------------
-2026-10-27 13:49:58.883851+0000 WordBuddy[2602:13383] [error] CoreData: error:   File system type: 		0x1a
-2026-10-27 13:49:58.883960+0000 WordBuddy[2602:13383] [error] CoreData: error:   File system flags: 		0x4909000
-2026-10-27 13:49:58.884129+0000 WordBuddy[2602:13383] [error] CoreData: error:   MNT_JOURNALED
-2026-10-27 13:49:58.884258+0000 WordBuddy[2602:13383] [error] CoreData: error:   Total data blocks: 		83758080
-2026-10-27 13:49:58.884396+0000 WordBuddy[2602:13383] [error] CoreData: error:   Free data blocks: 		24846530
-2026-10-27 13:49:58.884474+0000 WordBuddy[2602:13383] [error] CoreData: error:   Free blocks for nonsuperuser:	24846530
-2026-10-27 13:49:58.884542+0000 WordBuddy[2602:13383] [error] CoreData: error:   Total i-nodes: 			995764373
-2026-10-27 13:49:58.884598+0000 WordBuddy[2602:13383] [error] CoreData: error:   File system ID: 		0x100000a, 0x1a
-2026-10-27 13:49:58.966066+0000 WordBuddy[2602:13383] [error] CoreData: error:   Free i-nodes: 			993861200
-2026-10-27 13:49:58.966242+0000 WordBuddy[2602:13383] [error] CoreData: error:   Owner UID: 			0
-2026-10-27 13:49:58.966354+0000 WordBuddy[2602:13383] [error] CoreData: error:   Filesystem type name: 		apfs
-2026-10-27 13:49:58.966416+0000 WordBuddy[2602:13383] [error] CoreData: error:   Mount on name: 			/System/Volumes/Data
-2026-10-27 13:49:58.966488+0000 WordBuddy[2602:13383] [error] CoreData: error:   Mount from name: 		/dev/disk2s5
-2026-10-27 13:49:58.966608+0000 WordBuddy[2602:13383] [error] CoreData: error: Executing as effective user 501
-2026-10-27 13:49:58.967505+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data/Application/B537869D-7AF8-4D77-A35C-184E4F387BF6
-2026-10-27 13:49:58.967752+0000 WordBuddy[2602:13383] [error] CoreData: error: ---------------------------
-2026-10-27 13:49:58.967921+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:58.968064+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:58.968238+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		224 bytes
-2026-10-27 13:49:58.968379+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		2998001
-2026-10-27 13:49:58.968528+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		501
-2026-10-27 13:49:58.968672+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		20
-2026-10-27 13:49:58.968854+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:58.969002+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:58.969152+0000 WordBuddy[2602:13383] [error] CoreData: error:   755
-2026-10-27 13:49:58.969332+0000 WordBuddy[2602:13383] [error] CoreData: error:   file is not a symbolic link
-2026-10-27 13:49:58.969549+0000 WordBuddy[2602:13383] [error] CoreData: error:   Sandbox access to file-write-create allowed
-2026-10-27 13:49:58.969769+0000 WordBuddy[2602:13383] [error] CoreData: error: Executing as effective user 501
-2026-10-27 13:49:58.969959+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data/Application
-2026-10-27 13:49:59.214769+0000 WordBuddy[2602:13383] [error] CoreData: error: ---------------------------
-2026-10-27 13:49:59.214948+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.215067+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.215146+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		4768 bytes
-2026-10-27 13:49:59.215201+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		2986871
-2026-10-27 13:49:59.215255+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		501
-2026-10-27 13:49:59.215303+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		20
-2026-10-27 13:49:59.215390+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.215522+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.215622+0000 WordBuddy[2602:13383] [error] CoreData: error:   755
-2026-10-27 13:49:59.215753+0000 WordBuddy[2602:13383] [error] CoreData: error:   file is not a symbolic link
-2026-10-27 13:49:59.215894+0000 WordBuddy[2602:13383] [error] CoreData: error:   Sandbox access to file-write-create allowed
-2026-10-27 13:49:59.216104+0000 WordBuddy[2602:13383] [error] CoreData: error: Executing as effective user 501
-2026-10-27 13:49:59.216221+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data
-2026-10-27 13:49:59.216348+0000 WordBuddy[2602:13383] [error] CoreData: error: ---------------------------
-2026-10-27 13:49:59.216475+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.216600+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.216707+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		192 bytes
-2026-10-27 13:49:59.216832+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		2986622
-2026-10-27 13:49:59.311558+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		501
-2026-10-27 13:49:59.311670+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		20
-2026-10-27 13:49:59.311750+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.311813+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.311867+0000 WordBuddy[2602:13383] [error] CoreData: error:   755
-2026-10-27 13:49:59.311914+0000 WordBuddy[2602:13383] [error] CoreData: error:   file is not a symbolic link
-2026-10-27 13:49:59.312005+0000 WordBuddy[2602:13383] [error] CoreData: error:   Sandbox access to file-write-create allowed
-2026-10-27 13:49:59.313170+0000 WordBuddy[2602:13383] [error] CoreData: error: Executing as effective user 501
-2026-10-27 13:49:59.313248+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers
-2026-10-27 13:49:59.313308+0000 WordBuddy[2602:13383] [error] CoreData: error: ---------------------------
-2026-10-27 13:49:59.313358+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.313478+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.313553+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		224 bytes
-2026-10-27 13:49:59.314123+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		2986606
-2026-10-27 13:49:59.314185+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		501
-2026-10-27 13:49:59.314257+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		20
-2026-10-27 13:49:59.314315+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.314382+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.314440+0000 WordBuddy[2602:13383] [error] CoreData: error:   755
-2026-10-27 13:49:59.314491+0000 WordBuddy[2602:13383] [error] CoreData: error:   file is not a symbolic link
-2026-10-27 13:49:59.315014+0000 WordBuddy[2602:13383] [error] CoreData: error:   Sandbox access to file-write-create allowed
-2026-10-27 13:49:59.315097+0000 WordBuddy[2602:13383] [error] CoreData: error: Executing as effective user 501
-2026-10-27 13:49:59.315165+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data
-2026-10-27 13:49:59.315230+0000 WordBuddy[2602:13383] [error] CoreData: error: ---------------------------
-2026-10-27 13:49:59.315298+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.315345+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.315713+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		416 bytes
-2026-10-27 13:49:59.315771+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		2325148
-2026-10-27 13:49:59.315820+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		501
-2026-10-27 13:49:59.315873+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		20
-2026-10-27 13:49:59.316011+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.316095+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.316182+0000 WordBuddy[2602:13383] [error] CoreData: error:   775
-2026-10-27 13:49:59.316234+0000 WordBuddy[2602:13383] [error] CoreData: error:   file is not a symbolic link
-2026-10-27 13:49:59.316939+0000 WordBuddy[2602:13383] [error] CoreData: error:   Sandbox access to file-write-create allowed
-2026-10-27 13:49:59.317057+0000 WordBuddy[2602:13383] [error] CoreData: error: Executing as effective user 501
-2026-10-27 13:49:59.317132+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD
-2026-10-27 13:49:59.317211+0000 WordBuddy[2602:13383] [error] CoreData: error: ---------------------------
-2026-10-27 13:49:59.317265+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.317608+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.317671+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		160 bytes
-2026-10-27 13:49:59.317742+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		2325147
-2026-10-27 13:49:59.317790+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		501
-2026-10-27 13:49:59.317846+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		20
-2026-10-27 13:49:59.317897+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.317947+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.318000+0000 WordBuddy[2602:13383] [error] CoreData: error:   755
-2026-10-27 13:49:59.318348+0000 WordBuddy[2602:13383] [error] CoreData: error:   file is not a symbolic link
-2026-10-27 13:49:59.318446+0000 WordBuddy[2602:13383] [error] CoreData: error:   Sandbox access to file-write-create allowed
-2026-10-27 13:49:59.318541+0000 WordBuddy[2602:13383] [error] CoreData: error: Executing as effective user 501
-2026-10-27 13:49:59.318614+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices
-2026-10-27 13:49:59.318696+0000 WordBuddy[2602:13383] [error] CoreData: error: ---------------------------
-2026-10-27 13:49:59.318764+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.318978+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.319034+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		2016 bytes
-2026-10-27 13:49:59.319094+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		2303025
-2026-10-27 13:49:59.319167+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		501
-2026-10-27 13:49:59.319238+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		20
-2026-10-27 13:49:59.319292+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.319338+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.319699+0000 WordBuddy[2602:13383] [error] CoreData: error:   755
-2026-10-27 13:49:59.319764+0000 WordBuddy[2602:13383] [error] CoreData: error:   file is not a symbolic link
-2026-10-27 13:49:59.319859+0000 WordBuddy[2602:13383] [error] CoreData: error:   Sandbox access to file-write-create allowed
-2026-10-27 13:49:59.319951+0000 WordBuddy[2602:13383] [error] CoreData: error: Executing as effective user 501
-2026-10-27 13:49:59.320040+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator
-2026-10-27 13:49:59.320108+0000 WordBuddy[2602:13383] [error] CoreData: error: ---------------------------
-2026-10-27 13:49:59.320184+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.320888+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.320944+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		160 bytes
-2026-10-27 13:49:59.320997+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		2302996
-2026-10-27 13:49:59.321075+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		501
-2026-10-27 13:49:59.321153+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		20
-2026-10-27 13:49:59.321216+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.321274+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.322107+0000 WordBuddy[2602:13383] [error] CoreData: error:   755
-2026-10-27 13:49:59.322165+0000 WordBuddy[2602:13383] [error] CoreData: error:   file is not a symbolic link
-2026-10-27 13:49:59.322253+0000 WordBuddy[2602:13383] [error] CoreData: error:   Sandbox access to file-write-create allowed
-2026-10-27 13:49:59.322332+0000 WordBuddy[2602:13383] [error] CoreData: error: Executing as effective user 501
-2026-10-27 13:49:59.322389+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users/runner/Library/Developer
-2026-10-27 13:49:59.322445+0000 WordBuddy[2602:13383] [error] CoreData: error: ---------------------------
-2026-10-27 13:49:59.322525+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.322829+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.322890+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		160 bytes
-2026-10-27 13:49:59.322974+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		2302940
-2026-10-27 13:49:59.323047+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		501
-2026-10-27 13:49:59.323106+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		20
-2026-10-27 13:49:59.323159+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.323218+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.323769+0000 WordBuddy[2602:13383] [error] CoreData: error:   755
-2026-10-27 13:49:59.323831+0000 WordBuddy[2602:13383] [error] CoreData: error:   file is not a symbolic link
-2026-10-27 13:49:59.323924+0000 WordBuddy[2602:13383] [error] CoreData: error:   Sandbox access to file-write-create allowed
-2026-10-27 13:49:59.324011+0000 WordBuddy[2602:13383] [error] CoreData: error: Executing as effective user 501
-2026-10-27 13:49:59.324068+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users/runner/Library
-2026-10-27 13:49:59.324119+0000 WordBuddy[2602:13383] [error] CoreData: error: ---------------------------
-2026-10-27 13:49:59.324164+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.324498+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.324547+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		2688 bytes
-2026-10-27 13:49:59.324592+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		36534
-2026-10-27 13:49:59.324640+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		501
-2026-10-27 13:49:59.324697+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		20
-2026-10-27 13:49:59.324753+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.324803+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.325112+0000 WordBuddy[2602:13383] [error] CoreData: error:   700
-2026-10-27 13:49:59.325164+0000 WordBuddy[2602:13383] [error] CoreData: error:   file is not a symbolic link
-2026-10-27 13:49:59.325247+0000 WordBuddy[2602:13383] [error] CoreData: error:   Sandbox access to file-write-create allowed
-2026-10-27 13:49:59.325331+0000 WordBuddy[2602:13383] [error] CoreData: error: Executing as effective user 501
-2026-10-27 13:49:59.325385+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users/runner
-2026-10-27 13:49:59.325437+0000 WordBuddy[2602:13383] [error] CoreData: error: ---------------------------
-2026-10-27 13:49:59.325486+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.326060+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.326120+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		1280 bytes
-2026-10-27 13:49:59.326173+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		36527
-2026-10-27 13:49:59.326233+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		501
-2026-10-27 13:49:59.326286+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		20
-2026-10-27 13:49:59.326492+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.326591+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.326646+0000 WordBuddy[2602:13383] [error] CoreData: error:   750
-2026-10-27 13:49:59.327262+0000 WordBuddy[2602:13383] [error] CoreData: error:   file is not a symbolic link
-2026-10-27 13:49:59.327345+0000 WordBuddy[2602:13383] [error] CoreData: error:   Sandbox access to file-write-create allowed
-2026-10-27 13:49:59.327415+0000 WordBuddy[2602:13383] [error] CoreData: error: Executing as effective user 501
-2026-10-27 13:49:59.327485+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users
-2026-10-27 13:49:59.327553+0000 WordBuddy[2602:13383] [error] CoreData: error: ---------------------------
-2026-10-27 13:49:59.327603+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.327887+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.327973+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		160 bytes
-2026-10-27 13:49:59.328155+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		18483
-2026-10-27 13:49:59.328245+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		0
-2026-10-27 13:49:59.328298+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		80
-2026-10-27 13:49:59.328353+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.328403+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.328515+0000 WordBuddy[2602:13383] [error] CoreData: error:   755
-2026-10-27 13:49:59.329546+0000 WordBuddy[2602:13383] [error] CoreData: error:   file is not a symbolic link
-2026-10-27 13:49:59.329818+0000 WordBuddy[2602:13383] [error] CoreData: error:   Sandbox access to file-write-create allowed
-2026-10-27 13:49:59.329896+0000 WordBuddy[2602:13383] [error] CoreData: error: Executing as effective user 501
-2026-10-27 13:49:59.329948+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /
-2026-10-27 13:49:59.329998+0000 WordBuddy[2602:13383] [error] CoreData: error: ---------------------------
-2026-10-27 13:49:59.330046+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.330109+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.330364+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		704 bytes
-2026-10-27 13:49:59.330421+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		2
-2026-10-27 13:49:59.330482+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		0
-2026-10-27 13:49:59.330541+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		0
-2026-10-27 13:49:59.330591+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.330668+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.330726+0000 WordBuddy[2602:13383] [error] CoreData: error:   755
-2026-10-27 13:49:59.330775+0000 WordBuddy[2602:13383] [error] CoreData: error:   file is not a symbolic link
-2026-10-27 13:49:59.331425+0000 WordBuddy[2602:13383] [error] CoreData: error:   Sandbox access to file-write-create allowed
-2026-10-27 13:49:59.331542+0000 WordBuddy[2602:13383] [error] CoreData: error: Logging status information for directory path: /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data/Application/B537869D-7AF8-4D77-A35C-184E4F387BF6/Library/Application Support
-2026-10-27 13:49:59.331621+0000 WordBuddy[2602:13383] [error] CoreData: error: Executing as effective user 501
-2026-10-27 13:49:59.332017+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /
-2026-10-27 13:49:59.332103+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.332166+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.332224+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		704 bytes
-2026-10-27 13:49:59.332305+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		2
-2026-10-27 13:49:59.332367+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		0
-2026-10-27 13:49:59.332417+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		0
-2026-10-27 13:49:59.332494+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.332765+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.332828+0000 WordBuddy[2602:13383] [error] CoreData: error:   755
-2026-10-27 13:49:59.332888+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is not a symbolic link
-2026-10-27 13:49:59.332953+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is readable
-2026-10-27 13:49:59.333007+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is not writeable with errno 30
-2026-10-27 13:49:59.333066+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users
-2026-10-27 13:49:59.333112+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.333777+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.333861+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		160 bytes
-2026-10-27 13:49:59.333938+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		18483
-2026-10-27 13:49:59.333992+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		0
-2026-10-27 13:49:59.334047+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		80
-2026-10-27 13:49:59.334104+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.334152+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.334205+0000 WordBuddy[2602:13383] [error] CoreData: error:   755
-2026-10-27 13:49:59.334631+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is not a symbolic link
-2026-10-27 13:49:59.334710+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is readable
-2026-10-27 13:49:59.334774+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is not writeable with errno 13
-2026-10-27 13:49:59.334851+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users/runner
-2026-10-27 13:49:59.334909+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.334972+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.335017+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		1280 bytes
-2026-10-27 13:49:59.335533+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		36527
-2026-10-27 13:49:59.335583+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		501
-2026-10-27 13:49:59.335627+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		20
-2026-10-27 13:49:59.335667+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.335708+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.335749+0000 WordBuddy[2602:13383] [error] CoreData: error:   750
-2026-10-27 13:49:59.335787+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is not a symbolic link
-2026-10-27 13:49:59.336285+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is readable
-2026-10-27 13:49:59.336352+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is writeable
-2026-10-27 13:49:59.336412+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users/runner/Library
-2026-10-27 13:49:59.336461+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.336514+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.336561+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		2688 bytes
-2026-10-27 13:49:59.336606+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		36534
-2026-10-27 13:49:59.336975+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		501
-2026-10-27 13:49:59.337029+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		20
-2026-10-27 13:49:59.337075+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.337127+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.337176+0000 WordBuddy[2602:13383] [error] CoreData: error:   700
-2026-10-27 13:49:59.337223+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is not a symbolic link
-2026-10-27 13:49:59.337304+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is readable
-2026-10-27 13:49:59.337368+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is writeable
-2026-10-27 13:49:59.337903+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users/runner/Library/Developer
-2026-10-27 13:49:59.337955+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.338035+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.338116+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		160 bytes
-2026-10-27 13:49:59.338191+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		2302940
-2026-10-27 13:49:59.338259+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		501
-2026-10-27 13:49:59.338338+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		20
-2026-10-27 13:49:59.338765+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.338827+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.338886+0000 WordBuddy[2602:13383] [error] CoreData: error:   755
-2026-10-27 13:49:59.338988+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is not a symbolic link
-2026-10-27 13:49:59.339072+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is readable
-2026-10-27 13:49:59.339244+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is writeable
-2026-10-27 13:49:59.339330+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator
-2026-10-27 13:49:59.342585+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.342662+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.342726+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		160 bytes
-2026-10-27 13:49:59.342797+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		2302996
-2026-10-27 13:49:59.342896+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		501
-2026-10-27 13:49:59.342958+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		20
-2026-10-27 13:49:59.343020+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.343961+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.344023+0000 WordBuddy[2602:13383] [error] CoreData: error:   755
-2026-10-27 13:49:59.344109+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is not a symbolic link
-2026-10-27 13:49:59.344203+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is readable
-2026-10-27 13:49:59.344305+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is writeable
-2026-10-27 13:49:59.344377+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices
-2026-10-27 13:49:59.344445+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.345025+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.345088+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		2016 bytes
-2026-10-27 13:49:59.345163+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		2303025
-2026-10-27 13:49:59.345235+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		501
-2026-10-27 13:49:59.345309+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		20
-2026-10-27 13:49:59.345395+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.345449+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.345754+0000 WordBuddy[2602:13383] [error] CoreData: error:   755
-2026-10-27 13:49:59.345823+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is not a symbolic link
-2026-10-27 13:49:59.345911+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is readable
-2026-10-27 13:49:59.345986+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is writeable
-2026-10-27 13:49:59.346049+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD
-2026-10-27 13:49:59.346124+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.346653+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.346727+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		160 bytes
-2026-10-27 13:49:59.346777+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		2325147
-2026-10-27 13:49:59.346831+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		501
-2026-10-27 13:49:59.346889+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		20
-2026-10-27 13:49:59.346940+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.347016+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.347153+0000 WordBuddy[2602:13383] [error] CoreData: error:   755
-2026-10-27 13:49:59.347442+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is not a symbolic link
-2026-10-27 13:49:59.347525+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is readable
-2026-10-27 13:49:59.347585+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is writeable
-2026-10-27 13:49:59.347655+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data
-2026-10-27 13:49:59.347736+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.347806+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.348138+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		416 bytes
-2026-10-27 13:49:59.348207+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		2325148
-2026-10-27 13:49:59.348280+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		501
-2026-10-27 13:49:59.348359+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		20
-2026-10-27 13:49:59.348424+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.348492+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.348548+0000 WordBuddy[2602:13383] [error] CoreData: error:   775
-2026-10-27 13:49:59.348622+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is not a symbolic link
-2026-10-27 13:49:59.349099+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is readable
-2026-10-27 13:49:59.349248+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is writeable
-2026-10-27 13:49:59.349322+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers
-2026-10-27 13:49:59.349383+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.349431+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.351590+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		224 bytes
-2026-10-27 13:49:59.351712+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		2986606
-2026-10-27 13:49:59.351776+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		501
-2026-10-27 13:49:59.351827+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		20
-2026-10-27 13:49:59.351876+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.351939+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.352043+0000 WordBuddy[2602:13383] [error] CoreData: error:   755
-2026-10-27 13:49:59.352213+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is not a symbolic link
-2026-10-27 13:49:59.352644+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is readable
-2026-10-27 13:49:59.352713+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is writeable
-2026-10-27 13:49:59.352989+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data
-2026-10-27 13:49:59.353087+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.353144+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.353197+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		192 bytes
-2026-10-27 13:49:59.353864+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		2986622
-2026-10-27 13:49:59.353975+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		501
-2026-10-27 13:49:59.354038+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		20
-2026-10-27 13:49:59.354141+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.354220+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.354277+0000 WordBuddy[2602:13383] [error] CoreData: error:   755
-2026-10-27 13:49:59.354328+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is not a symbolic link
-2026-10-27 13:49:59.356004+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is readable
-2026-10-27 13:49:59.356108+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is writeable
-2026-10-27 13:49:59.356382+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data/Application
-2026-10-27 13:49:59.356539+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.356608+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.356687+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		4768 bytes
-2026-10-27 13:49:59.356953+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		2986871
-2026-10-27 13:49:59.357022+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		501
-2026-10-27 13:49:59.357133+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		20
-2026-10-27 13:49:59.357192+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.357243+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.357295+0000 WordBuddy[2602:13383] [error] CoreData: error:   755
-2026-10-27 13:49:59.357352+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is not a symbolic link
-2026-10-27 13:49:59.358053+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is readable
-2026-10-27 13:49:59.358181+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is writeable
-2026-10-27 13:49:59.358268+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data/Application/B537869D-7AF8-4D77-A35C-184E4F387BF6
-2026-10-27 13:49:59.358329+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.358393+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.359146+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		224 bytes
-2026-10-27 13:49:59.359272+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		2998001
-2026-10-27 13:49:59.359334+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		501
-2026-10-27 13:49:59.359387+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		20
-2026-10-27 13:49:59.359440+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.359502+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.359589+0000 WordBuddy[2602:13383] [error] CoreData: error:   755
-2026-10-27 13:49:59.359693+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is not a symbolic link
-2026-10-27 13:49:59.360023+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is readable
-2026-10-27 13:49:59.360101+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is writeable
-2026-10-27 13:49:59.360168+0000 WordBuddy[2602:13383] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data/Application/B537869D-7AF8-4D77-A35C-184E4F387BF6/Library
-2026-10-27 13:49:59.360225+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Device ID: 	0
-2026-10-27 13:49:59.360276+0000 WordBuddy[2602:13383] [error] CoreData: error:   Device ID: 		16777226
-2026-10-27 13:49:59.360731+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Size: 		160 bytes
-2026-10-27 13:49:59.360793+0000 WordBuddy[2602:13383] [error] CoreData: error:   File inode: 		2998003
-2026-10-27 13:49:59.360859+0000 WordBuddy[2602:13383] [error] CoreData: error:   File user ID: 		501
-2026-10-27 13:49:59.360915+0000 WordBuddy[2602:13383] [error] CoreData: error:   File group ID: 		20
-2026-10-27 13:49:59.360975+0000 WordBuddy[2602:13383] [error] CoreData: error:   File Permissions:
-2026-10-27 13:49:59.361042+0000 WordBuddy[2602:13383] [error] CoreData: error: d
-2026-10-27 13:49:59.361095+0000 WordBuddy[2602:13383] [error] CoreData: error:   755
-2026-10-27 13:49:59.361170+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is not a symbolic link
-2026-10-27 13:49:59.361487+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is readable
-2026-10-27 13:49:59.361575+0000 WordBuddy[2602:13383] [error] CoreData: error:   component is writeable
-2026-10-27 13:49:59.361643+0000 WordBuddy[2602:13383] [error] CoreData: error: Failed to stat path '/Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data/Application/B537869D-7AF8-4D77-A35C-184E4F387BF6/Library/Application Support', errno 2 / No such file or directory.
-2026-10-27 13:49:59.362044+0000 WordBuddy[2602:13383] [error] CoreData: error:   Sandbox access to file-write-create denied
-2026-10-27 13:49:59.363229+0000 WordBuddy[2602:13383] [error] CoreData: error: addPersistentStoreWithType:configuration:URL:options:error: returned error NSCocoaErrorDomain (512)
-2026-10-27 13:49:59.363306+0000 WordBuddy[2602:13383] [error] CoreData: error: userInfo:
-2026-10-27 13:49:59.363362+0000 WordBuddy[2602:13383] [error] CoreData: error: 	reason : Failed to create file; code = 2
-2026-10-27 13:49:59.363435+0000 WordBuddy[2602:13383] [error] CoreData: error: storeType: SQLite
-2026-10-27 13:49:59.363495+0000 WordBuddy[2602:13383] [error] CoreData: error: configuration: default
-2026-10-27 13:49:59.363562+0000 WordBuddy[2602:13383] [error] CoreData: error: URL: file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data/Application/B537869D-7AF8-4D77-A35C-184E4F387BF6/Library/Application%20Support/default.store
-2026-10-27 13:49:59.365148+0000 WordBuddy[2602:13383] [error] CoreData: error: <NSPersistentStoreCoordinator: 0x106808580>: Attempting recovery from error encountered during addPersistentStore: 0x103462dc0 Error Domain=NSCocoaErrorDomain Code=512 "The file couldn’t be saved." UserInfo={reason=Failed to create file; code = 2}
-2026-10-27 13:49:59.368828+0000 WordBuddy[2602:13383] [error] CoreData: error: During recovery, parent directory path reported as missing
-2026-10-27 13:49:59.377074+0000 WordBuddy[2602:13383] [error] CoreData: error: Recovery attempt while adding <NSPersistentStoreDescription: 0x103462dc0> (type: SQLite, url: file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data/Application/B537869D-7AF8-4D77-A35C-184E4F387BF6/Library/Application%20Support/default.store) was successful!
+2026-10-27 15:45:47.026 appintentsmetadataprocessor[2179:9964] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+2026-10-27 15:45:48.746 appintentsmetadataprocessor[2191:10031] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+2026-10-27 15:45:49.298 appintentsmetadataprocessor[2197:10044] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+2026-10-27 15:49:07.323035+0000 WordBuddy[3136:14847] [error] CoreData: error: Failed to stat path '/Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers/Data/Application/5ED68059-796C-4D12-9816-B58F64D4972C/Library/Application Support/default.store', errno 2 / No such file or directory.
+2026-10-27 15:49:07.323327+0000 WordBuddy[3136:14847] [error] CoreData: error: Executing as effective user 501
+2026-10-27 15:49:07.323486+0000 WordBuddy[3136:14847] [error] CoreData: error:   Sandbox access to file-write-create denied
+2026-10-27 15:49:07.323635+0000 WordBuddy[3136:14847] [error] CoreData: error: Failed to statfs file; errno 2 / No such file or directory.
+2026-10-27 15:49:07.331915+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for file system
+2026-10-27 15:49:07.332106+0000 WordBuddy[3136:14847] [error] CoreData: error: ---------------------------
+2026-10-27 15:49:07.332284+0000 WordBuddy[3136:14847] [error] CoreData: error:   File system type: 		0
+2026-10-27 15:49:07.332428+0000 WordBuddy[3136:14847] [error] CoreData: error:   File system flags: 		0
+2026-10-27 15:49:07.332498+0000 WordBuddy[3136:14847] [error] CoreData: error:   Total data blocks: 		0
+2026-10-27 15:49:07.332556+0000 WordBuddy[3136:14847] [error] CoreData: error:   Free data blocks: 		0
+2026-10-27 15:49:07.424264+0000 WordBuddy[3136:14847] [error] CoreData: error:   Free blocks for nonsuperuser:	0
+2026-10-27 15:49:07.424890+0000 WordBuddy[3136:14847] [error] CoreData: error:   Total i-nodes: 			0
+2026-10-27 15:49:07.425126+0000 WordBuddy[3136:14847] [error] CoreData: error:   File system ID: 		0, 0
+2026-10-27 15:49:07.425268+0000 WordBuddy[3136:14847] [error] CoreData: error:   Free i-nodes: 			0
+2026-10-27 15:49:07.425412+0000 WordBuddy[3136:14847] [error] CoreData: error:   Owner UID: 			0
+2026-10-27 15:49:07.425544+0000 WordBuddy[3136:14847] [error] CoreData: error:   Filesystem type name:
+2026-10-27 15:49:07.425697+0000 WordBuddy[3136:14847] [error] CoreData: error:   Mount on name:
+2026-10-27 15:49:07.425919+0000 WordBuddy[3136:14847] [error] CoreData: error:   Mount from name:
+2026-10-27 15:49:07.430089+0000 WordBuddy[3136:14847] [error] CoreData: error: Failed to stat path '/Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers/Data/Application/5ED68059-796C-4D12-9816-B58F64D4972C/Library/Application Support', errno 2 / No such file or directory.
+2026-10-27 15:49:07.430226+0000 WordBuddy[3136:14847] [error] CoreData: error: Executing as effective user 501
+2026-10-27 15:49:07.430332+0000 WordBuddy[3136:14847] [error] CoreData: error:   Sandbox access to file-write-create denied
+2026-10-27 15:49:07.431307+0000 WordBuddy[3136:14847] [error] CoreData: error: Failed to statfs file; errno 2 / No such file or directory.
+2026-10-27 15:49:07.431404+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for file system
+2026-10-27 15:49:07.431462+0000 WordBuddy[3136:14847] [error] CoreData: error: ---------------------------
+2026-10-27 15:49:07.431516+0000 WordBuddy[3136:14847] [error] CoreData: error:   File system type: 		0
+2026-10-27 15:49:07.431567+0000 WordBuddy[3136:14847] [error] CoreData: error:   File system flags: 		0
+2026-10-27 15:49:07.431617+0000 WordBuddy[3136:14847] [error] CoreData: error:   Total data blocks: 		0
+2026-10-27 15:49:07.431666+0000 WordBuddy[3136:14847] [error] CoreData: error:   Free data blocks: 		0
+2026-10-27 15:49:07.433262+0000 WordBuddy[3136:14847] [error] CoreData: error:   Free blocks for nonsuperuser:	0
+2026-10-27 15:49:07.433381+0000 WordBuddy[3136:14847] [error] CoreData: error:   Total i-nodes: 			0
+2026-10-27 15:49:07.433444+0000 WordBuddy[3136:14847] [error] CoreData: error:   File system ID: 		0, 0
+2026-10-27 15:49:07.433500+0000 WordBuddy[3136:14847] [error] CoreData: error:   Free i-nodes: 			0
+2026-10-27 15:49:07.433552+0000 WordBuddy[3136:14847] [error] CoreData: error:   Owner UID: 			0
+2026-10-27 15:49:07.433606+0000 WordBuddy[3136:14847] [error] CoreData: error:   Filesystem type name:
+2026-10-27 15:49:07.433769+0000 WordBuddy[3136:14847] [error] CoreData: error:   Mount on name:
+2026-10-27 15:49:07.439410+0000 WordBuddy[3136:14847] [error] CoreData: error:   Mount from name:
+2026-10-27 15:49:07.439787+0000 WordBuddy[3136:14847] [error] CoreData: error: Executing as effective user 501
+2026-10-27 15:49:07.440096+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers/Data/Application/5ED68059-796C-4D12-9816-B58F64D4972C/Library
+2026-10-27 15:49:07.440167+0000 WordBuddy[3136:14847] [error] CoreData: error: ---------------------------
+2026-10-27 15:49:07.440224+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.442145+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.442506+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		128 bytes
+2026-10-27 15:49:07.442629+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		2991162
+2026-10-27 15:49:07.442686+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		501
+2026-10-27 15:49:07.442745+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		20
+2026-10-27 15:49:07.442799+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.443678+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.445454+0000 WordBuddy[3136:14847] [error] CoreData: error:   755
+2026-10-27 15:49:07.445677+0000 WordBuddy[3136:14847] [error] CoreData: error:   file is not a symbolic link
+2026-10-27 15:49:07.445908+0000 WordBuddy[3136:14847] [error] CoreData: error:   Sandbox access to file-write-create allowed
+2026-10-27 15:49:07.446014+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for file system
+2026-10-27 15:49:07.446071+0000 WordBuddy[3136:14847] [error] CoreData: error: ---------------------------
+2026-10-27 15:49:07.446128+0000 WordBuddy[3136:14847] [error] CoreData: error:   File system type: 		0x1a
+2026-10-27 15:49:07.446183+0000 WordBuddy[3136:14847] [error] CoreData: error:   File system flags: 		0x4909000
+2026-10-27 15:49:07.448589+0000 WordBuddy[3136:14847] [error] CoreData: error:   MNT_JOURNALED
+2026-10-27 15:49:07.448819+0000 WordBuddy[3136:14847] [error] CoreData: error:   Total data blocks: 		83758080
+2026-10-27 15:49:07.448916+0000 WordBuddy[3136:14847] [error] CoreData: error:   Free data blocks: 		24814507
+2026-10-27 15:49:07.448973+0000 WordBuddy[3136:14847] [error] CoreData: error:   Free blocks for nonsuperuser:	24814507
+2026-10-27 15:49:07.449029+0000 WordBuddy[3136:14847] [error] CoreData: error:   Total i-nodes: 			994484412
+2026-10-27 15:49:07.449093+0000 WordBuddy[3136:14847] [error] CoreData: error:   File system ID: 		0x100000d, 0x1a
+2026-10-27 15:49:07.451190+0000 WordBuddy[3136:14847] [error] CoreData: error:   Free i-nodes: 			992580280
+2026-10-27 15:49:07.451348+0000 WordBuddy[3136:14847] [error] CoreData: error:   Owner UID: 			0
+2026-10-27 15:49:07.451411+0000 WordBuddy[3136:14847] [error] CoreData: error:   Filesystem type name: 		apfs
+2026-10-27 15:49:07.451461+0000 WordBuddy[3136:14847] [error] CoreData: error:   Mount on name: 			/System/Volumes/Data
+2026-10-27 15:49:07.451515+0000 WordBuddy[3136:14847] [error] CoreData: error:   Mount from name: 		/dev/disk2s5
+2026-10-27 15:49:07.451621+0000 WordBuddy[3136:14847] [error] CoreData: error: Executing as effective user 501
+2026-10-27 15:49:07.451670+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers/Data/Application/5ED68059-796C-4D12-9816-B58F64D4972C
+2026-10-27 15:49:07.452600+0000 WordBuddy[3136:14847] [error] CoreData: error: ---------------------------
+2026-10-27 15:49:07.452686+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.452736+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.452786+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		224 bytes
+2026-10-27 15:49:07.452836+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		2991160
+2026-10-27 15:49:07.453562+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		501
+2026-10-27 15:49:07.453633+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		20
+2026-10-27 15:49:07.453687+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.453737+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.453788+0000 WordBuddy[3136:14847] [error] CoreData: error:   755
+2026-10-27 15:49:07.453839+0000 WordBuddy[3136:14847] [error] CoreData: error:   file is not a symbolic link
+2026-10-27 15:49:07.453978+0000 WordBuddy[3136:14847] [error] CoreData: error:   Sandbox access to file-write-create allowed
+2026-10-27 15:49:07.455726+0000 WordBuddy[3136:14847] [error] CoreData: error: Executing as effective user 501
+2026-10-27 15:49:07.455848+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers/Data/Application
+2026-10-27 15:49:07.455906+0000 WordBuddy[3136:14847] [error] CoreData: error: ---------------------------
+2026-10-27 15:49:07.455963+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.456013+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.456061+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		4768 bytes
+2026-10-27 15:49:07.458235+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		2981208
+2026-10-27 15:49:07.458340+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		501
+2026-10-27 15:49:07.458507+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		20
+2026-10-27 15:49:07.458566+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.458618+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.458670+0000 WordBuddy[3136:14847] [error] CoreData: error:   755
+2026-10-27 15:49:07.458750+0000 WordBuddy[3136:14847] [error] CoreData: error:   file is not a symbolic link
+2026-10-27 15:49:07.459983+0000 WordBuddy[3136:14847] [error] CoreData: error:   Sandbox access to file-write-create allowed
+2026-10-27 15:49:07.460356+0000 WordBuddy[3136:14847] [error] CoreData: error: Executing as effective user 501
+2026-10-27 15:49:07.460480+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers/Data
+2026-10-27 15:49:07.460543+0000 WordBuddy[3136:14847] [error] CoreData: error: ---------------------------
+2026-10-27 15:49:07.460595+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.461570+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.461689+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		192 bytes
+2026-10-27 15:49:07.461746+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		2981046
+2026-10-27 15:49:07.461796+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		501
+2026-10-27 15:49:07.461846+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		20
+2026-10-27 15:49:07.461896+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.461945+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.462100+0000 WordBuddy[3136:14847] [error] CoreData: error:   755
+2026-10-27 15:49:07.462982+0000 WordBuddy[3136:14847] [error] CoreData: error:   file is not a symbolic link
+2026-10-27 15:49:07.463107+0000 WordBuddy[3136:14847] [error] CoreData: error:   Sandbox access to file-write-create allowed
+2026-10-27 15:49:07.463190+0000 WordBuddy[3136:14847] [error] CoreData: error: Executing as effective user 501
+2026-10-27 15:49:07.463242+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers
+2026-10-27 15:49:07.463296+0000 WordBuddy[3136:14847] [error] CoreData: error: ---------------------------
+2026-10-27 15:49:07.464198+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.464275+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.464324+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		224 bytes
+2026-10-27 15:49:07.464374+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		2981022
+2026-10-27 15:49:07.464422+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		501
+2026-10-27 15:49:07.464468+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		20
+2026-10-27 15:49:07.464510+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.464726+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.465490+0000 WordBuddy[3136:14847] [error] CoreData: error:   755
+2026-10-27 15:49:07.465550+0000 WordBuddy[3136:14847] [error] CoreData: error:   file is not a symbolic link
+2026-10-27 15:49:07.465653+0000 WordBuddy[3136:14847] [error] CoreData: error:   Sandbox access to file-write-create allowed
+2026-10-27 15:49:07.465730+0000 WordBuddy[3136:14847] [error] CoreData: error: Executing as effective user 501
+2026-10-27 15:49:07.465780+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data
+2026-10-27 15:49:07.465836+0000 WordBuddy[3136:14847] [error] CoreData: error: ---------------------------
+2026-10-27 15:49:07.466590+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.466653+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.466702+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		384 bytes
+2026-10-27 15:49:07.466748+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		2324552
+2026-10-27 15:49:07.466797+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		501
+2026-10-27 15:49:07.466841+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		20
+2026-10-27 15:49:07.467044+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.467719+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.467782+0000 WordBuddy[3136:14847] [error] CoreData: error:   775
+2026-10-27 15:49:07.467833+0000 WordBuddy[3136:14847] [error] CoreData: error:   file is not a symbolic link
+2026-10-27 15:49:07.467936+0000 WordBuddy[3136:14847] [error] CoreData: error:   Sandbox access to file-write-create allowed
+2026-10-27 15:49:07.468034+0000 WordBuddy[3136:14847] [error] CoreData: error: Executing as effective user 501
+2026-10-27 15:49:07.468087+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957
+2026-10-27 15:49:07.469236+0000 WordBuddy[3136:14847] [error] CoreData: error: ---------------------------
+2026-10-27 15:49:07.469339+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.469397+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.469444+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		128 bytes
+2026-10-27 15:49:07.469492+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		2324551
+2026-10-27 15:49:07.469550+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		501
+2026-10-27 15:49:07.469595+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		20
+2026-10-27 15:49:07.473012+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.473222+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.473378+0000 WordBuddy[3136:14847] [error] CoreData: error:   755
+2026-10-27 15:49:07.473468+0000 WordBuddy[3136:14847] [error] CoreData: error:   file is not a symbolic link
+2026-10-27 15:49:07.473600+0000 WordBuddy[3136:14847] [error] CoreData: error:   Sandbox access to file-write-create allowed
+2026-10-27 15:49:07.473701+0000 WordBuddy[3136:14847] [error] CoreData: error: Executing as effective user 501
+2026-10-27 15:49:07.473786+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices
+2026-10-27 15:49:07.474898+0000 WordBuddy[3136:14847] [error] CoreData: error: ---------------------------
+2026-10-27 15:49:07.474970+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.475029+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.475089+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		2016 bytes
+2026-10-27 15:49:07.475193+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		2302267
+2026-10-27 15:49:07.475264+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		501
+2026-10-27 15:49:07.475404+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		20
+2026-10-27 15:49:07.476362+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.476428+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.476479+0000 WordBuddy[3136:14847] [error] CoreData: error:   755
+2026-10-27 15:49:07.476530+0000 WordBuddy[3136:14847] [error] CoreData: error:   file is not a symbolic link
+2026-10-27 15:49:07.476642+0000 WordBuddy[3136:14847] [error] CoreData: error:   Sandbox access to file-write-create allowed
+2026-10-27 15:49:07.476719+0000 WordBuddy[3136:14847] [error] CoreData: error: Executing as effective user 501
+2026-10-27 15:49:07.476880+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator
+2026-10-27 15:49:07.477809+0000 WordBuddy[3136:14847] [error] CoreData: error: ---------------------------
+2026-10-27 15:49:07.477876+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.477928+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.477977+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		160 bytes
+2026-10-27 15:49:07.478025+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		2302205
+2026-10-27 15:49:07.478080+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		501
+2026-10-27 15:49:07.479020+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		20
+2026-10-27 15:49:07.479588+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.479653+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.479704+0000 WordBuddy[3136:14847] [error] CoreData: error:   755
+2026-10-27 15:49:07.479752+0000 WordBuddy[3136:14847] [error] CoreData: error:   file is not a symbolic link
+2026-10-27 15:49:07.479857+0000 WordBuddy[3136:14847] [error] CoreData: error:   Sandbox access to file-write-create allowed
+2026-10-27 15:49:07.479931+0000 WordBuddy[3136:14847] [error] CoreData: error: Executing as effective user 501
+2026-10-27 15:49:07.480017+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users/runner/Library/Developer
+2026-10-27 15:49:07.484695+0000 WordBuddy[3136:14847] [error] CoreData: error: ---------------------------
+2026-10-27 15:49:07.484874+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.484955+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.485008+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		160 bytes
+2026-10-27 15:49:07.485058+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		2302196
+2026-10-27 15:49:07.485110+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		501
+2026-10-27 15:49:07.487412+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		20
+2026-10-27 15:49:07.487612+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.487693+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.487767+0000 WordBuddy[3136:14847] [error] CoreData: error:   755
+2026-10-27 15:49:07.488132+0000 WordBuddy[3136:14847] [error] CoreData: error:   file is not a symbolic link
+2026-10-27 15:49:07.488460+0000 WordBuddy[3136:14847] [error] CoreData: error:   Sandbox access to file-write-create allowed
+2026-10-27 15:49:07.488700+0000 WordBuddy[3136:14847] [error] CoreData: error: Executing as effective user 501
+2026-10-27 15:49:07.488911+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users/runner/Library
+2026-10-27 15:49:07.491418+0000 WordBuddy[3136:14847] [error] CoreData: error: ---------------------------
+2026-10-27 15:49:07.492868+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.493130+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.493253+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		2688 bytes
+2026-10-27 15:49:07.493311+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		36534
+2026-10-27 15:49:07.493368+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		501
+2026-10-27 15:49:07.493419+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		20
+2026-10-27 15:49:07.494433+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.494503+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.494555+0000 WordBuddy[3136:14847] [error] CoreData: error:   700
+2026-10-27 15:49:07.494604+0000 WordBuddy[3136:14847] [error] CoreData: error:   file is not a symbolic link
+2026-10-27 15:49:07.494702+0000 WordBuddy[3136:14847] [error] CoreData: error:   Sandbox access to file-write-create allowed
+2026-10-27 15:49:07.494784+0000 WordBuddy[3136:14847] [error] CoreData: error: Executing as effective user 501
+2026-10-27 15:49:07.494929+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users/runner
+2026-10-27 15:49:07.496502+0000 WordBuddy[3136:14847] [error] CoreData: error: ---------------------------
+2026-10-27 15:49:07.496645+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.496703+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.496753+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		1312 bytes
+2026-10-27 15:49:07.496802+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		36527
+2026-10-27 15:49:07.496848+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		501
+2026-10-27 15:49:07.496900+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		20
+2026-10-27 15:49:07.498057+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.498127+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.498180+0000 WordBuddy[3136:14847] [error] CoreData: error:   750
+2026-10-27 15:49:07.498231+0000 WordBuddy[3136:14847] [error] CoreData: error:   file is not a symbolic link
+2026-10-27 15:49:07.498338+0000 WordBuddy[3136:14847] [error] CoreData: error:   Sandbox access to file-write-create allowed
+2026-10-27 15:49:07.498407+0000 WordBuddy[3136:14847] [error] CoreData: error: Executing as effective user 501
+2026-10-27 15:49:07.498566+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users
+2026-10-27 15:49:07.500191+0000 WordBuddy[3136:14847] [error] CoreData: error: ---------------------------
+2026-10-27 15:49:07.500297+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.500376+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.500434+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		160 bytes
+2026-10-27 15:49:07.500490+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		18483
+2026-10-27 15:49:07.500542+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		0
+2026-10-27 15:49:07.500615+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		80
+2026-10-27 15:49:07.501635+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.501735+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.501790+0000 WordBuddy[3136:14847] [error] CoreData: error:   755
+2026-10-27 15:49:07.501844+0000 WordBuddy[3136:14847] [error] CoreData: error:   file is not a symbolic link
+2026-10-27 15:49:07.501988+0000 WordBuddy[3136:14847] [error] CoreData: error:   Sandbox access to file-write-create allowed
+2026-10-27 15:49:07.502077+0000 WordBuddy[3136:14847] [error] CoreData: error: Executing as effective user 501
+2026-10-27 15:49:07.502133+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /
+2026-10-27 15:49:07.502211+0000 WordBuddy[3136:14847] [error] CoreData: error: ---------------------------
+2026-10-27 15:49:07.503139+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.503202+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.503250+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		704 bytes
+2026-10-27 15:49:07.503303+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		2
+2026-10-27 15:49:07.503359+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		0
+2026-10-27 15:49:07.503404+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		0
+2026-10-27 15:49:07.503481+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.504316+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.504375+0000 WordBuddy[3136:14847] [error] CoreData: error:   755
+2026-10-27 15:49:07.504422+0000 WordBuddy[3136:14847] [error] CoreData: error:   file is not a symbolic link
+2026-10-27 15:49:07.504531+0000 WordBuddy[3136:14847] [error] CoreData: error:   Sandbox access to file-write-create allowed
+2026-10-27 15:49:07.504638+0000 WordBuddy[3136:14847] [error] CoreData: error: Logging status information for directory path: /Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers/Data/Application/5ED68059-796C-4D12-9816-B58F64D4972C/Library/Application Support
+2026-10-27 15:49:07.505304+0000 WordBuddy[3136:14847] [error] CoreData: error: Executing as effective user 501
+2026-10-27 15:49:07.505393+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /
+2026-10-27 15:49:07.505442+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.505488+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.505533+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		704 bytes
+2026-10-27 15:49:07.505579+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		2
+2026-10-27 15:49:07.506179+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		0
+2026-10-27 15:49:07.506251+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		0
+2026-10-27 15:49:07.506299+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.506352+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.506401+0000 WordBuddy[3136:14847] [error] CoreData: error:   755
+2026-10-27 15:49:07.506457+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is not a symbolic link
+2026-10-27 15:49:07.506533+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is readable
+2026-10-27 15:49:07.506628+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is not writeable with errno 30
+2026-10-27 15:49:07.507387+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users
+2026-10-27 15:49:07.507448+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.507497+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.507543+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		160 bytes
+2026-10-27 15:49:07.507623+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		18483
+2026-10-27 15:49:07.507699+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		0
+2026-10-27 15:49:07.507783+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		80
+2026-10-27 15:49:07.508895+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.508976+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.509043+0000 WordBuddy[3136:14847] [error] CoreData: error:   755
+2026-10-27 15:49:07.509120+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is not a symbolic link
+2026-10-27 15:49:07.509226+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is readable
+2026-10-27 15:49:07.509297+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is not writeable with errno 13
+2026-10-27 15:49:07.509408+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users/runner
+2026-10-27 15:49:07.510770+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.510994+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.511079+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		1312 bytes
+2026-10-27 15:49:07.511146+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		36527
+2026-10-27 15:49:07.511203+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		501
+2026-10-27 15:49:07.511250+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		20
+2026-10-27 15:49:07.511295+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.511433+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.513553+0000 WordBuddy[3136:14847] [error] CoreData: error:   750
+2026-10-27 15:49:07.513646+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is not a symbolic link
+2026-10-27 15:49:07.513770+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is readable
+2026-10-27 15:49:07.513862+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is writeable
+2026-10-27 15:49:07.513945+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users/runner/Library
+2026-10-27 15:49:07.513997+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.514076+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.514921+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		2688 bytes
+2026-10-27 15:49:07.514985+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		36534
+2026-10-27 15:49:07.515053+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		501
+2026-10-27 15:49:07.515110+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		20
+2026-10-27 15:49:07.515159+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.515208+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.515281+0000 WordBuddy[3136:14847] [error] CoreData: error:   700
+2026-10-27 15:49:07.515474+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is not a symbolic link
+2026-10-27 15:49:07.516348+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is readable
+2026-10-27 15:49:07.516431+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is writeable
+2026-10-27 15:49:07.516502+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users/runner/Library/Developer
+2026-10-27 15:49:07.516556+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.516605+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.516672+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		160 bytes
+2026-10-27 15:49:07.517207+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		2302196
+2026-10-27 15:49:07.517515+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		501
+2026-10-27 15:49:07.517780+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		20
+2026-10-27 15:49:07.518039+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.518158+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.518296+0000 WordBuddy[3136:14847] [error] CoreData: error:   755
+2026-10-27 15:49:07.518436+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is not a symbolic link
+2026-10-27 15:49:07.518679+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is readable
+2026-10-27 15:49:07.520768+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is writeable
+2026-10-27 15:49:07.520905+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator
+2026-10-27 15:49:07.521006+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.521076+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.521130+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		160 bytes
+2026-10-27 15:49:07.521194+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		2302205
+2026-10-27 15:49:07.522427+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		501
+2026-10-27 15:49:07.522553+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		20
+2026-10-27 15:49:07.522625+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.522682+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.522737+0000 WordBuddy[3136:14847] [error] CoreData: error:   755
+2026-10-27 15:49:07.522787+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is not a symbolic link
+2026-10-27 15:49:07.522874+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is readable
+2026-10-27 15:49:07.522968+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is writeable
+2026-10-27 15:49:07.524907+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices
+2026-10-27 15:49:07.525164+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.525226+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.525284+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		2016 bytes
+2026-10-27 15:49:07.525337+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		2302267
+2026-10-27 15:49:07.525386+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		501
+2026-10-27 15:49:07.525436+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		20
+2026-10-27 15:49:07.531258+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.531430+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.531552+0000 WordBuddy[3136:14847] [error] CoreData: error:   755
+2026-10-27 15:49:07.531605+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is not a symbolic link
+2026-10-27 15:49:07.531708+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is readable
+2026-10-27 15:49:07.531769+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is writeable
+2026-10-27 15:49:07.531843+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957
+2026-10-27 15:49:07.533764+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.534034+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.534183+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		128 bytes
+2026-10-27 15:49:07.534259+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		2324551
+2026-10-27 15:49:07.534316+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		501
+2026-10-27 15:49:07.534374+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		20
+2026-10-27 15:49:07.535394+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.535456+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.535516+0000 WordBuddy[3136:14847] [error] CoreData: error:   755
+2026-10-27 15:49:07.535565+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is not a symbolic link
+2026-10-27 15:49:07.535658+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is readable
+2026-10-27 15:49:07.535720+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is writeable
+2026-10-27 15:49:07.535825+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data
+2026-10-27 15:49:07.537299+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.537459+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.537540+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		384 bytes
+2026-10-27 15:49:07.537595+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		2324552
+2026-10-27 15:49:07.537643+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		501
+2026-10-27 15:49:07.537691+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		20
+2026-10-27 15:49:07.537799+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.538597+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.538656+0000 WordBuddy[3136:14847] [error] CoreData: error:   775
+2026-10-27 15:49:07.538704+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is not a symbolic link
+2026-10-27 15:49:07.538815+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is readable
+2026-10-27 15:49:07.538886+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is writeable
+2026-10-27 15:49:07.538954+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers
+2026-10-27 15:49:07.539952+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.540044+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.540109+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		224 bytes
+2026-10-27 15:49:07.540165+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		2981022
+2026-10-27 15:49:07.540212+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		501
+2026-10-27 15:49:07.540258+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		20
+2026-10-27 15:49:07.540304+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.541070+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.541132+0000 WordBuddy[3136:14847] [error] CoreData: error:   755
+2026-10-27 15:49:07.541180+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is not a symbolic link
+2026-10-27 15:49:07.541302+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is readable
+2026-10-27 15:49:07.541364+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is writeable
+2026-10-27 15:49:07.541433+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers/Data
+2026-10-27 15:49:07.542346+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.542418+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.542474+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		192 bytes
+2026-10-27 15:49:07.542521+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		2981046
+2026-10-27 15:49:07.542567+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		501
+2026-10-27 15:49:07.542614+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		20
+2026-10-27 15:49:07.542661+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.543985+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.544167+0000 WordBuddy[3136:14847] [error] CoreData: error:   755
+2026-10-27 15:49:07.544228+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is not a symbolic link
+2026-10-27 15:49:07.544326+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is readable
+2026-10-27 15:49:07.544390+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is writeable
+2026-10-27 15:49:07.544463+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers/Data/Application
+2026-10-27 15:49:07.546705+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.546862+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.546922+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		4768 bytes
+2026-10-27 15:49:07.546972+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		2981208
+2026-10-27 15:49:07.547085+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		501
+2026-10-27 15:49:07.547142+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		20
+2026-10-27 15:49:07.547192+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.547241+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.548116+0000 WordBuddy[3136:14847] [error] CoreData: error:   755
+2026-10-27 15:49:07.548195+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is not a symbolic link
+2026-10-27 15:49:07.548458+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is readable
+2026-10-27 15:49:07.548619+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is writeable
+2026-10-27 15:49:07.548718+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers/Data/Application/5ED68059-796C-4D12-9816-B58F64D4972C
+2026-10-27 15:49:07.549366+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.549461+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.549512+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		224 bytes
+2026-10-27 15:49:07.549562+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		2991160
+2026-10-27 15:49:07.549612+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		501
+2026-10-27 15:49:07.549674+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		20
+2026-10-27 15:49:07.549732+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.550389+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.550444+0000 WordBuddy[3136:14847] [error] CoreData: error:   755
+2026-10-27 15:49:07.550493+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is not a symbolic link
+2026-10-27 15:49:07.550585+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is readable
+2026-10-27 15:49:07.550655+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is writeable
+2026-10-27 15:49:07.551119+0000 WordBuddy[3136:14847] [error] CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers/Data/Application/5ED68059-796C-4D12-9816-B58F64D4972C/Library
+2026-10-27 15:49:07.552956+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Device ID: 	0
+2026-10-27 15:49:07.553198+0000 WordBuddy[3136:14847] [error] CoreData: error:   Device ID: 		16777229
+2026-10-27 15:49:07.553381+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Size: 		128 bytes
+2026-10-27 15:49:07.553512+0000 WordBuddy[3136:14847] [error] CoreData: error:   File inode: 		2991162
+2026-10-27 15:49:07.553574+0000 WordBuddy[3136:14847] [error] CoreData: error:   File user ID: 		501
+2026-10-27 15:49:07.553624+0000 WordBuddy[3136:14847] [error] CoreData: error:   File group ID: 		20
+2026-10-27 15:49:07.554113+0000 WordBuddy[3136:14847] [error] CoreData: error:   File Permissions:
+2026-10-27 15:49:07.556143+0000 WordBuddy[3136:14847] [error] CoreData: error: d
+2026-10-27 15:49:07.556314+0000 WordBuddy[3136:14847] [error] CoreData: error:   755
+2026-10-27 15:49:07.556448+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is not a symbolic link
+2026-10-27 15:49:07.556649+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is readable
+2026-10-27 15:49:07.556750+0000 WordBuddy[3136:14847] [error] CoreData: error:   component is writeable
+2026-10-27 15:49:07.556829+0000 WordBuddy[3136:14847] [error] CoreData: error: Failed to stat path '/Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers/Data/Application/5ED68059-796C-4D12-9816-B58F64D4972C/Library/Application Support', errno 2 / No such file or directory.
+2026-10-27 15:49:07.558439+0000 WordBuddy[3136:14847] [error] CoreData: error:   Sandbox access to file-write-create denied
+2026-10-27 15:49:07.560744+0000 WordBuddy[3136:14847] [error] CoreData: error: addPersistentStoreWithType:configuration:URL:options:error: returned error NSCocoaErrorDomain (512)
+2026-10-27 15:49:07.560944+0000 WordBuddy[3136:14847] [error] CoreData: error: userInfo:
+2026-10-27 15:49:07.561112+0000 WordBuddy[3136:14847] [error] CoreData: error: 	reason : Failed to create file; code = 2
+2026-10-27 15:49:07.563277+0000 WordBuddy[3136:14847] [error] CoreData: error: storeType: SQLite
+2026-10-27 15:49:07.563365+0000 WordBuddy[3136:14847] [error] CoreData: error: configuration: default
+2026-10-27 15:49:07.563450+0000 WordBuddy[3136:14847] [error] CoreData: error: URL: file:///Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers/Data/Application/5ED68059-796C-4D12-9816-B58F64D4972C/Library/Application%20Support/default.store
+2026-10-27 15:49:07.567852+0000 WordBuddy[3136:14847] [error] CoreData: error: <NSPersistentStoreCoordinator: 0x102ccd700>: Attempting recovery from error encountered during addPersistentStore: 0x102c6b270 Error Domain=NSCocoaErrorDomain Code=512 "The file couldn’t be saved." UserInfo={reason=Failed to create file; code = 2}
+2026-10-27 15:49:07.568466+0000 WordBuddy[3136:14847] [error] CoreData: error: During recovery, parent directory path reported as missing
+2026-10-27 15:49:07.576809+0000 WordBuddy[3136:14847] [error] CoreData: error: Recovery attempt while adding <NSPersistentStoreDescription: 0x102c6b270> (type: SQLite, url: file:///Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers/Data/Application/5ED68059-796C-4D12-9816-B58F64D4972C/Library/Application%20Support/default.store) was successful!
 CoreData: error: 	reason : Failed to create file; code = 2
 CoreData: error:   700
 CoreData: error:   750
@@ -454,40 +454,41 @@ CoreData: error:   component is not writeable with errno 13
 CoreData: error:   component is not writeable with errno 30
 CoreData: error:   component is readable
 CoreData: error:   component is writeable
-CoreData: error:   Device ID: 		16777226
+CoreData: error:   Device ID: 		16777229
 CoreData: error:   File Device ID: 	0
 CoreData: error:   File group ID: 		0
 CoreData: error:   File group ID: 		20
 CoreData: error:   File group ID: 		80
 CoreData: error:   File inode: 		18483
 CoreData: error:   File inode: 		2
-CoreData: error:   File inode: 		2302940
-CoreData: error:   File inode: 		2302996
-CoreData: error:   File inode: 		2303025
-CoreData: error:   File inode: 		2325147
-CoreData: error:   File inode: 		2325148
-CoreData: error:   File inode: 		2986606
-CoreData: error:   File inode: 		2986622
-CoreData: error:   File inode: 		2986871
-CoreData: error:   File inode: 		2998001
-CoreData: error:   File inode: 		2998003
+CoreData: error:   File inode: 		2302196
+CoreData: error:   File inode: 		2302205
+CoreData: error:   File inode: 		2302267
+CoreData: error:   File inode: 		2324551
+CoreData: error:   File inode: 		2324552
+CoreData: error:   File inode: 		2981022
+CoreData: error:   File inode: 		2981046
+CoreData: error:   File inode: 		2981208
+CoreData: error:   File inode: 		2991160
+CoreData: error:   File inode: 		2991162
 CoreData: error:   File inode: 		36527
 CoreData: error:   File inode: 		36534
 CoreData: error:   file is not a symbolic link
 CoreData: error:   File Permissions: 	
-CoreData: error:   File Size: 		1280 bytes
+CoreData: error:   File Size: 		128 bytes
+CoreData: error:   File Size: 		1312 bytes
 CoreData: error:   File Size: 		160 bytes
 CoreData: error:   File Size: 		192 bytes
 CoreData: error:   File Size: 		2016 bytes
 CoreData: error:   File Size: 		224 bytes
 CoreData: error:   File Size: 		2688 bytes
-CoreData: error:   File Size: 		416 bytes
+CoreData: error:   File Size: 		384 bytes
 CoreData: error:   File Size: 		4768 bytes
 CoreData: error:   File Size: 		704 bytes
 CoreData: error:   File system flags: 		0
 CoreData: error:   File system flags: 		0x4909000
 CoreData: error:   File system ID: 		0, 0
-CoreData: error:   File system ID: 		0x100000a, 0x1a
+CoreData: error:   File system ID: 		0x100000d, 0x1a
 CoreData: error:   File system type: 		0
 CoreData: error:   File system type: 		0x1a
 CoreData: error:   File user ID: 		0
@@ -495,11 +496,11 @@ CoreData: error:   File user ID: 		501
 CoreData: error:   Filesystem type name: 		
 CoreData: error:   Filesystem type name: 		apfs
 CoreData: error:   Free blocks for nonsuperuser:	0
-CoreData: error:   Free blocks for nonsuperuser:	24846530
+CoreData: error:   Free blocks for nonsuperuser:	24814507
 CoreData: error:   Free data blocks: 		0
-CoreData: error:   Free data blocks: 		24846530
+CoreData: error:   Free data blocks: 		24814507
 CoreData: error:   Free i-nodes: 			0
-CoreData: error:   Free i-nodes: 			993861200
+CoreData: error:   Free i-nodes: 			992580280
 CoreData: error:   MNT_JOURNALED
 CoreData: error:   Mount from name: 		
 CoreData: error:   Mount from name: 		/dev/disk2s5
@@ -511,16 +512,16 @@ CoreData: error:   Sandbox access to file-write-create denied
 CoreData: error:   Total data blocks: 		0
 CoreData: error:   Total data blocks: 		83758080
 CoreData: error:   Total i-nodes: 			0
-CoreData: error:   Total i-nodes: 			995764373
+CoreData: error:   Total i-nodes: 			994484412
 CoreData: error: ---------------------------
-CoreData: error: <NSPersistentStoreCoordinator: 0x106808580>: Attempting recovery from error encountered during addPersistentStore: 0x103462dc0 Error Domain=NSCocoaErrorDomain Code=512 "The file couldn’t be saved." UserInfo={reason=Failed to create file; code = 2}
+CoreData: error: <NSPersistentStoreCoordinator: 0x102ccd700>: Attempting recovery from error encountered during addPersistentStore: 0x102c6b270 Error Domain=NSCocoaErrorDomain Code=512 "The file couldn’t be saved." UserInfo={reason=Failed to create file; code = 2}
 CoreData: error: addPersistentStoreWithType:configuration:URL:options:error: returned error NSCocoaErrorDomain (512)
 CoreData: error: configuration: default
 CoreData: error: d
 CoreData: error: During recovery, parent directory path reported as missing
 CoreData: error: Executing as effective user 501
-CoreData: error: Failed to stat path '/Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data/Application/B537869D-7AF8-4D77-A35C-184E4F387BF6/Library/Application Support', errno 2 / No such file or directory.
-CoreData: error: Failed to stat path '/Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data/Application/B537869D-7AF8-4D77-A35C-184E4F387BF6/Library/Application Support/default.store', errno 2 / No such file or directory.
+CoreData: error: Failed to stat path '/Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers/Data/Application/5ED68059-796C-4D12-9816-B58F64D4972C/Library/Application Support', errno 2 / No such file or directory.
+CoreData: error: Failed to stat path '/Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers/Data/Application/5ED68059-796C-4D12-9816-B58F64D4972C/Library/Application Support/default.store', errno 2 / No such file or directory.
 CoreData: error: Failed to statfs file; errno 2 / No such file or directory.
 CoreData: error: Information for /
 CoreData: error: Information for /Users
@@ -529,16 +530,16 @@ CoreData: error: Information for /Users/runner/Library
 CoreData: error: Information for /Users/runner/Library/Developer
 CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator
 CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices
-CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD
-CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data
-CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers
-CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data
-CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data/Application
-CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data/Application/B537869D-7AF8-4D77-A35C-184E4F387BF6
-CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data/Application/B537869D-7AF8-4D77-A35C-184E4F387BF6/Library
+CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957
+CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data
+CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers
+CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers/Data
+CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers/Data/Application
+CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers/Data/Application/5ED68059-796C-4D12-9816-B58F64D4972C
+CoreData: error: Information for /Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers/Data/Application/5ED68059-796C-4D12-9816-B58F64D4972C/Library
 CoreData: error: Information for file system
-CoreData: error: Logging status information for directory path: /Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data/Application/B537869D-7AF8-4D77-A35C-184E4F387BF6/Library/Application Support
-CoreData: error: Recovery attempt while adding <NSPersistentStoreDescription: 0x103462dc0> (type: SQLite, url: file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data/Application/B537869D-7AF8-4D77-A35C-184E4F387BF6/Library/Application%20Support/default.store) was successful!
+CoreData: error: Logging status information for directory path: /Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers/Data/Application/5ED68059-796C-4D12-9816-B58F64D4972C/Library/Application Support
+CoreData: error: Recovery attempt while adding <NSPersistentStoreDescription: 0x102c6b270> (type: SQLite, url: file:///Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers/Data/Application/5ED68059-796C-4D12-9816-B58F64D4972C/Library/Application%20Support/default.store) was successful!
 CoreData: error: storeType: SQLite
-CoreData: error: URL: file:///Users/runner/Library/Developer/CoreSimulator/Devices/77AA4492-C787-4EEE-A772-05D4B3E9ECCD/data/Containers/Data/Application/B537869D-7AF8-4D77-A35C-184E4F387BF6/Library/Application%20Support/default.store
+CoreData: error: URL: file:///Users/runner/Library/Developer/CoreSimulator/Devices/E839A11B-51B4-4AD3-ACF4-A53B95B7C957/data/Containers/Data/Application/5ED68059-796C-4D12-9816-B58F64D4972C/Library/Application%20Support/default.store
 CoreData: error: userInfo:
