@@ -3,6 +3,7 @@ name: CI
 on:
   push:
     branches: [main]
+    paths-ignore: ['web/**', 'ci/safari_server.py', 'ci/web_safari_test.sh', '.github/workflows/web.yml']
   pull_request:
   workflow_dispatch:
 

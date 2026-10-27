@@ -1,0 +1,86 @@
+name: Web (Safari)
+
+on:
+  push:
+    branches: [main]
+    paths: ['web/**', 'ci/**', '.github/workflows/web.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  safari-test:
+    runs-on: macos-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Environment
+        run: |
+          mkdir -p web-report
+          { xcodebuild -version; sw_vers; node --version; } | tee web-report/env.txt
+
+      - name: Logic tests (Node)
+        run: node web/tests/run-node.mjs | tee web-report/node-tests.txt
+
+      - name: Self-test in Safari on iPhone 17 Pro Max simulator
+        id: iphone
+        continue-on-error: true
+        run: |
+          chmod +x ci/web_safari_test.sh
+          ci/web_safari_test.sh "iPhone 17 Pro Max" web-report/iphone 8000
+
+      - name: Self-test in Safari on iPad simulator
+        id: ipad
+        continue-on-error: true
+        run: ci/web_safari_test.sh "iPad Pro 13" web-report/ipad 8001
+
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-safari-results
+          path: web-report
+
+      - name: Publish results to ci-results branch
+        if: always()
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          RUN_DIR="web/runs/${{ github.run_id }}"
+          echo "iphone=${{ steps.iphone.outcome }}" > web-report/outcome.txt
+          echo "ipad=${{ steps.ipad.outcome }}" >> web-report/outcome.txt
+          echo "${{ github.sha }}" > web-report/commit.txt
+          cd "$RUNNER_TEMP" && rm -rf res && mkdir res && cd res
+          git init -q -b ci-results
+          git remote add origin "https://x-access-token:${TOKEN}@github.com/${{ github.repository }}.git"
+          if git fetch -q --depth 1 origin ci-results; then git checkout -q -B ci-results FETCH_HEAD; fi
+          mkdir -p "$RUN_DIR"
+          cp -R "$GITHUB_WORKSPACE/web-report/." "$RUN_DIR/"
+          rm -rf web/latest && cp -R "$RUN_DIR" web/latest
+          git add -A
+          git -c user.name="github-actions" -c user.email="github-actions@users.noreply.github.com" \
+            commit -q -m "Web Safari results for ${{ github.sha }} (run ${{ github.run_id }})"
+          for i in 1 2 3; do git push -q origin ci-results && break; git fetch -q --depth 1 origin ci-results && git rebase -q FETCH_HEAD; done
+
+      - name: Fail if self-test failed
+        if: steps.iphone.outcome != 'success'
+        run: exit 1
+
+  deploy-pages:
+    needs: safari-test
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+      - id: deploy
+        uses: actions/deploy-pages@v4
