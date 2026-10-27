@@ -95,9 +95,8 @@ function sceneHTML(scene, { words, showZh = true } = {}) {
   }).join('');
   return `<div class="stack">
       <div class="row">
-        <b style="font-size:19px">${scene.emoji} ${h(scene.title)}</b><span class="tag">${KIND_LABEL[scene.kind]}</span>
-        <span class="spacer"></span>
-        <button class="link" data-act="toggleZh">${showZh ? '隐藏中文' : '显示中文'}</button>
+        <b style="font-size:19px;flex:1;min-width:0">${scene.emoji} ${h(scene.title)}</b><span class="tag">${KIND_LABEL[scene.kind] || '对话'}</span>
+        <button class="link" style="white-space:nowrap" data-act="toggleZh">${showZh ? '隐藏中文' : '显示中文'}</button>
       </div>
       <div class="lines">${lines}</div>
       <div class="row">
@@ -363,13 +362,16 @@ function addBarHTML() {
         ✨ 生成场景并添加（${selected.length} 个词 → ${Math.ceil(selected.length / MAX_WORDS_PER_SCENE)} 个场景）</button></div></div>`;
 }
 
+// 默认只取第一个意思（词典第二个意思有时很冷僻，如“长颈鹿；鹿豹座”）
+const firstMeaning = m => String(m || '').split('；')[0];
+
 function mergeCands(found, { manual = false } = {}) {
   const A = addState();
   const old = Object.fromEntries(A.cands.map(c => [c.id, c]));
   A.cands = found.map(f => {
     const prev = old[f.id];
     if (prev) return { ...prev, manual: prev.manual || manual };
-    return { id: f.id, raw: f.raw, entry: f.entry, sense: f.entry ? 0 : -1, meaning: f.entry?.senses[0]?.meaning || '',
+    return { id: f.id, raw: f.raw, entry: f.entry, sense: f.entry ? 0 : -1, meaning: firstMeaning(f.entry?.senses[0]?.meaning),
              sel: manual && !isKnownWord(f.id) && !!f.entry, manual };
   });
 }
@@ -917,7 +919,7 @@ const ACTIONS = {
   candToggle: d => { const c = addState().cands[Number(d.i)]; c.sel = !c.sel; refresh(); },
   candSense: d => {
     const c = addState().cands[Number(d.i)]; const k = Number(d.k);
-    c.sense = k; c.meaning = c.entry.senses[k].meaning; c.sel = true; refresh();
+    c.sense = k; c.meaning = firstMeaning(c.entry.senses[k].meaning); c.sel = true; refresh();
   },
   candAll: () => { const A = addState(); A.cands.forEach(c => { if (!isKnownWord(c.id) && (c.entry || c.manual || A.showUnknown)) c.sel = true; }); refresh(); },
   showUnknown: () => { addState().showUnknown = true; refresh(); },

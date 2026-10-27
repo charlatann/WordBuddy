@@ -94,7 +94,7 @@ mark { background: none; color: var(--accent); font-weight: 700; }
   background: var(--accent-soft); font-size: 14px; font-weight: 550;
 }
 .chip .ok { color: var(--green); font-size: 12px; }
-.tag { display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 99px; background: var(--orange-soft); color: var(--orange); font-weight: 600; }
+.tag { display: inline-block; white-space: nowrap; flex: none; font-size: 12px; padding: 2px 8px; border-radius: 99px; background: var(--orange-soft); color: var(--orange); font-weight: 600; }
 
 .btn {
   display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
