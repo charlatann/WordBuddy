@@ -1,0 +1,108 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-test:
+    runs-on: macos-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Environment
+        run: |
+          mkdir -p report
+          { xcodebuild -version; sw_vers; } | tee report/env.txt
+
+      - name: Install XcodeGen & generate project
+        run: |
+          brew install xcodegen
+          xcodegen generate
+
+      - name: Pick simulators
+        run: |
+          IPHONE=$(python3 ci/pick_sim.py iPhone)
+          IPAD=$(python3 ci/pick_sim.py iPad)
+          echo "IPHONE_ID=${IPHONE%%|*}" >> "$GITHUB_ENV"
+          echo "IPAD_ID=${IPAD%%|*}" >> "$GITHUB_ENV"
+          { echo "iPhone: ${IPHONE#*|}"; echo "iPad: ${IPAD#*|}"; } | tee -a report/env.txt
+
+      - name: Unit & UI tests (iPhone)
+        id: test
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          xcodebuild test \
+            -project WordBuddy.xcodeproj -scheme WordBuddy \
+            -destination "id=$IPHONE_ID" \
+            -resultBundlePath TestResults.xcresult \
+            CODE_SIGNING_ALLOWED=NO 2>&1 | tee xcodebuild-test.log
+
+      - name: Build (iPad)
+        id: ipad
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          xcodebuild build \
+            -project WordBuddy.xcodeproj -scheme WordBuddy \
+            -destination "id=$IPAD_ID" \
+            CODE_SIGNING_ALLOWED=NO 2>&1 | tee xcodebuild-ipad.log
+
+      - name: Collect results
+        if: always()
+        run: |
+          echo "test=${{ steps.test.outcome }}" >> report/outcome.txt
+          echo "ipad=${{ steps.ipad.outcome }}" >> report/outcome.txt
+          if [ -d TestResults.xcresult ]; then
+            xcrun xcresulttool get test-results summary --path TestResults.xcresult > report/summary.json || true
+            xcrun xcresulttool get test-results tests --path TestResults.xcresult > report/tests.json || true
+            xcrun xccov view --report --json TestResults.xcresult > report/coverage.json 2>/dev/null || true
+            mkdir -p report/screenshots
+            xcrun xcresulttool export attachments --path TestResults.xcresult --output-path report/screenshots || true
+            ditto -c -k --keepParent TestResults.xcresult TestResults.xcresult.zip
+          fi
+          for f in test ipad; do
+            [ -f xcodebuild-$f.log ] || continue
+            grep -E "(error|warning):" xcodebuild-$f.log | sort -u > report/diagnostics-$f.txt || true
+            tail -n 300 xcodebuild-$f.log > report/log-tail-$f.txt
+          done
+
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: |
+            report
+            TestResults.xcresult.zip
+            xcodebuild-*.log
+
+      - name: Publish results to ci-results branch
+        if: always()
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          RUN_DIR="runs/${{ github.run_id }}"
+          cd "$RUNNER_TEMP" && rm -rf res && mkdir res && cd res
+          git init -q -b ci-results
+          git remote add origin "https://x-access-token:${TOKEN}@github.com/${{ github.repository }}.git"
+          if git fetch -q --depth 1 origin ci-results; then git checkout -q -B ci-results FETCH_HEAD; fi
+          mkdir -p "$RUN_DIR"
+          cp -R "$GITHUB_WORKSPACE/report/." "$RUN_DIR/"
+          echo "${{ github.sha }}" > "$RUN_DIR/commit.txt"
+          rm -rf latest && cp -R "$RUN_DIR" latest
+          git add -A
+          git -c user.name="github-actions" -c user.email="github-actions@users.noreply.github.com" \
+            commit -q -m "CI results for ${{ github.sha }} (run ${{ github.run_id }})"
+          git push -q origin ci-results
+
+      - name: Fail if tests failed
+        if: steps.test.outcome != 'success' || steps.ipad.outcome != 'success'
+        run: exit 1

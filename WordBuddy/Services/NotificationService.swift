@@ -61,7 +61,7 @@ enum NotificationService {
         }
     }
 
-    private static func daytime(_ date: Date, cal: Calendar) -> Date {
+    static func daytime(_ date: Date, cal: Calendar) -> Date {
         let hour = cal.component(.hour, from: date)
         if hour < 8 { return cal.date(bySettingHour: 8, minute: 0, second: 0, of: date) ?? date }
         if hour >= 22, let next = cal.date(byAdding: .day, value: 1, to: date) {

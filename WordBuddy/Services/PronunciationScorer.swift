@@ -152,10 +152,16 @@ enum PronunciationScorer {
             if maxGap > 1.2 { fluency *= 0.7 }
         }
 
-        var score = 100 * (0.6 * best.acc + 0.3 * clarity + 0.1 * fluency)
-        if best.acc == 0 { score = min(score, 10) }
-        return PronunciationResult(score: Int(score.rounded()), accuracy: best.acc, clarity: clarity,
+        return PronunciationResult(score: combinedScore(accuracy: best.acc, clarity: clarity, fluency: fluency),
+                                   accuracy: best.acc, clarity: clarity,
                                    fluency: fluency, recognized: best.text, words: words)
+    }
+
+    /// 综合分 = 准确度 60% + 清晰度 30% + 流利度 10%；一个词都没读对时最多 10 分
+    static func combinedScore(accuracy: Double, clarity: Double, fluency: Double) -> Int {
+        var score = 100 * (0.6 * accuracy + 0.3 * clarity + 0.1 * fluency)
+        if accuracy == 0 { score = min(score, 10) }
+        return Int(max(0, min(100, score)).rounded())
     }
 
     private static let numberWords: [String: String] = [

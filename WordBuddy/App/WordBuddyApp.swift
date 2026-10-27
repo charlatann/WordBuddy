@@ -71,7 +71,12 @@ struct RootView: View {
                 .tag(AppTab.speak)
         }
         .tint(.indigo)
-        .task { NotificationService.requestAuthorization() }
+        .task {
+            // UI 自动化测试时跳过系统权限弹窗
+            if !ProcessInfo.processInfo.arguments.contains("-uiTesting") {
+                NotificationService.requestAuthorization()
+            }
+        }
         .onChange(of: scenePhase) { _, phase in
             if phase == .background { NotificationService.refresh(progress: progress) }
         }
