@@ -4,7 +4,7 @@ import SwiftUI
 
 struct CardModifier: ViewModifier {
     var padding: CGFloat = 16
-    func body(content: Content) -> some View {
+    func body(content: Self.Content) -> some View {
         content
             .padding(padding)
             .background(Color(.secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
