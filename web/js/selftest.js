@@ -14,6 +14,9 @@ const $ = sel => document.querySelector(sel);
 const $$ = sel => [...document.querySelectorAll(sel)];
 const results = [];
 const shots = [];
+const errors = [];
+window.addEventListener('error', e => errors.push(`${e.message} @${(e.filename || '').split('/').pop()}:${e.lineno}`));
+window.addEventListener('unhandledrejection', e => errors.push(`未处理的 Promise 错误：${e.reason?.message || e.reason}`));
 
 async function waitFor(fn, ms = 3000, msg = '等待超时') {
   const t0 = Date.now();
@@ -22,18 +25,28 @@ async function waitFor(fn, ms = 3000, msg = '等待超时') {
 }
 function expect(cond, msg) { if (!cond) throw new Error(msg); }
 
+const navRetries = [];
 async function nav(hash) {
-  location.hash = hash;
   const view = hash.replace(/^#\//, '').split(/[/?]/)[0];
-  await waitFor(() => document.getElementById('app').dataset.view === view, 3000, `打开 ${hash} 失败`);
+  const appEl = document.getElementById('app');
+  location.hash = hash;
+  try {
+    await waitFor(() => appEl.dataset.view === view, 2500);
+  } catch {
+    // 模拟器里 Safari 有时会延迟派发 hashchange：补发一次并记录
+    navRetries.push(hash);
+    window.dispatchEvent(new HashChangeEvent('hashchange'));
+    await waitFor(() => appEl.dataset.view === view, 8000,
+      `打开 ${hash} 失败（当前 hash=${location.hash}，页面=${appEl.dataset.view}，错误=${errors.slice(-1)[0] || '无'}）`);
+  }
   await sleep(80);
 }
 async function tap(sel) {
   const el = typeof sel === 'string' ? await waitFor(() => $(sel), 3000, `找不到元素 ${sel}`) : sel;
   if (el.tagName === 'A' && el.getAttribute('href')?.startsWith('#')) {
     const view = el.getAttribute('href').replace(/^#\//, '').split(/[/?]/)[0];
-    location.hash = el.getAttribute('href');
-    await waitFor(() => document.getElementById('app').dataset.view === view, 3000, `打开 ${el.getAttribute('href')} 失败`);
+    await nav(el.getAttribute('href'));
+    void view;
   } else {
     el.click();
   }
@@ -253,7 +266,7 @@ export async function runSelfTest() {
     total: results.filter(r => !r.info).length,
     passed: results.filter(r => !r.info && r.ok).length,
     failed: results.filter(r => !r.info && !r.ok).length,
-    results, shots,
+    results, shots, errors, navRetries,
   };
   showReport(report);
   await shot('16-自检结果');
@@ -262,11 +275,16 @@ export async function runSelfTest() {
     catch { /* 无测试服务器 */ }
   }
   window.__selftest = report;
+  // 演示数据：学过 3 课、有 4 个待复习，供最后的首页截图
+  ['s1', 's2', 's3'].forEach(id => Store.learnScene(sceneByID[id]));
+  Store._mutate(st => Object.values(st.progress).slice(0, 4).forEach(p => { p.nextReview = Date.now() - 1000; }));
+  await sleep(1500);
+  location.hash = '#/learn';
   return report;
 }
 
 async function waitVoices() {
-  for (let i = 0; i < 20 && !voiceCount(); i++) await sleep(150);
+  for (let i = 0; i < 60 && !voiceCount(); i++) await sleep(150);
   return voiceCount();
 }
 

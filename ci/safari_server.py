@@ -43,7 +43,7 @@ class Handler(SimpleHTTPRequestHandler):
         elif url.path == "/__report":
             with open(os.path.join(out, "report.json"), "wb") as f:
                 f.write(body)
-            threading.Timer(3, done.set).start()   # 留时间给最后一张截图
+            threading.Timer(6, done.set).start()   # 留时间给最后一张截图
         self.send_response(200)
         self.send_header("Content-Type", "text/plain")
         self.send_header("Content-Length", "2")

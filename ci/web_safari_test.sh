@@ -15,7 +15,14 @@ xcrun simctl bootstatus "$UDID" -b
 xcrun simctl ui "$UDID" appearance light
 sleep 5
 
-python3 ci/safari_server.py web "$PORT" "$UDID" "$OUT" 420 &
+# 预热 Safari：首次启动的功能提示弹窗出现过一次后，重启 Safari 通常不再出现
+xcrun simctl openurl "$UDID" "http://example.com" || true
+sleep 12
+xcrun simctl io "$UDID" screenshot "$OUT/warmup.png" || true
+xcrun simctl terminate "$UDID" com.apple.mobilesafari || true
+sleep 3
+
+python3 ci/safari_server.py web "$PORT" "$UDID" "$OUT" 600 &
 SERVER=$!
 sleep 2
 
@@ -25,17 +32,12 @@ wait $SERVER
 STATUS=$?
 echo "self-test exit: $STATUS"
 
-# 额外截图：深色模式首页、正常模式（非自检）首页
-python3 -m http.server "$PORT" --directory web >/dev/null 2>&1 &
-HTTP=$!
-sleep 1
-xcrun simctl openurl "$UDID" "http://localhost:$PORT/index.html#/learn"
-sleep 6
-xcrun simctl io "$UDID" screenshot "$OUT/shots/20-正常打开.png"
+# 自检结束后页面会回到带演示进度的首页：截浅色和深色两张
+sleep 2
+xcrun simctl io "$UDID" screenshot "$OUT/shots/20-首页（有学习进度）.png"
 xcrun simctl ui "$UDID" appearance dark
 sleep 4
 xcrun simctl io "$UDID" screenshot "$OUT/shots/21-深色模式.png"
 xcrun simctl ui "$UDID" appearance light
-kill $HTTP 2>/dev/null
 xcrun simctl shutdown "$UDID" 2>/dev/null || true
 exit $STATUS

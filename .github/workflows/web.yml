@@ -67,8 +67,11 @@ jobs:
           for i in 1 2 3; do git push -q origin ci-results && break; git fetch -q --depth 1 origin ci-results && git rebase -q FETCH_HEAD; done
 
       - name: Fail if self-test failed
-        if: steps.iphone.outcome != 'success'
-        run: exit 1
+        if: always()
+        run: |
+          for d in iphone ipad; do
+            python3 -c "import json,sys; r=json.load(open('web-report/$d/report.json')); print('$d', r['passed'], '/', r['total']); sys.exit(1 if r['failed'] else 0)" || exit 1
+          done
 
   deploy-pages:
     needs: safari-test
