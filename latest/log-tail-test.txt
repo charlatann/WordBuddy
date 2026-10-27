@@ -1,300 +1,300 @@
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    write-file /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/Objects-normal/arm64/WordBuddy.SwiftConstValuesFileList
-
-WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/Objects-normal/arm64/WordBuddy.LinkFileList (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    write-file /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/Objects-normal/arm64/WordBuddy.LinkFileList
-
-WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/Objects-normal/arm64/WordBuddy-OutputFileMap.json (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    write-file /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/Objects-normal/arm64/WordBuddy-OutputFileMap.json
-
-MkDir /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddyUITests-Runner.app/PlugIns/WordBuddyUITests.xctest (in target 'WordBuddyUITests' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    /bin/mkdir -p /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddyUITests-Runner.app/PlugIns/WordBuddyUITests.xctest
-
-MkDir /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/PlugIns (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    /bin/mkdir -p /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/PlugIns
-
-MkDir /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/PlugIns/WordBuddyTests.xctest (in target 'WordBuddyTests' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    /bin/mkdir -p /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/PlugIns/WordBuddyTests.xctest
-
-MkDir /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Frameworks (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    /bin/mkdir -p /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Frameworks
-
-MkDir /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    /bin/mkdir -p /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app
-
-Ld /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/__preview.dylib normal (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -dynamiclib -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -O0 -L/Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator -F/Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator -install_name @rpath/WordBuddy.debug.dylib -Xlinker -dead_strip -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/Objects-normal/arm64/WordBuddy_dependency_info.dat -o /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/__preview.dylib
-
-ProcessInfoPlistFile /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Info.plist /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/empty-WordBuddy.plist (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    builtin-infoPlistUtility /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/empty-WordBuddy.plist -producttype com.apple.product-type.application -genpkginfo /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Info.plist
-
-Copy /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Frameworks/libXCTestSwiftSupport.dylib /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Frameworks
-
-Copy /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Frameworks/libXCTestBundleInject.dylib /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestBundleInject.dylib (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestBundleInject.dylib /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Frameworks
-
-Copy /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Frameworks/XCUnit.framework /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCUnit.framework (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCUnit.framework /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Frameworks
-
-Copy /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Frameworks/XCUIAutomation.framework /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCUIAutomation.framework (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCUIAutomation.framework /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Frameworks
-
-Copy /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Frameworks/XCTestSupport.framework /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTestSupport.framework (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTestSupport.framework /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Frameworks
-
-Copy /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Frameworks/XCTestCore.framework /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTestCore.framework (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTestCore.framework /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Frameworks
-
-Copy /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Frameworks/XCTest.framework /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Frameworks
-
-Copy /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Frameworks/XCTAutomationSupport.framework /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTAutomationSupport.framework (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTAutomationSupport.framework /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Frameworks
-
-Copy /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Frameworks/Testing.framework /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/Testing.framework (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/Testing.framework /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Frameworks
-
-SwiftDriver WordBuddy normal arm64 com.apple.xcode.tools.swift.compiler (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    builtin-SwiftDriver -- /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name WordBuddy -Onone @/Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/Objects-normal/arm64/WordBuddy.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator -F /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-688ef53f1462e2c8f657fdc38a81448ff45c64a1807a658693f2a61704f17a36.sdkstatcache -output-file-map /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/Objects-normal/arm64/WordBuddy-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/Objects-normal/arm64/WordBuddy.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/Objects-normal/arm64/WordBuddy_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/WordBuddy-generated-files.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/WordBuddy-own-target-headers.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/WordBuddy-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/WordBuddy-project-headers.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/DerivedSources/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/Objects-normal/arm64/WordBuddy-Swift.h -working-directory /Users/runner/work/WordBuddy/WordBuddy -experimental-emit-module-separately -disable-cmo
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_AvailabilityInternal-6DZPBQ1GDR5VQVTX2KC3CFZKH.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/ptrcheck-WAV18TPZUVHKV3LXIRAFLYN7.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_stdarg-20TTVJBLLUY68CTJF1YJ48AZH.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_SwiftConcurrencyShims-4KKVRAVQYQHYK78482W4R7Y0E.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/SwiftShims-25GF3K3ZWSIY4T115Z2UEBZRL.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_stddef-DWO58UINTQGF5NN6EL74ARD99.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_DarwinFoundation1-ANGWZ3QPJMCIIRYDIFF6F0A2Q.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/DeveloperToolsSupport-61KBSG06XH7JULTKC4JJAZYGU.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_float-DRI87QHPGHDIV0UGRIVM1OVSM.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/ptrauth-99KW7CKVZXSQOHY38O3KXSSTT.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_stdbool-BXY040X58V8IZOC6WDNJXHXCV.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_limits-AV62CHGU5T6PIMK4ZV6R4N1WH.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_DarwinFoundation2-30EAKIEMLPFIAZ2LNB2G4ILWF.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_tgmath-BJVZJINKJNFRZCMY9V2E2E98U.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/sys_types-3WFJB1QNQT9HFLHJI0FG7PKCY.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_stdint-A50XLKTB75Q7HJSX20NLCDUCC.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_intrinsics-4KGL842L7V5UUL5DB22ZU9HDA.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_stdatomic-8PHN86WU604AYPILVOIQTNR65.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_DarwinFoundation3-6DD217POB8BARVOV9UQ89H754.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_inttypes-73EZH83H58MM24JFLUTCF3XBR.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Darwin-APF3C2ZN9FXR10PA1SRA3PO98.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/simd-8GVFQ6R6BWGAURRZG38Y8OE1A.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/MachO-EJV0RP6V75PXZFNOFMV7VU8RV.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/ObjectiveC-B802B6QK4BJJ63CGILBWI02OB.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/os_object-AF02TD8G4ZEZ3GXQY1PH0FSNT.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/os_workgroup-73NYE0NKG4RHX1UTM23RBIAWC.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Spatial-C7MHDB01YPJTHLBLLIQ7CMENC.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Dispatch-3KN2919J4WK06BTC8UFCB42FN.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/XPC-55NK3COZI48F3N2K2V8KFWCC1.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/dnssd-ADI1EP21JY0T7XPB85BID4OJU.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreFoundation-8O1NNKID9BZPZI1HHDYA9QSN8.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/os-7HEU2P5Q9W31LMJ19ZXYYVXSS.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreGraphics-BLKTZREZS9TJL5Y3Y0V3MUFRO.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Security-95EHSFZOAPJ358UFK25YA3AQD.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CFNetwork-2GF6GF914KIFQ38MZKXVA3J7I.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreAudioTypes-637BIT0GWSGA5EQD0W66BA81T.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Foundation-1PTEE9RGH68MBUWZNWKWC193Z.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/ImageIO-1E2X9DD074CC95S3HN9D1IL5U.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreText-4EBQHS853T98K6ZTQTFX16U9I.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreAudio-21VVU26L7MM8334C04KNQCELT.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/FileProvider-EV22JPVA1HLL2AQ1VKDPT5ACG.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UIUtilities-DXFEK0IECSX8PAMNU2S9G0GGX.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreMIDI-DO256TCQTO4OD7EXH3H3V9VBB.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreTransferable-ATYR50YZ8UXEMVZ0C414V2ATZ.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Accessibility-6RYZQOEO1N4UXHKDPKMT1D45A.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/OSLog-JELT6ZLAXSAQA917ROMIQAQD.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/IOSurface-97KA04QGQHV850AXUA05LMB58.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreData-8LDZC0X103VE8R8OBZTLG3OUC.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Symbols-9GQ0YDSHLIVN04OWAYR6HDOHL.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Network-3QROYKFIEUE3JVAFUBCFX7VVQ.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Metal-CLJRFHE5G9CUUKBMXC13CSYDO.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/DataDetection-6SYUEZOG1HRAXQ176ZCACSYXQ.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AudioToolbox-43UCAROOY1DHH69S9URSWB6UU.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/OpenGLES-4NKEV3L6CLUARBBYKZS70K8V.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AVRouting-6IUHQK6PODQOASO1EGIMDPHDN.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UserNotifications-7P7MEL69A4HM1XOO31HBWLEPC.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreVideo-4QFECY7SPZQ1AQJAIUXCZ4GFZ.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UniformTypeIdentifiers-47LTBOG29G6NM2EM2NGT5R1T6.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreMedia-9A9WQWD5EUDNBD0KA7LUK5Q0L.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/QuartzCore-66AHQ13MM6PSTBWUZAIY7XCW9.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreImage-2XOWYSEH6N8WXT2PHC5R1THSB.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/SwiftUICore-4XCD93VCTZTA0381JBAMF03NF.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/MediaToolbox-PHW0Q1QIN1GMSG4K87OJRC6C.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AVFAudio-11D48A21UKXFZU81UJP6AGPIJ.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UIKit-CVDQ4ZFZ3C09E3QHZA1IQWWUB.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AVFoundation-DT2WVBDKOTGISK0E7JKWE62FS.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Speech-7U2Y5IQSACEG7THSCPNCNCQWA.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/SwiftUI-21HO5GXGWMPI9BSAIULZAIM08.pcm
-
-SwiftEmitModule normal arm64 Emitting\ module\ for\ WordBuddy (in target 'WordBuddy' from project 'WordBuddy')
-
-EmitSwiftModule normal arm64 (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    
-/Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Common/Components.swift:5:8: error: type 'CardModifier' does not conform to protocol 'ViewModifier'
-struct CardModifier: ViewModifier {
-       ^
-/Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Common/Components.swift:5:8: note: add stubs for conformance
-struct CardModifier: ViewModifier {
-       ^
-SwiftUI.ViewModifier.Body:2:16: note: protocol requires nested type 'Body'
-associatedtype Body : View}
-               ^
-
-Failed frontend command:
-/Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -frontend -emit-module -experimental-skip-non-inlinable-function-bodies-without-types /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Services/AudioRecorder.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Common/Components.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Models/Content.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Learn/LearnHomeView.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Learn/LearnSessionView.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Models/Models.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Services/NotificationService.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Speak/PracticePanel.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Services/PronunciationScorer.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Review/ReviewHomeView.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Review/ReviewSessionView.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Speak/SpeakHubView.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Services/Speaker.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Models/Stories.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Story/StoryHubView.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Story/StoryPlayerView.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Services/TextTools.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/App/WordBuddyApp.swift -target arm64-apple-ios17.0-simulator -disable-cross-import-overlay-search -swift-module-cross-import SwiftData /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk/System/Library/Frameworks/SwiftData.framework/Modules/SwiftData.swiftcrossimport/CoreData.swiftoverlay -swift-module-cross-import SwiftData /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk/System/Library/Frameworks/SwiftData.framework/Modules/SwiftData.swiftcrossimport/SwiftUI.swiftoverlay -load-resolved-plugin /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libFoundationMacros.dylib\#/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#FoundationMacros -load-resolved-plugin /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libObservationMacros.dylib\#/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#ObservationMacros -load-resolved-plugin /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libPreviewsMacros.dylib\#/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#PreviewsMacros -load-resolved-plugin /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libSwiftDataMacros.dylib\#/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#SwiftDataMacros -load-resolved-plugin /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libSwiftMacros.dylib\#/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#SwiftMacros -load-resolved-plugin /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins/libSwiftUIMacros.dylib\#/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server\#SwiftUIMacros -disable-implicit-swift-modules -Xcc -fno-implicit-modules -Xcc -fno-implicit-module-maps -explicit-swift-module-map-file /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/Objects-normal/arm64/WordBuddy-dependencies-1.json -Xllvm -aarch64-use-tbi -enable-objc-interop -sdk /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -I /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator -F /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator -no-color-diagnostics -Xcc -fno-color-diagnostics -enable-testing -g -debug-info-format\=dwarf -dwarf-version\=4 -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -profile-generate -profile-coverage-mapping -swift-version 5 -Onone -D DEBUG -serialize-debugging-options -const-gather-protocols-file /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/Objects-normal/arm64/WordBuddy_const_extract_protocols.json -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -empty-abi-descriptor -validate-clang-modules-once -clang-build-session-file /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -working-directory -Xcc /Users/runner/work/WordBuddy/WordBuddy -enable-anonymous-context-mangled-names -file-compilation-dir /Users/runner/work/WordBuddy/WordBuddy -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -Xcc -ivfsstatcache -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-688ef53f1462e2c8f657fdc38a81448ff45c64a1807a658693f2a61704f17a36.sdkstatcache -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/WordBuddy-generated-files.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/WordBuddy-own-target-headers.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/WordBuddy-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/WordBuddy-project-headers.hmap -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/DerivedSources/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/DerivedSources -Xcc -DDEBUG\=1 -no-auto-bridging-header-chaining -module-name WordBuddy -frontend-parseable-output -disable-clang-spi -clang-target arm64-apple-ios26.5-simulator -target-sdk-version 26.5 -target-sdk-name iphonesimulator26.5 -in-process-plugin-server-path /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/libSwiftInProcPluginServer.dylib -emit-module-doc-path /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/Objects-normal/arm64/WordBuddy.swiftdoc -emit-module-source-info-path /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/Objects-normal/arm64/WordBuddy.swiftsourceinfo -emit-objc-header-path /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/Objects-normal/arm64/WordBuddy-Swift.h -serialize-diagnostics-path /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/Objects-normal/arm64/WordBuddy-primary-emit-module.dia -emit-dependencies-path /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/Objects-normal/arm64/WordBuddy-primary-emit-module.d -o /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/Objects-normal/arm64/WordBuddy.swiftmodule -emit-abi-descriptor-path /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/Objects-normal/arm64/WordBuddy.abi.json
-SwiftCompile normal arm64 Compiling\ Speaker.swift,\ Stories.swift,\ StoryHubView.swift,\ StoryPlayerView.swift,\ TextTools.swift,\ WordBuddyApp.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Services/Speaker.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Models/Stories.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Story/StoryHubView.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Story/StoryPlayerView.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Services/TextTools.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/App/WordBuddyApp.swift (in target 'WordBuddy' from project 'WordBuddy')
-SwiftCompile normal arm64 /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Services/Speaker.swift (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    
-
-SwiftCompile normal arm64 /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Models/Stories.swift (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    
-
-SwiftCompile normal arm64 /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Story/StoryHubView.swift (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    
-
-SwiftCompile normal arm64 /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Story/StoryPlayerView.swift (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    
-
-SwiftCompile normal arm64 /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Services/TextTools.swift (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    
-
-SwiftCompile normal arm64 /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/App/WordBuddyApp.swift (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    
-
-SwiftCompile normal arm64 Compiling\ NotificationService.swift,\ PracticePanel.swift,\ PronunciationScorer.swift,\ ReviewHomeView.swift,\ ReviewSessionView.swift,\ SpeakHubView.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Services/NotificationService.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Speak/PracticePanel.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Services/PronunciationScorer.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Review/ReviewHomeView.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Review/ReviewSessionView.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Speak/SpeakHubView.swift (in target 'WordBuddy' from project 'WordBuddy')
-SwiftCompile normal arm64 /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Services/NotificationService.swift (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    
-
-SwiftCompile normal arm64 /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Speak/PracticePanel.swift (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    
-
-SwiftCompile normal arm64 /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Services/PronunciationScorer.swift (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    
-
-SwiftCompile normal arm64 /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Review/ReviewHomeView.swift (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    
-
-SwiftCompile normal arm64 /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Review/ReviewSessionView.swift (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    
-
-SwiftCompile normal arm64 /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Speak/SpeakHubView.swift (in target 'WordBuddy' from project 'WordBuddy')
-    cd /Users/runner/work/WordBuddy/WordBuddy
-    
-
-SwiftCompile normal arm64 Compiling\ AudioRecorder.swift,\ Components.swift,\ Content.swift,\ LearnHomeView.swift,\ LearnSessionView.swift,\ Models.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Services/AudioRecorder.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Common/Components.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Models/Content.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Learn/LearnHomeView.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Learn/LearnSessionView.swift /Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Models/Models.swift (in target 'WordBuddy' from project 'WordBuddy')
-
+Test Case '-[WordBuddyTests.ContentTests testVoiceIndexIsStablePerSpeaker]' passed (0.001 seconds).
+Test Case '-[WordBuddyTests.ContentTests testWordFieldsAreComplete]' started.
+Test Case '-[WordBuddyTests.ContentTests testWordFieldsAreComplete]' passed (0.001 seconds).
+Test Case '-[WordBuddyTests.ContentTests testWordIDsAreUniqueAndLowercase]' started.
+Test Case '-[WordBuddyTests.ContentTests testWordIDsAreUniqueAndLowercase]' passed (0.002 seconds).
+Test Suite 'ContentTests' passed at 2026-10-27 11:50:25.123.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.017 (0.375) seconds
+Test Suite 'EbbinghausTests' started at 2026-10-27 11:50:25.123.
+Test Case '-[WordBuddyTests.EbbinghausTests testEarlyReviewDoesNotAdvanceSchedule]' started.
+Test Case '-[WordBuddyTests.EbbinghausTests testEarlyReviewDoesNotAdvanceSchedule]' passed (0.023 seconds).
+Test Case '-[WordBuddyTests.EbbinghausTests testEarlyReviewForgotStillResets]' started.
+Test Case '-[WordBuddyTests.EbbinghausTests testEarlyReviewForgotStillResets]' passed (0.002 seconds).
+Test Case '-[WordBuddyTests.EbbinghausTests testForgotRestartsCurve]' started.
+Test Case '-[WordBuddyTests.EbbinghausTests testForgotRestartsCurve]' passed (0.002 seconds).
+Test Case '-[WordBuddyTests.EbbinghausTests testGoodWalksThroughEveryInterval]' started.
+Test Case '-[WordBuddyTests.EbbinghausTests testGoodWalksThroughEveryInterval]' passed (1.447 seconds).
+Test Case '-[WordBuddyTests.EbbinghausTests testHardKeepsCurrentInterval]' started.
+Test Case '-[WordBuddyTests.EbbinghausTests testHardKeepsCurrentInterval]' passed (0.001 seconds).
+Test Case '-[WordBuddyTests.EbbinghausTests testIntervalsMatchSpec]' started.
+Test Case '-[WordBuddyTests.EbbinghausTests testIntervalsMatchSpec]' passed (0.001 seconds).
+Test Case '-[WordBuddyTests.EbbinghausTests testNewWordIsDueAfterFiveMinutes]' started.
+Test Case '-[WordBuddyTests.EbbinghausTests testNewWordIsDueAfterFiveMinutes]' passed (0.017 seconds).
+Test Case '-[WordBuddyTests.EbbinghausTests testStageLabels]' started.
+Test Case '-[WordBuddyTests.EbbinghausTests testStageLabels]' passed (0.001 seconds).
+Test Suite 'EbbinghausTests' passed at 2026-10-27 11:50:26.645.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 1.492 (1.521) seconds
+Test Suite 'NotificationTimeTests' started at 2026-10-27 11:50:26.645.
+Test Case '-[WordBuddyTests.NotificationTimeTests testDaytimeUnchanged]' started.
+Test Case '-[WordBuddyTests.NotificationTimeTests testDaytimeUnchanged]' passed (0.001 seconds).
+Test Case '-[WordBuddyTests.NotificationTimeTests testNightTimeMovesToEightAM]' started.
+Test Case '-[WordBuddyTests.NotificationTimeTests testNightTimeMovesToEightAM]' passed (0.000 seconds).
+Test Suite 'NotificationTimeTests' passed at 2026-10-27 11:50:26.648.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.001 (0.002) seconds
+Test Suite 'ScoringTests' started at 2026-10-27 11:50:26.648.
+Test Case '-[WordBuddyTests.ScoringTests testAlignEmptyInputs]' started.
+Test Case '-[WordBuddyTests.ScoringTests testAlignEmptyInputs]' passed (0.806 seconds).
+Test Case '-[WordBuddyTests.ScoringTests testAlignFuzzyForLongWords]' started.
+Test Case '-[WordBuddyTests.ScoringTests testAlignFuzzyForLongWords]' passed (0.002 seconds).
+Test Case '-[WordBuddyTests.ScoringTests testAlignMissingAndExtraWords]' started.
+Test Case '-[WordBuddyTests.ScoringTests testAlignMissingAndExtraWords]' passed (0.002 seconds).
+Test Case '-[WordBuddyTests.ScoringTests testAlignPerfect]' started.
+Test Case '-[WordBuddyTests.ScoringTests testAlignPerfect]' passed (0.002 seconds).
+Test Case '-[WordBuddyTests.ScoringTests testCombinedScore]' started.
+Test Case '-[WordBuddyTests.ScoringTests testCombinedScore]' passed (0.001 seconds).
+Test Case '-[WordBuddyTests.ScoringTests testEveryPracticeSentenceIsScorable]' started.
+Test Case '-[WordBuddyTests.ScoringTests testEveryPracticeSentenceIsScorable]' passed (1.037 seconds).
+Test Case '-[WordBuddyTests.ScoringTests testNormalize]' started.
+Test Case '-[WordBuddyTests.ScoringTests testNormalize]' passed (0.001 seconds).
+Test Case '-[WordBuddyTests.ScoringTests testResultLevels]' started.
+Test Case '-[WordBuddyTests.ScoringTests testResultLevels]' passed (0.002 seconds).
+Test Suite 'ScoringTests' passed at 2026-10-27 11:50:28.505.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 1.852 (1.856) seconds
+Test Suite 'StoryTests' started at 2026-10-27 11:50:28.505.
+Test Case '-[WordBuddyTests.StoryTests testCuratedFillStepsAreValid]' started.
+Test Case '-[WordBuddyTests.StoryTests testCuratedFillStepsAreValid]' passed (0.010 seconds).
+Test Case '-[WordBuddyTests.StoryTests testCuratedStoriesHaveSpeakingAndFillSteps]' started.
+Test Case '-[WordBuddyTests.StoryTests testCuratedStoriesHaveSpeakingAndFillSteps]' passed (0.367 seconds).
+Test Case '-[WordBuddyTests.StoryTests testCuratedStoriesUseKnownWords]' started.
+Test Case '-[WordBuddyTests.StoryTests testCuratedStoriesUseKnownWords]' passed (0.007 seconds).
+Test Case '-[WordBuddyTests.StoryTests testRemixIsAlwaysValidAcrossManyRuns]' started.
+Test Case '-[WordBuddyTests.StoryTests testRemixIsAlwaysValidAcrossManyRuns]' passed (0.394 seconds).
+Test Case '-[WordBuddyTests.StoryTests testRemixNeedsAtLeastThreeWords]' started.
+Test Case '-[WordBuddyTests.StoryTests testRemixNeedsAtLeastThreeWords]' passed (0.009 seconds).
+Test Case '-[WordBuddyTests.StoryTests testRemixPrioritizesDueWords]' started.
+Test Case '-[WordBuddyTests.StoryTests testRemixPrioritizesDueWords]' passed (0.083 seconds).
+Test Case '-[WordBuddyTests.StoryTests testRemixWithThreeWordsPadsOptions]' started.
+Test Case '-[WordBuddyTests.StoryTests testRemixWithThreeWordsPadsOptions]' passed (0.011 seconds).
+Test Suite 'StoryTests' passed at 2026-10-27 11:50:29.400.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 0.880 (0.895) seconds
+Test Suite 'TextToolsTests' started at 2026-10-27 11:50:29.401.
+Test Case '-[WordBuddyTests.TextToolsTests testBlankKeepsPunctuationAndOnlyFirstOccurrence]' started.
+Test Case '-[WordBuddyTests.TextToolsTests testBlankKeepsPunctuationAndOnlyFirstOccurrence]' passed (0.002 seconds).
+Test Case '-[WordBuddyTests.TextToolsTests testContains]' started.
+Test Case '-[WordBuddyTests.TextToolsTests testContains]' passed (0.002 seconds).
+Test Case '-[WordBuddyTests.TextToolsTests testHighlightKeepsOriginalText]' started.
+Test Case '-[WordBuddyTests.TextToolsTests testHighlightKeepsOriginalText]' passed (0.106 seconds).
+Test Case '-[WordBuddyTests.TextToolsTests testTokenMatchesWordForms]' started.
+Test Case '-[WordBuddyTests.TextToolsTests testTokenMatchesWordForms]' passed (0.001 seconds).
+Test Suite 'TextToolsTests' passed at 2026-10-27 11:50:29.513.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.110 (0.112) seconds
+Test Suite 'WordBuddyTests.xctest' passed at 2026-10-27 11:50:29.513.
+	 Executed 38 tests, with 0 failures (0 unexpected) in 4.352 (4.765) seconds
+Test Suite 'All tests' passed at 2026-10-27 11:50:29.513.
+	 Executed 38 tests, with 0 failures (0 unexpected) in 4.352 (4.766) seconds
+2026-10-27 11:50:36.407957+0000 WordBuddyUITests-Runner[4530:20798] [Default] Running tests...
+2026-10-27 11:50:36.469920+0000 WordBuddyUITests-Runner[4530:20837] [General] Failed to send CA Event for app launch measurements for ca_event_type: 0 event_name: com.apple.app_launch_measurement.FirstFramePresentationMetric
+2026-10-27 11:50:38.118519+0000 WordBuddyUITests-Runner[4530:20831] [General] Failed to send CA Event for app launch measurements for ca_event_type: 1 event_name: com.apple.app_launch_measurement.ExtendedLaunchMetrics
+objc[4530]: Class UIAccessibilityLoaderWebShared is implemented in both /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x108ec4310) and /Library/Developer/CoreSimulator/Volumes/iOS_23F77/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 26.5.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x108f6c398). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'All tests' started at 2026-10-27 11:50:51.548.
+Test Suite 'WordBuddyUITests.xctest' started at 2026-10-27 11:50:51.550.
+Test Suite 'SmokeUITests' started at 2026-10-27 11:50:51.551.
+Test Case '-[WordBuddyUITests.SmokeUITests testFirstLessonFlow]' started.
+    t =     0.00s Start Test at 2026-10-27 11:50:51.552
+    t =     1.53s Set Up
+    t =     1.57s     Open com.example.wordbuddy
+    t =     1.57s         Launch com.example.wordbuddy
+2026-10-27 11:50:55.823 xcodebuild[2101:10285] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-10-27 11:50:55.826 xcodebuild[2101:10285] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =     5.88s             Setting up automation session
+    t =     7.79s             Wait for com.example.wordbuddy to idle
+    t =    10.41s Waiting 10.0s for "学新词" NavigationBar to exist
+    t =    11.46s     Checking `Expect predicate `existsNoRetry == 1` for object "学新词" NavigationBar`
+    t =    11.46s         Checking existence of `"学新词" NavigationBar`
+    t =    11.71s Waiting 5.0s for Button (First Match) to exist
+    t =    12.76s     Checking `Expect predicate `existsNoRetry == 1` for object Button (First Match)`
+    t =    12.76s         Checking existence of `Button (First Match)`
+    t =    12.87s Tap Button (First Match)
+    t =    12.87s     Wait for com.example.wordbuddy to idle
+    t =    12.87s     Find the Button (First Match)
+    t =    13.00s     Check for interrupting elements affecting "⏰, 下一课, 迟到的早晨, morning · coffee · late · hurry" Button
+    t =    13.05s         Wait for com.apple.springboard to idle
+    t =    13.33s     Found 1 interrupting element:
+    t =    13.33s         Find the "“单词伙伴” Would Like to Send You Notifications" Alert
+    t =    13.38s "“单词伙伴” Would Like to Send You Notifications" Alert from Application 'com.apple.springboard'
+    t =    13.38s     Invoking UI interruption monitors for "“单词伙伴” Would Like to Send You Notifications" Alert from Application 'com.apple.springboard'
+    t =    13.38s         Find the "“单词伙伴” Would Like to Send You Notifications" Alert
+    t =    13.42s         Checking existence of `Button (Elements matching predicate 'userTestingAttributes CONTAINS "cancel-button"')`
+    t =    13.49s         Get all elements bound by accessibility element for: Elements matching predicate 'userTestingAttributes CONTAINS "default-button"'
+    t =    13.54s         Checking existence of `"Allow" Button`
+    t =    13.58s Default interruption handler attempting to dismiss alert by tapping "Allow" Button.
+    t =    13.58s         Tap "Allow" Button
+    t =    13.58s             Wait for com.apple.springboard to idle
+    t =    13.58s             Find the "Allow" Button
+    t =    13.63s             Check for interrupting elements affecting "Allow" Button
+    t =    13.69s             Synthesize event
+    t =    14.20s             Wait for com.apple.springboard to idle
+    t =    14.58s         Waiting 1.0s for Alert to not exist
+    t =    15.59s             Checking `Expect predicate `existsNoRetry == 0` for object Alert`
+    t =    15.59s                 Checking existence of `Alert`
+    t =    15.65s             Checking existence of `Alert`
+    t =    15.72s         Verifying handling...
+    t =    15.97s Confirmed successful handling of interrupting element
+    t =    15.98s     Synthesize event
+    t =    16.35s     Wait for com.example.wordbuddy to idle
+    t =    18.45s Waiting 5.0s for "morning" StaticText to exist
+    t =    19.49s     Checking `Expect predicate `existsNoRetry == 1` for object "morning" StaticText`
+    t =    19.52s         Checking existence of `"morning" StaticText`
+    t =    22.26s Find the Target Application 'com.example.wordbuddy'
+    t =    22.89s Added attachment named '02-单词卡'
+    t =    22.89s Tap "下一个" Button
+    t =    22.90s     Wait for com.example.wordbuddy to idle
+    t =    22.93s     Find the "下一个" Button
+    t =    23.58s     Check for interrupting elements affecting "下一个" Button
+    t =    23.81s     Synthesize event
+    t =    24.31s     Wait for com.example.wordbuddy to idle
+    t =    24.69s Tap "下一个" Button
+    t =    24.69s     Wait for com.example.wordbuddy to idle
+    t =    24.72s     Find the "下一个" Button
+    t =    25.09s     Check for interrupting elements affecting "下一个" Button
+    t =    25.32s     Synthesize event
+    t =    25.72s     Wait for com.example.wordbuddy to idle
+    t =    25.77s Tap "下一个" Button
+    t =    25.77s     Wait for com.example.wordbuddy to idle
+    t =    25.85s     Find the "下一个" Button
+    t =    26.09s     Check for interrupting elements affecting "下一个" Button
+    t =    26.43s     Synthesize event
+    t =    26.81s     Wait for com.example.wordbuddy to idle
+    t =    27.03s Tap "进入场景 ▶︎" Button
+    t =    27.03s     Wait for com.example.wordbuddy to idle
+    t =    27.04s     Find the "进入场景 ▶︎" Button
+    t =    27.61s     Check for interrupting elements affecting "进入场景 ▶︎" Button
+    t =    27.82s     Synthesize event
+    t =    28.23s     Wait for com.example.wordbuddy to idle
+    t =    28.45s Waiting 5.0s for "播放全部" Button to exist
+    t =    29.51s     Checking `Expect predicate `existsNoRetry == 1` for object "播放全部" Button`
+    t =    29.51s         Checking existence of `"播放全部" Button`
+    t =    29.66s Checking existence of `"今日日常用语" StaticText`
+    t =    29.87s Find the Target Application 'com.example.wordbuddy'
+    t =    30.23s Added attachment named '03-场景'
+    t =    30.24s Swipe up Target Application 'com.example.wordbuddy'
+    t =    30.24s     Wait for com.example.wordbuddy to idle
+    t =    30.24s     Find the Target Application 'com.example.wordbuddy'
+    t =    30.33s     Check for interrupting elements affecting "单词伙伴" Application
+    t =    30.43s     Synthesize event
+    t =    30.87s     Wait for com.example.wordbuddy to idle
+    t =    31.48s Tap "小测验 ▶︎" Button
+    t =    31.48s     Wait for com.example.wordbuddy to idle
+    t =    31.48s     Find the "小测验 ▶︎" Button
+    t =    31.59s     Check for interrupting elements affecting "小测验 ▶︎" Button
+    t =    31.68s     Synthesize event
+    t =    31.99s     Wait for com.example.wordbuddy to idle
+    t =    32.00s Waiting 5.0s for StaticText (First Match) to exist
+    t =    33.03s     Checking `Expect predicate `existsNoRetry == 1` for object StaticText (First Match)`
+    t =    33.03s         Checking existence of `StaticText (First Match)`
+    t =    33.21s Find the Target Application 'com.example.wordbuddy'
+    t =    33.57s Added attachment named '04-小测验'
+    t =    33.57s Tear Down
+Test Case '-[WordBuddyUITests.SmokeUITests testFirstLessonFlow]' passed (35.420 seconds).
+Test Case '-[WordBuddyUITests.SmokeUITests testLaunchAndSwitchTabs]' started.
+    t =     0.00s Start Test at 2026-10-27 11:51:26.973
+    t =     0.05s Set Up
+    t =     0.05s     Open com.example.wordbuddy
+    t =     0.05s         Launch com.example.wordbuddy
+    t =     0.05s             Terminate com.example.wordbuddy:4861
+2026-10-27 11:51:28.131 xcodebuild[2101:10285] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-10-27 11:51:28.132 xcodebuild[2101:10285] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =     1.90s             Setting up automation session
+    t =     4.89s             Wait for com.example.wordbuddy to idle
+    t =     7.54s Waiting 10.0s for "学新词" NavigationBar to exist
+    t =     8.56s     Checking `Expect predicate `existsNoRetry == 1` for object "学新词" NavigationBar`
+    t =     8.56s         Checking existence of `"学新词" NavigationBar`
+    t =     8.76s Find the Target Application 'com.example.wordbuddy'
+    t =     9.09s Added attachment named '01-学习首页'
+    t =     9.10s Tap "复习" Button
+    t =     9.10s     Wait for com.example.wordbuddy to idle
+    t =     9.11s     Find the "复习" Button
+    t =     9.15s     Check for interrupting elements affecting "复习" Button
+    t =     9.23s     Synthesize event
+    t =     9.55s     Wait for com.example.wordbuddy to idle
+    t =    11.34s Waiting 5.0s for "复习" NavigationBar to exist
+    t =    12.37s     Checking `Expect predicate `existsNoRetry == 1` for object "复习" NavigationBar`
+    t =    12.37s         Checking existence of `"复习" NavigationBar`
+    t =    12.42s Find the Target Application 'com.example.wordbuddy'
+    t =    12.72s Added attachment named 'tab-复习'
+    t =    12.72s Tap "剧场" Button
+    t =    12.72s     Wait for com.example.wordbuddy to idle
+    t =    12.73s     Find the "剧场" Button
+    t =    12.81s     Check for interrupting elements affecting "theatermasks.fill" Button
+    t =    12.85s     Synthesize event
+    t =    13.17s     Wait for com.example.wordbuddy to idle
+    t =    15.11s Waiting 5.0s for "互动剧场" NavigationBar to exist
+    t =    16.17s     Checking `Expect predicate `existsNoRetry == 1` for object "互动剧场" NavigationBar`
+    t =    16.17s         Checking existence of `"互动剧场" NavigationBar`
+    t =    16.25s Find the Target Application 'com.example.wordbuddy'
+    t =    16.49s Added attachment named 'tab-剧场'
+    t =    16.49s Tap "发音" Button
+    t =    16.49s     Wait for com.example.wordbuddy to idle
+    t =    16.49s     Find the "发音" Button
+    t =    16.53s     Check for interrupting elements affecting "waveform" Button
+    t =    16.57s     Synthesize event
+    t =    16.87s     Wait for com.example.wordbuddy to idle
+    t =    18.45s Waiting 5.0s for "发音练习" NavigationBar to exist
+    t =    19.48s     Checking `Expect predicate `existsNoRetry == 1` for object "发音练习" NavigationBar`
+    t =    19.48s         Checking existence of `"发音练习" NavigationBar`
+    t =    19.53s Find the Target Application 'com.example.wordbuddy'
+    t =    19.74s Added attachment named 'tab-发音'
+    t =    19.74s Tap "学习" Button
+    t =    19.74s     Wait for com.example.wordbuddy to idle
+    t =    19.75s     Find the "学习" Button
+    t =    19.84s     Check for interrupting elements affecting "book.fill" Button
+    t =    19.90s     Synthesize event
+    t =    20.26s     Wait for com.example.wordbuddy to idle
+    t =    21.67s Waiting 5.0s for "学新词" NavigationBar to exist
+    t =    22.70s     Checking `Expect predicate `existsNoRetry == 1` for object "学新词" NavigationBar`
+    t =    22.70s         Checking existence of `"学新词" NavigationBar`
+    t =    22.78s Find the Target Application 'com.example.wordbuddy'
+    t =    23.11s Added attachment named 'tab-学习'
+    t =    23.11s Tear Down
+Test Case '-[WordBuddyUITests.SmokeUITests testLaunchAndSwitchTabs]' passed (23.619 seconds).
+Test Case '-[WordBuddyUITests.SmokeUITests testPronunciationScreenOpens]' started.
+    t =     0.00s Start Test at 2026-10-27 11:51:50.592
+    t =     0.03s Set Up
+    t =     0.04s     Open com.example.wordbuddy
+    t =     0.04s         Launch com.example.wordbuddy
+    t =     0.04s             Terminate com.example.wordbuddy:5437
+2026-10-27 11:51:51.691 xcodebuild[2101:10285] [MT] IDELaunchParametersSnapshot: The operation couldn’t be completed. (DebuggerLLDB.DebuggerVersionStore.StoreError error 0.)
+2026-10-27 11:51:51.691 xcodebuild[2101:10285] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =     2.06s             Setting up automation session
+    t =     3.75s             Wait for com.example.wordbuddy to idle
+    t =     6.24s Tap "发音" Button
+    t =     6.24s     Wait for com.example.wordbuddy to idle
+    t =     6.25s     Find the "发音" Button
+    t =     6.69s     Check for interrupting elements affecting "发音" Button
+    t =     6.80s     Synthesize event
+    t =     7.12s     Wait for com.example.wordbuddy to idle
+    t =     9.12s Waiting 5.0s for "发音练习" NavigationBar to exist
+    t =    10.12s     Checking `Expect predicate `existsNoRetry == 1` for object "发音练习" NavigationBar`
+    t =    10.12s         Checking existence of `"发音练习" NavigationBar`
+    t =    10.22s Tap Button (First Match)
+    t =    10.22s     Wait for com.example.wordbuddy to idle
+    t =    10.23s     Find the Button (First Match)
+    t =    10.32s     Check for interrupting elements affecting "🌅, morning, /ˈmɔːrnɪŋ/, 未练习" Button
+    t =    10.41s     Synthesize event
+    t =    10.73s     Wait for com.example.wordbuddy to idle
+    t =    11.87s Waiting 5.0s for "跟读打分" NavigationBar to exist
+    t =    12.92s     Checking `Expect predicate `existsNoRetry == 1` for object "跟读打分" NavigationBar`
+    t =    12.92s         Checking existence of `"跟读打分" NavigationBar`
+    t =    13.00s Checking existence of `"开始录音" Button`
+    t =    13.10s Find the Target Application 'com.example.wordbuddy'
+    t =    13.48s Added attachment named '05-跟读打分'
+    t =    13.49s Tear Down
+Test Case '-[WordBuddyUITests.SmokeUITests testPronunciationScreenOpens]' passed (24.360 seconds).
+Test Suite 'SmokeUITests' passed at 2026-10-27 11:52:14.952.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 83.398 (83.402) seconds
+Test Suite 'WordBuddyUITests.xctest' passed at 2026-10-27 11:52:14.953.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 83.398 (83.403) seconds
+Test Suite 'All tests' passed at 2026-10-27 11:52:14.954.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 83.398 (83.406) seconds
+2026-10-27 11:53:01.231950+0000 WordBuddyUITests-Runner[4530:27575] [Default] Xcode took 42.50 seconds to acknowledge that testing finished.
+2026-10-27 11:54:43.836 xcodebuild[2101:10285] [MT] IDETestOperationsObserverDebug: 472.226 elapsed -- Testing started completed.
+2026-10-27 11:54:43.836 xcodebuild[2101:10285] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-27 11:54:43.836 xcodebuild[2101:10285] [MT] IDETestOperationsObserverDebug: 472.226 sec, +472.226 sec -- end
 
 Test session results, code coverage, and logs:
 	/Users/runner/work/WordBuddy/WordBuddy/TestResults.xcresult
 
-Testing failed:
-	Type 'CardModifier' does not conform to protocol 'ViewModifier'
-	Testing cancelled because the build failed.
+** TEST SUCCEEDED **
 
-** TEST FAILED **
-
-
-The following build commands failed:
-	EmitSwiftModule normal arm64 (in target 'WordBuddy' from project 'WordBuddy')
-	SwiftEmitModule normal arm64 Emitting\ module\ for\ WordBuddy (in target 'WordBuddy' from project 'WordBuddy')
-	Testing project WordBuddy with scheme WordBuddy
-(3 failures)
+Testing started

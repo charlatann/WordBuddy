@@ -1,2 +1,2 @@
-test=failure
-ipad=failure
+test=success
+ipad=success

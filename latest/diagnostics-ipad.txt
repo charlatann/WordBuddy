@@ -1,1 +1,0 @@
-/Users/runner/work/WordBuddy/WordBuddy/WordBuddy/Views/Common/Components.swift:5:8: error: type 'CardModifier' does not conform to protocol 'ViewModifier'
