@@ -1,0 +1,475 @@
+{
+  "devices" : [
+    {
+      "architecture" : "arm64",
+      "deviceId" : "77AA4492-C787-4EEE-A772-05D4B3E9ECCD",
+      "deviceName" : "iPhone 17 Pro",
+      "modelName" : "iPhone 17 Pro",
+      "osBuildNumber" : "23F77",
+      "osVersion" : "26.5",
+      "platform" : "iOS Simulator"
+    }
+  ],
+  "testNodes" : [
+    {
+      "children" : [
+        {
+          "children" : [
+            {
+              "children" : [
+                {
+                  "duration" : "0.0025s",
+                  "durationInSeconds" : 0.0024629831314086914,
+                  "name" : "testDialogueScenesHaveSpeakersAndStoriesHaveNarration()",
+                  "nodeIdentifier" : "ContentTests/testDialogueScenesHaveSpeakersAndStoriesHaveNarration()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/ContentTests/testDialogueScenesHaveSpeakersAndStoriesHaveNarration",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.0041s",
+                  "durationInSeconds" : 0.00412297248840332,
+                  "name" : "testEveryWordAppearsInItsScene()",
+                  "nodeIdentifier" : "ContentTests/testEveryWordAppearsInItsScene()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/ContentTests/testEveryWordAppearsInItsScene",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.00073s",
+                  "durationInSeconds" : 0.0007309913635253906,
+                  "name" : "testLookupTables()",
+                  "nodeIdentifier" : "ContentTests/testLookupTables()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/ContentTests/testLookupTables",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.00054s",
+                  "durationInSeconds" : 0.0005439519882202148,
+                  "name" : "testSceneIDsAreUnique()",
+                  "nodeIdentifier" : "ContentTests/testSceneIDsAreUnique()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/ContentTests/testSceneIDsAreUnique",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.0016s",
+                  "durationInSeconds" : 0.0015850067138671875,
+                  "name" : "testScenesAreShortAndBeginnerFriendly()",
+                  "nodeIdentifier" : "ContentTests/testScenesAreShortAndBeginnerFriendly()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/ContentTests/testScenesAreShortAndBeginnerFriendly",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.42s",
+                  "durationInSeconds" : 0.41932594776153564,
+                  "name" : "testUnitAndWordCounts()",
+                  "nodeIdentifier" : "ContentTests/testUnitAndWordCounts()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/ContentTests/testUnitAndWordCounts",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.00056s",
+                  "durationInSeconds" : 0.0005589723587036133,
+                  "name" : "testVoiceIndexIsStablePerSpeaker()",
+                  "nodeIdentifier" : "ContentTests/testVoiceIndexIsStablePerSpeaker()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/ContentTests/testVoiceIndexIsStablePerSpeaker",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.00053s",
+                  "durationInSeconds" : 0.0005309581756591797,
+                  "name" : "testWordFieldsAreComplete()",
+                  "nodeIdentifier" : "ContentTests/testWordFieldsAreComplete()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/ContentTests/testWordFieldsAreComplete",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.00068s",
+                  "durationInSeconds" : 0.0006750822067260742,
+                  "name" : "testWordIDsAreUniqueAndLowercase()",
+                  "nodeIdentifier" : "ContentTests/testWordIDsAreUniqueAndLowercase()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/ContentTests/testWordIDsAreUniqueAndLowercase",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "ContentTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/ContentTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "0.0069s",
+                  "durationInSeconds" : 0.006946921348571777,
+                  "name" : "testEarlyReviewDoesNotAdvanceSchedule()",
+                  "nodeIdentifier" : "EbbinghausTests/testEarlyReviewDoesNotAdvanceSchedule()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/EbbinghausTests/testEarlyReviewDoesNotAdvanceSchedule",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.0015s",
+                  "durationInSeconds" : 0.001540064811706543,
+                  "name" : "testEarlyReviewForgotStillResets()",
+                  "nodeIdentifier" : "EbbinghausTests/testEarlyReviewForgotStillResets()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/EbbinghausTests/testEarlyReviewForgotStillResets",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.0033s",
+                  "durationInSeconds" : 0.003285050392150879,
+                  "name" : "testForgotRestartsCurve()",
+                  "nodeIdentifier" : "EbbinghausTests/testForgotRestartsCurve()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/EbbinghausTests/testForgotRestartsCurve",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.0009s",
+                  "durationInSeconds" : 0.0009019374847412109,
+                  "name" : "testGoodWalksThroughEveryInterval()",
+                  "nodeIdentifier" : "EbbinghausTests/testGoodWalksThroughEveryInterval()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/EbbinghausTests/testGoodWalksThroughEveryInterval",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.28s",
+                  "durationInSeconds" : 0.2833080291748047,
+                  "name" : "testHardKeepsCurrentInterval()",
+                  "nodeIdentifier" : "EbbinghausTests/testHardKeepsCurrentInterval()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/EbbinghausTests/testHardKeepsCurrentInterval",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.0016s",
+                  "durationInSeconds" : 0.0016149282455444336,
+                  "name" : "testIntervalsMatchSpec()",
+                  "nodeIdentifier" : "EbbinghausTests/testIntervalsMatchSpec()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/EbbinghausTests/testIntervalsMatchSpec",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.017s",
+                  "durationInSeconds" : 0.016662001609802246,
+                  "name" : "testNewWordIsDueAfterFiveMinutes()",
+                  "nodeIdentifier" : "EbbinghausTests/testNewWordIsDueAfterFiveMinutes()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/EbbinghausTests/testNewWordIsDueAfterFiveMinutes",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.00055s",
+                  "durationInSeconds" : 0.0005469322204589844,
+                  "name" : "testStageLabels()",
+                  "nodeIdentifier" : "EbbinghausTests/testStageLabels()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/EbbinghausTests/testStageLabels",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "EbbinghausTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/EbbinghausTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "0.011s",
+                  "durationInSeconds" : 0.011038899421691895,
+                  "name" : "testDaytimeUnchanged()",
+                  "nodeIdentifier" : "NotificationTimeTests/testDaytimeUnchanged()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/NotificationTimeTests/testDaytimeUnchanged",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.00067s",
+                  "durationInSeconds" : 0.0006710290908813477,
+                  "name" : "testNightTimeMovesToEightAM()",
+                  "nodeIdentifier" : "NotificationTimeTests/testNightTimeMovesToEightAM()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/NotificationTimeTests/testNightTimeMovesToEightAM",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "NotificationTimeTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/NotificationTimeTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "0.0011s",
+                  "durationInSeconds" : 0.001145005226135254,
+                  "name" : "testAlignEmptyInputs()",
+                  "nodeIdentifier" : "ScoringTests/testAlignEmptyInputs()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/ScoringTests/testAlignEmptyInputs",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.00066s",
+                  "durationInSeconds" : 0.0006579160690307617,
+                  "name" : "testAlignFuzzyForLongWords()",
+                  "nodeIdentifier" : "ScoringTests/testAlignFuzzyForLongWords()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/ScoringTests/testAlignFuzzyForLongWords",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.0015s",
+                  "durationInSeconds" : 0.0015490055084228516,
+                  "name" : "testAlignMissingAndExtraWords()",
+                  "nodeIdentifier" : "ScoringTests/testAlignMissingAndExtraWords()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/ScoringTests/testAlignMissingAndExtraWords",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.0029s",
+                  "durationInSeconds" : 0.0028880834579467773,
+                  "name" : "testAlignPerfect()",
+                  "nodeIdentifier" : "ScoringTests/testAlignPerfect()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/ScoringTests/testAlignPerfect",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.00078s",
+                  "durationInSeconds" : 0.0007759332656860352,
+                  "name" : "testCombinedScore()",
+                  "nodeIdentifier" : "ScoringTests/testCombinedScore()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/ScoringTests/testCombinedScore",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.008s",
+                  "durationInSeconds" : 0.007950067520141602,
+                  "name" : "testEveryPracticeSentenceIsScorable()",
+                  "nodeIdentifier" : "ScoringTests/testEveryPracticeSentenceIsScorable()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/ScoringTests/testEveryPracticeSentenceIsScorable",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.0016s",
+                  "durationInSeconds" : 0.0016200542449951172,
+                  "name" : "testNormalize()",
+                  "nodeIdentifier" : "ScoringTests/testNormalize()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/ScoringTests/testNormalize",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.00084s",
+                  "durationInSeconds" : 0.0008400678634643555,
+                  "name" : "testResultLevels()",
+                  "nodeIdentifier" : "ScoringTests/testResultLevels()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/ScoringTests/testResultLevels",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "ScoringTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/ScoringTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "0.016s",
+                  "durationInSeconds" : 0.015866994857788086,
+                  "name" : "testCuratedFillStepsAreValid()",
+                  "nodeIdentifier" : "StoryTests/testCuratedFillStepsAreValid()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/StoryTests/testCuratedFillStepsAreValid",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.01s",
+                  "durationInSeconds" : 0.010362029075622559,
+                  "name" : "testCuratedStoriesHaveSpeakingAndFillSteps()",
+                  "nodeIdentifier" : "StoryTests/testCuratedStoriesHaveSpeakingAndFillSteps()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/StoryTests/testCuratedStoriesHaveSpeakingAndFillSteps",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.012s",
+                  "durationInSeconds" : 0.012208104133605957,
+                  "name" : "testCuratedStoriesUseKnownWords()",
+                  "nodeIdentifier" : "StoryTests/testCuratedStoriesUseKnownWords()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/StoryTests/testCuratedStoriesUseKnownWords",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.41s",
+                  "durationInSeconds" : 0.4092390537261963,
+                  "name" : "testRemixIsAlwaysValidAcrossManyRuns()",
+                  "nodeIdentifier" : "StoryTests/testRemixIsAlwaysValidAcrossManyRuns()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/StoryTests/testRemixIsAlwaysValidAcrossManyRuns",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.0092s",
+                  "durationInSeconds" : 0.009178996086120605,
+                  "name" : "testRemixNeedsAtLeastThreeWords()",
+                  "nodeIdentifier" : "StoryTests/testRemixNeedsAtLeastThreeWords()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/StoryTests/testRemixNeedsAtLeastThreeWords",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.11s",
+                  "durationInSeconds" : 0.1148519515991211,
+                  "name" : "testRemixPrioritizesDueWords()",
+                  "nodeIdentifier" : "StoryTests/testRemixPrioritizesDueWords()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/StoryTests/testRemixPrioritizesDueWords",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.0075s",
+                  "durationInSeconds" : 0.007456064224243164,
+                  "name" : "testRemixWithThreeWordsPadsOptions()",
+                  "nodeIdentifier" : "StoryTests/testRemixWithThreeWordsPadsOptions()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/StoryTests/testRemixWithThreeWordsPadsOptions",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "StoryTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/StoryTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "0.011s",
+                  "durationInSeconds" : 0.011328935623168945,
+                  "name" : "testBlankKeepsPunctuationAndOnlyFirstOccurrence()",
+                  "nodeIdentifier" : "TextToolsTests/testBlankKeepsPunctuationAndOnlyFirstOccurrence()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/TextToolsTests/testBlankKeepsPunctuationAndOnlyFirstOccurrence",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.00058s",
+                  "durationInSeconds" : 0.0005769729614257812,
+                  "name" : "testContains()",
+                  "nodeIdentifier" : "TextToolsTests/testContains()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/TextToolsTests/testContains",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.0093s",
+                  "durationInSeconds" : 0.00931096076965332,
+                  "name" : "testHighlightKeepsOriginalText()",
+                  "nodeIdentifier" : "TextToolsTests/testHighlightKeepsOriginalText()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/TextToolsTests/testHighlightKeepsOriginalText",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.00081s",
+                  "durationInSeconds" : 0.0008139610290527344,
+                  "name" : "testTokenMatchesWordForms()",
+                  "nodeIdentifier" : "TextToolsTests/testTokenMatchesWordForms()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/TextToolsTests/testTokenMatchesWordForms",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "TextToolsTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests/TextToolsTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            }
+          ],
+          "name" : "WordBuddyTests",
+          "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyTests",
+          "nodeType" : "Unit test bundle",
+          "result" : "Passed"
+        },
+        {
+          "children" : [
+            {
+              "children" : [
+                {
+                  "children" : [
+                    {
+                      "name" : "[Internal] Thread running at User-interactive quality-of-service class waiting on a lower QoS thread running at Default quality-of-service class. Investigate ways to avoid priority inversions",
+                      "nodeType" : "Runtime Warning"
+                    }
+                  ],
+                  "duration" : "44s",
+                  "durationInSeconds" : 44.15354096889496,
+                  "name" : "testFirstLessonFlow()",
+                  "nodeIdentifier" : "SmokeUITests/testFirstLessonFlow()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyUITests/SmokeUITests/testFirstLessonFlow",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "22s",
+                  "durationInSeconds" : 22.081493973731995,
+                  "name" : "testLaunchAndSwitchTabs()",
+                  "nodeIdentifier" : "SmokeUITests/testLaunchAndSwitchTabs()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyUITests/SmokeUITests/testLaunchAndSwitchTabs",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "13s",
+                  "durationInSeconds" : 13.11458706855774,
+                  "name" : "testPronunciationScreenOpens()",
+                  "nodeIdentifier" : "SmokeUITests/testPronunciationScreenOpens()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyUITests/SmokeUITests/testPronunciationScreenOpens",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "SmokeUITests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyUITests/SmokeUITests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            }
+          ],
+          "name" : "WordBuddyUITests",
+          "nodeIdentifierURL" : "test://com.apple.xcode/WordBuddy/WordBuddyUITests",
+          "nodeType" : "UI test bundle",
+          "result" : "Passed"
+        }
+      ],
+      "name" : "WordBuddy",
+      "nodeType" : "Test Plan",
+      "result" : "Passed"
+    }
+  ],
+  "testPlanConfigurations" : [
+    {
+      "configurationId" : "1",
+      "configurationName" : "Test Scheme Action"
+    }
+  ]
+}

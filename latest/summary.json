@@ -3,7 +3,7 @@
     {
       "device" : {
         "architecture" : "arm64",
-        "deviceId" : "E839A11B-51B4-4AD3-ACF4-A53B95B7C957",
+        "deviceId" : "77AA4492-C787-4EEE-A772-05D4B3E9ECCD",
         "deviceName" : "iPhone 17 Pro",
         "modelName" : "iPhone 17 Pro",
         "osBuildNumber" : "23F77",
@@ -23,11 +23,11 @@
   "environmentDescription" : "WordBuddy · Built with macOS 26.6.2",
   "expectedFailures" : 0,
   "failedTests" : 0,
-  "finishTime" : 1793128813.443,
+  "finishTime" : 1793170294.771,
   "passedTests" : 41,
   "result" : "Passed",
   "skippedTests" : 0,
-  "startTime" : 1793128268.498,
+  "startTime" : 1793169854.839,
   "statistics" : [
 
   ],
@@ -38,8 +38,8 @@
   "topInsights" : [
     {
       "category" : "Longest Test Runs",
-      "impact" : "52% of duration",
-      "text" : "1 longest test run with outlier durations exceeding 0.67s (three standard deviations)"
+      "impact" : "60% of duration",
+      "text" : "2 longest test runs with outlier durations exceeding 0.34s (three standard deviations)"
     }
   ],
   "totalTestCount" : 41

@@ -1,12 +1,12 @@
 Command line invocation:
-    /Applications/Xcode_26.6.app/Contents/Developer/usr/bin/xcodebuild build -project WordBuddy.xcodeproj -scheme WordBuddy -destination id=99DEE653-946C-406D-8E9E-238D1FCE93C9 CODE_SIGNING_ALLOWED=NO
+    /Applications/Xcode_26.6.app/Contents/Developer/usr/bin/xcodebuild build -project WordBuddy.xcodeproj -scheme WordBuddy -destination id=687AB7EE-DF9A-4A96-878E-7509AB01A80C CODE_SIGNING_ALLOWED=NO
 
 Build settings from command line:
     CODE_SIGNING_ALLOWED = NO
 
 --- xcodebuild: WARNING: Using the first of multiple matching destinations:
-{ platform:iOS Simulator, arch:arm64, id:99DEE653-946C-406D-8E9E-238D1FCE93C9, OS:26.5, name:iPad Pro 13-inch (M5) }
-{ platform:iOS Simulator, arch:x86_64, id:99DEE653-946C-406D-8E9E-238D1FCE93C9, OS:26.5, name:iPad Pro 13-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:687AB7EE-DF9A-4A96-878E-7509AB01A80C, OS:26.5, name:iPad Pro 13-inch (M5) }
+{ platform:iOS Simulator, arch:x86_64, id:687AB7EE-DF9A-4A96-878E-7509AB01A80C, OS:26.5, name:iPad Pro 13-inch (M5) }
 ComputePackagePrebuildTargetDependencyGraph
 
 Prepare packages
@@ -32,8 +32,8 @@ ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/X
 
 ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
 
-Build description signature: a52ba588f376ae50b6de6923e60f643c
-Build description path: /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/XCBuildData/a52ba588f376ae50b6de6923e60f643c.xcbuilddata
+Build description signature: dd163ac0c4f24fbfb4aec46ba488fcb8
+Build description path: /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/XCBuildData/dd163ac0c4f24fbfb4aec46ba488fcb8.xcbuilddata
 ClangStatCache /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-688ef53f1462e2c8f657fdc38a81448ff45c64a1807a658693f2a61704f17a36.sdkstatcache
     cd /Users/runner/work/WordBuddy/WordBuddy/WordBuddy.xcodeproj
     /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -o /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-688ef53f1462e2c8f657fdc38a81448ff45c64a1807a658693f2a61704f17a36.sdkstatcache
@@ -44,7 +44,7 @@ ProcessInfoPlistFile /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy
 
 CopySwiftLibs /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app (in target 'WordBuddy' from project 'WordBuddy')
     cd /Users/runner/work/WordBuddy/WordBuddy
-    builtin-swiftStdLibTool --copy --verbose --scan-executable /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/WordBuddy.debug.dylib --scan-folder /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Frameworks --scan-folder /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/PlugIns --scan-folder /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/SystemExtensions --scan-folder /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Extensions --platform iphonesimulator --toolchain /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.6.109.0.QPjKCy/Metal.xctoolchain --toolchain /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+    builtin-swiftStdLibTool --copy --verbose --scan-executable /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/WordBuddy.debug.dylib --scan-folder /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Frameworks --scan-folder /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/PlugIns --scan-folder /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/SystemExtensions --scan-folder /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Extensions --platform iphonesimulator --toolchain /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.6.109.0.V2OMEA/Metal.xctoolchain --toolchain /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Intermediates.noindex/WordBuddy.build/Debug-iphonesimulator/WordBuddy.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
 Ignoring --strip-bitcode because --sign was not passed
 
 Validate /Users/runner/Library/Developer/Xcode/DerivedData/WordBuddy-enkrzuviiheyopgzsqrlnpsjkxiv/Build/Products/Debug-iphonesimulator/WordBuddy.app (in target 'WordBuddy' from project 'WordBuddy')

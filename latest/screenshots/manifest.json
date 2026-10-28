@@ -3,30 +3,30 @@
     "attachments" : [
       {
         "configurationName" : "Test Scheme Action",
-        "deviceId" : "E839A11B-51B4-4AD3-ACF4-A53B95B7C957",
+        "deviceId" : "77AA4492-C787-4EEE-A772-05D4B3E9ECCD",
         "deviceName" : "iPhone 17 Pro",
-        "exportedFileName" : "F18438C5-1CC4-4C42-A0A9-410496A4377E.png",
+        "exportedFileName" : "CD89C606-7FEE-4076-AE6A-E97244855660.png",
         "isAssociatedWithFailure" : false,
-        "suggestedHumanReadableName" : "04-小测验_0_198D67B5-AA6F-410A-A4A9-3DEC9591912B.png",
-        "timestamp" : 1793128690.55
+        "suggestedHumanReadableName" : "04-小测验_0_E3405CA2-1E7C-4745-A3DF-F792998C4948.png",
+        "timestamp" : 1793170177.366
       },
       {
         "configurationName" : "Test Scheme Action",
-        "deviceId" : "E839A11B-51B4-4AD3-ACF4-A53B95B7C957",
+        "deviceId" : "77AA4492-C787-4EEE-A772-05D4B3E9ECCD",
         "deviceName" : "iPhone 17 Pro",
-        "exportedFileName" : "2E000681-68D4-47FD-A188-1D04AA9F2602.png",
+        "exportedFileName" : "CF53A0AD-0068-46A2-9A20-5C6C5D4FBDA2.png",
         "isAssociatedWithFailure" : false,
-        "suggestedHumanReadableName" : "03-场景_0_52226E42-78D3-4FC1-8972-167BE75782F4.png",
-        "timestamp" : 1793128685.794
+        "suggestedHumanReadableName" : "03-场景_0_BB664BA8-1275-452E-A3AA-AF1E566B6295.png",
+        "timestamp" : 1793170173.731
       },
       {
         "configurationName" : "Test Scheme Action",
-        "deviceId" : "E839A11B-51B4-4AD3-ACF4-A53B95B7C957",
+        "deviceId" : "77AA4492-C787-4EEE-A772-05D4B3E9ECCD",
         "deviceName" : "iPhone 17 Pro",
-        "exportedFileName" : "52B73B72-B056-42BE-B3D5-F5CFEB502C04.png",
+        "exportedFileName" : "FA4A8186-EFFE-4DBC-B50A-5ACB2BF4B63E.png",
         "isAssociatedWithFailure" : false,
-        "suggestedHumanReadableName" : "02-单词卡_0_C85F181B-3F4E-4FFF-9465-F52CD78360C1.png",
-        "timestamp" : 1793128679.785
+        "suggestedHumanReadableName" : "02-单词卡_0_B74E52AE-5F88-413E-9B53-7D1D8F3B6C40.png",
+        "timestamp" : 1793170167.131
       }
     ],
     "testIdentifier" : "SmokeUITests/testFirstLessonFlow()",
@@ -36,48 +36,48 @@
     "attachments" : [
       {
         "configurationName" : "Test Scheme Action",
-        "deviceId" : "E839A11B-51B4-4AD3-ACF4-A53B95B7C957",
+        "deviceId" : "77AA4492-C787-4EEE-A772-05D4B3E9ECCD",
         "deviceName" : "iPhone 17 Pro",
-        "exportedFileName" : "932F140E-3A0D-42D3-ADC7-9BC446CB1484.png",
+        "exportedFileName" : "AB4F72F3-B06D-4FA6-9D74-21C7AAA24F95.png",
         "isAssociatedWithFailure" : false,
-        "suggestedHumanReadableName" : "tab-学习_0_7AB7BDDF-E84B-493F-8FB4-C89F4F68E40F.png",
-        "timestamp" : 1793128720.54
+        "suggestedHumanReadableName" : "tab-学习_0_96A5B5E9-CD55-4D3D-BE4E-E0974D82CD6E.png",
+        "timestamp" : 1793170209.437
       },
       {
         "configurationName" : "Test Scheme Action",
-        "deviceId" : "E839A11B-51B4-4AD3-ACF4-A53B95B7C957",
+        "deviceId" : "77AA4492-C787-4EEE-A772-05D4B3E9ECCD",
         "deviceName" : "iPhone 17 Pro",
-        "exportedFileName" : "8C480476-B7CE-42A2-B5D6-12DD1131019C.png",
+        "exportedFileName" : "779AAA7F-84ED-4A83-A7B6-40225B585832.png",
         "isAssociatedWithFailure" : false,
-        "suggestedHumanReadableName" : "tab-发音_0_1CC165B2-B7D7-479D-B350-2533FC051597.png",
-        "timestamp" : 1793128716.872
+        "suggestedHumanReadableName" : "tab-发音_0_E2CBE1FE-6C20-4175-875F-A31BD25D71C0.png",
+        "timestamp" : 1793170206.267
       },
       {
         "configurationName" : "Test Scheme Action",
-        "deviceId" : "E839A11B-51B4-4AD3-ACF4-A53B95B7C957",
+        "deviceId" : "77AA4492-C787-4EEE-A772-05D4B3E9ECCD",
         "deviceName" : "iPhone 17 Pro",
-        "exportedFileName" : "908BEAFD-F3AA-4387-8318-0D9F536CC56C.png",
+        "exportedFileName" : "BCD93677-4DB2-4215-B753-4217427E2569.png",
         "isAssociatedWithFailure" : false,
-        "suggestedHumanReadableName" : "tab-剧场_0_23BDB7C7-5708-4BC1-92B0-737240F581BD.png",
-        "timestamp" : 1793128712.817
+        "suggestedHumanReadableName" : "tab-剧场_0_5E2DAF24-056B-4829-A117-DCFE75641C07.png",
+        "timestamp" : 1793170202.782
       },
       {
         "configurationName" : "Test Scheme Action",
-        "deviceId" : "E839A11B-51B4-4AD3-ACF4-A53B95B7C957",
+        "deviceId" : "77AA4492-C787-4EEE-A772-05D4B3E9ECCD",
         "deviceName" : "iPhone 17 Pro",
-        "exportedFileName" : "70FA5141-445D-41AB-AC7C-955CF3473610.png",
+        "exportedFileName" : "AFF51ABB-B0AD-4285-ADB0-9CE73F4DD05A.png",
         "isAssociatedWithFailure" : false,
-        "suggestedHumanReadableName" : "tab-复习_0_BF54AAF6-BAE3-4DEC-8242-F116395A398F.png",
-        "timestamp" : 1793128708.19
+        "suggestedHumanReadableName" : "tab-复习_0_451013A1-4ABD-4A52-B62D-9F3822064F96.png",
+        "timestamp" : 1793170198.785
       },
       {
         "configurationName" : "Test Scheme Action",
-        "deviceId" : "E839A11B-51B4-4AD3-ACF4-A53B95B7C957",
+        "deviceId" : "77AA4492-C787-4EEE-A772-05D4B3E9ECCD",
         "deviceName" : "iPhone 17 Pro",
-        "exportedFileName" : "A3560B07-223C-4D38-860B-06837E369486.png",
+        "exportedFileName" : "216F6001-5AB2-4F10-9250-98265A1CEF7B.png",
         "isAssociatedWithFailure" : false,
-        "suggestedHumanReadableName" : "01-学习首页_0_373722CD-5220-4757-B546-42F4FA3904DF.png",
-        "timestamp" : 1793128704.659
+        "suggestedHumanReadableName" : "01-学习首页_0_681DCF0E-055A-4153-B812-1D61BAC8F118.png",
+        "timestamp" : 1793170195.195
       }
     ],
     "testIdentifier" : "SmokeUITests/testLaunchAndSwitchTabs()",
@@ -87,12 +87,12 @@
     "attachments" : [
       {
         "configurationName" : "Test Scheme Action",
-        "deviceId" : "E839A11B-51B4-4AD3-ACF4-A53B95B7C957",
+        "deviceId" : "77AA4492-C787-4EEE-A772-05D4B3E9ECCD",
         "deviceName" : "iPhone 17 Pro",
-        "exportedFileName" : "116924B1-5E9B-4910-9AC3-0FB495D8353D.png",
+        "exportedFileName" : "DE179373-D535-40EC-8CBD-741789A441D6.png",
         "isAssociatedWithFailure" : false,
-        "suggestedHumanReadableName" : "05-跟读打分_0_1C6BD266-4750-4B7E-BE79-BFB136C6219D.png",
-        "timestamp" : 1793128736.04
+        "suggestedHumanReadableName" : "05-跟读打分_0_AC1594BD-AFE9-4DFE-995C-80F3988CD2C3.png",
+        "timestamp" : 1793170222.006
       }
     ],
     "testIdentifier" : "SmokeUITests/testPronunciationScreenOpens()",
