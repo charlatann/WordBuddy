@@ -4,7 +4,7 @@ import { tokenMatches, contains, blank, highlight } from '../core/text.js';
 import { INTERVALS, LABELS, MASTERED_INTERVAL, interval, newProgress, apply, isMastered, stageLabel, MIN, HOUR, markProgress, statusOf } from '../core/srs.js';
 import { normalize, align, combinedScore, evaluate, level } from '../core/scoring.js';
 import { remix } from '../core/generator.js';
-import { setCustom, BUILTIN_SCENES } from '../core/content.js';
+import { setCustom, BUILTIN_SCENES, customBatches } from '../core/content.js';
 import { useDictionary, resetDictionary, lookup, lemma, extractWords } from '../core/dict.js';
 import { templateScene, validateScene, aiScene, generateScene, parseAIResponse, chunkWords, emojiFor } from '../core/scenegen.js';
 
@@ -191,6 +191,12 @@ export const suites = [
       t.eq(sent.opt.headers['anthropic-dangerous-direct-browser-access'], 'true');
       const body = JSON.parse(sent.opt.body); t.eq(body.model, 'm1'); t.ok(/giraffe/.test(body.messages[0].content));
       t.eq(parseAIResponse('```json\n{"a":1}\n```').a, 1);
+    }],
+    ['“我的单词”按添加批次分组，最新一批在前', () => {
+      const mk = (id, batch, createdAt) => ({ id, batch, createdAt, words: [], lines: [] });
+      const b = customBatches([mk('a', 100, 100), mk('b', 100, 101), mk('c', 300, 300), mk('old', undefined, 50), mk('d', 200, 200)]);
+      t.deep(b.map(x => x.key), [300, 200, 100, 50]); t.deep(b[2].scenes.map(x => x.id), ['a', 'b']);
+      t.deep(customBatches([]), []);
     }],
     ['按每组最多 4 个词拆分场景', () => { t.deep(chunkWords([1, 2, 3, 4, 5, 6, 7, 8, 9]).map(c => c.length), [4, 4, 1]); }],
     ['注册我的单词后可用于复习、剧场；不会覆盖内置单词', () => {

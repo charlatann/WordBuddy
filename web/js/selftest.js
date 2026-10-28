@@ -344,6 +344,26 @@ export async function runSelfTest() {
     return `识别出 ${ids.join(', ')}，用时 ${((Date.now() - t0) / 1000).toFixed(1)} 秒（含首次下载识别组件）`;
   });
 
+  await flow(G4, '学习页只显示最近一次添加的单词，其余在“查看全部”里', async () => {
+    const before = Store.customScenes().map(x => x.id);
+    await nav('#/add');
+    await tap('[data-test="mode-type"]');
+    setValue(await waitFor(() => $('[data-test="add-text"]')), 'pumpkin, rocket');
+    await tap('[data-test="add-lookup"]');
+    await waitFor(() => $('[data-test="cand-pumpkin"]'), 15000, '查词结果没有出现');
+    await tap('[data-test="add-generate"]');
+    await waitFor(() => S.add.gen.phase === 'idle' && Store.customScenes().length === before.length + 1, 20000, '没有生成场景');
+    const added = Store.customScenes().find(x => !before.includes(x.id));
+    await nav('#/learn');
+    expect($(`[data-test="scene-${added.id}"]`), '学习页没有显示最新添加的单词');
+    for (const id of before) expect(!$(`[data-test="scene-${id}"]`), '学习页不应显示更早添加的单词');
+    await shot('34-我的单词-只显示最新');
+    await tap('[data-test="mine-all"]');
+    await waitFor(() => $('[data-test="batch-1"]'), 3000, '“查看全部”没有列出更早的批次');
+    expect($(`[data-test="batch-0"] [data-test="scene-${added.id}"]`), '最新一批应排在最前');
+    for (const id of before) expect($(`[data-test="scene-${id}"]`), '全部列表里缺少更早添加的单词');
+  });
+
   await flow(G4, '删除我的单词后进度一并清除', async () => {
     const sc = Store.customScenes()[0];
     Store.deleteCustomScene(sc.id);

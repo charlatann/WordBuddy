@@ -35,6 +35,18 @@ export function setCustom(customScenes) {
 
 export const isKnownWord = id => !!wordByID[id];
 
+/** “我的单词”按添加批次分组（同一次添加生成的场景为一批），最新的一批在前 */
+export const batchKey = s => s.batch || s.createdAt || 0;
+export function customBatches(scenes = CUSTOM_UNIT.scenes) {
+  const groups = new Map();
+  for (const s of scenes) {
+    const k = batchKey(s);
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(s);
+  }
+  return [...groups.entries()].sort((a, b) => b[0] - a[0]).map(([key, list]) => ({ key, scenes: list }));
+}
+
 export const KIND_LABEL = { dialogue: '对话', story: '小故事' };
 
 /** 场景中出场的角色（按顺序），用于给不同角色分配不同声音 */

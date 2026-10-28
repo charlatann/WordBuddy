@@ -1,4 +1,4 @@
-import { UNITS, STORIES, SCENES, WORDS, wordByID, sceneByID, sceneByWordID, KIND_LABEL, CUSTOM_UNIT, isKnownWord,
+import { UNITS, STORIES, SCENES, WORDS, wordByID, sceneByID, sceneByWordID, KIND_LABEL, CUSTOM_UNIT, isKnownWord, customBatches,
          voiceIndex, linesContaining, keyPhrase } from './core/content.js';
 import { highlight, blank, escapeHTML as h, shuffle, relativeCN } from './core/text.js';
 import { INTERVALS, LABELS, interval, isMastered, isDue, statusOf } from './core/srs.js';
@@ -28,9 +28,9 @@ export function go(hash) { location.hash = hash; }
 
 const VIEWS = {
   learn: viewLearn, lesson: viewLesson, review: viewReview, run: viewReviewRun,
-  story: viewStory, play: viewPlay, speak: viewSpeak, practice: viewPractice, check: viewCheck, add: viewAdd, sync: viewSync, words: viewWords,
+  story: viewStory, play: viewPlay, speak: viewSpeak, practice: viewPractice, check: viewCheck, add: viewAdd, sync: viewSync, words: viewWords, mine: viewMine,
 };
-const TAB_OF = { learn: 'learn', lesson: 'learn', add: 'learn', sync: 'learn', words: 'learn', review: 'review', run: 'review', story: 'story', play: 'story',
+const TAB_OF = { learn: 'learn', lesson: 'learn', add: 'learn', sync: 'learn', words: 'learn', mine: 'learn', review: 'review', run: 'review', story: 'story', play: 'story',
                  speak: 'speak', practice: 'speak', check: 'speak' };
 
 export function render({ keepScroll = false } = {}) {
@@ -134,6 +134,42 @@ function sceneCard(s, learned) {
     </a>`;
 }
 
+/** 学习页只显示最近一次添加的单词 */
+function myLatest(learned) {
+  const [latest] = customBatches();
+  return latest ? latest.scenes.map(s => sceneCard(s, learned)).join('') : '';
+}
+function myMoreLink() {
+  const batches = customBatches();
+  if (batches.length < 2) return '';
+  const words = CUSTOM_UNIT.scenes.reduce((n, s) => n + s.words.length, 0);
+  return `<a class="link" href="#/mine" style="display:block;margin:10px 2px 0" data-test="mine-all">
+    查看全部我的单词（${batches.length} 次添加 · ${words} 个词）›</a>`;
+}
+
+function batchLabel(key) {
+  if (!key) return '更早添加';
+  const d = new Date(key), now = new Date();
+  const day = d.toDateString() === now.toDateString() ? '今天'
+    : new Date(now - 86_400_000).toDateString() === d.toDateString() ? '昨天'
+    : `${d.getMonth() + 1}月${d.getDate()}日`;
+  return `${day} ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')} 添加`;
+}
+
+function viewMine() {
+  const learned = new Set([...Store.learnedIDs()].filter(id => wordByID[id]));
+  const batches = customBatches();
+  return `${topbar('我的单词', '#/learn')}
+    <div class="stack">
+      <a class="btn" href="#/add" style="text-decoration:none">➕ 添加单词</a>
+      ${batches.length ? batches.map((b, i) => `<div data-test="batch-${i}">
+        <div class="section-title" style="margin-top:8px;font-size:16px">${i === 0 ? '🆕 ' : ''}${batchLabel(b.key)}
+          <span class="tiny muted">· ${b.scenes.reduce((n, s) => n + s.words.length, 0)} 个词</span></div>
+        <div class="grid">${b.scenes.map(s => sceneCard(s, learned)).join('')}</div></div>`).join('')
+        : '<p class="muted center">还没有添加过单词。</p>'}
+    </div>`;
+}
+
 function viewLearn() {
   const learned = new Set([...Store.learnedIDs()].filter(id => wordByID[id]));
   const list = Store.progressList().filter(p => wordByID[p.wordID]);
@@ -160,8 +196,9 @@ function viewLearn() {
         <div class="head"><span class="emoji">➕</span><div><h3>添加我要背的单词</h3>
           <span class="tiny muted">拍照识别或手动输入，自动生成使用场景</span></div></div>
       </a>
-      ${CUSTOM_UNIT.scenes.map(s => sceneCard(s, learned)).join('')}
+      ${myLatest(learned)}
     </div>
+    ${myMoreLink()}
     ${UNITS.map(u => `
       <div class="section-title">${u.emoji} 第${u.id}单元 · ${h(u.title)}</div>
       <div class="grid">
@@ -424,12 +461,14 @@ async function addGenerate() {
     return { id: c.id, phonetic: c.entry?.phonetic || '', pos, meaning: (c.meaning || '').trim(), emoji: emojiFor(c.id, pos) };
   });
   const groups = chunkWords(words);
+  const batch = Date.now();          // 同一次添加的场景属于同一批
   A.gen = { phase: 'working', step: 1, total: groups.length, done: [], errors: [] };
   refresh();
   for (const [k, group] of groups.entries()) {
     A.gen.step = k + 1; refresh();
     const { scene, error } = await generateScene(group, { id: Store.newCustomID(), apiKey: st.apiKey, model: st.model || DEFAULT_MODEL });
     scene.words.forEach(w => { w.meaning ||= '（未填写）'; });
+    scene.batch = batch;
     Store.saveCustomScene(scene);
     A.gen.done.push(scene.id);
     if (error) A.gen.errors.push(error);
@@ -449,6 +488,8 @@ async function regenScene(id) {
   const words = old.words.map(w => ({ ...w, emojiFixed: true }));
   const { scene, error } = await generateScene(words, { id, apiKey: st.apiKey, model: st.model || DEFAULT_MODEL });
   scene.words = old.words;
+  scene.batch = old.batch;
+  scene.createdAt = old.createdAt;
   Store.saveCustomScene(scene);
   S.regen = false;
   if (S.lesson?.id === id) S.lesson.showZh = true;
@@ -1211,7 +1252,7 @@ function downloadICS(time) {
 // ============ 启动 ============
 
 // 同步状态变化或收到其他设备的数据时刷新页面（正在输入或做题的页面不打断）
-const SAFE_TO_REFRESH = new Set(['learn', 'review', 'story', 'speak', 'sync', 'check']);
+const SAFE_TO_REFRESH = new Set(['learn', 'review', 'story', 'speak', 'sync', 'check', 'mine', 'words']);
 SyncMgr.onChange(res => {
   const view = $app.dataset.view;
   if (view === 'sync' || (res?.pulled && SAFE_TO_REFRESH.has(view))) refresh();
