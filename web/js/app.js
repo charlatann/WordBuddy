@@ -7,6 +7,7 @@ import { remix } from './core/generator.js';
 import { loadDictionary, lookup, extractWords, normalizeWord } from './core/dict.js';
 import { generateScene, chunkWords, emojiFor, MAX_WORDS_PER_SCENE, DEFAULT_MODEL } from './core/scenegen.js';
 import { Store } from './store.js';
+import { SyncMgr } from './syncmgr.js';
 import { Speech, speak, speakAll, stopSpeaking, startTake, playURL, stopPlaying,
          recordingSupported, recognitionSupported, ttsSupported, voiceCount, pickMime } from './speech.js';
 
@@ -27,9 +28,9 @@ export function go(hash) { location.hash = hash; }
 
 const VIEWS = {
   learn: viewLearn, lesson: viewLesson, review: viewReview, run: viewReviewRun,
-  story: viewStory, play: viewPlay, speak: viewSpeak, practice: viewPractice, check: viewCheck, add: viewAdd,
+  story: viewStory, play: viewPlay, speak: viewSpeak, practice: viewPractice, check: viewCheck, add: viewAdd, sync: viewSync,
 };
-const TAB_OF = { learn: 'learn', lesson: 'learn', add: 'learn', review: 'review', run: 'review', story: 'story', play: 'story',
+const TAB_OF = { learn: 'learn', lesson: 'learn', add: 'learn', sync: 'learn', review: 'review', run: 'review', story: 'story', play: 'story',
                  speak: 'speak', practice: 'speak', check: 'speak' };
 
 export function render({ keepScroll = false } = {}) {
@@ -139,7 +140,8 @@ function viewLearn() {
   const due = list.filter(p => isDue(p)).length;
   const next = SCENES.find(s => !s.words.every(w => learned.has(w.id)));
   return `
-    <h1 class="page-title">学新词</h1>
+    <div class="row" style="align-items:flex-end"><h1 class="page-title">学新词</h1><span class="spacer"></span>
+      ${cloudBadge()}</div>
     <div class="stats">
       <div class="card stat"><div>📘</div><b>${learned.size}/${WORDS.length}</b><span>已学单词</span></div>
       <div class="card stat"><div>⏰</div><b>${due}</b><span>待复习</span></div>
@@ -451,6 +453,76 @@ async function regenScene(id) {
   if (S.lesson?.id === id) S.lesson.showZh = true;
   refresh();
   toast(error ? `AI 生成失败，已用模板生成：${error}` : '已换成新场景');
+}
+
+// ============ 云同步 ============
+
+function cloudBadge() {
+  const c = SyncMgr.config();
+  const label = !c.token ? '☁️ 同步' : SyncMgr.busy ? '☁️ 同步中…' : c.lastError ? '☁️ ⚠️' : '☁️ ✓';
+  return `<a href="#/sync" class="btn-sm" style="margin-bottom:22px;text-decoration:none;color:${c.lastError ? 'var(--orange)' : 'inherit'}"
+    data-test="cloud">${label}</a>`;
+}
+
+function viewSync() {
+  const c = SyncMgr.config();
+  const st = Store.exportSync();
+  const counts = `${Object.keys(st.progress).length} 个单词的进度 · ${st.custom.length} 组我的单词 · ${st.records.length} 条练习记录`;
+  if (!c.token) {
+    return `${topbar('云同步', '#/learn')}
+    <div class="stack">
+      <div class="card stack">
+        <b>☁️ 在多台设备之间自动同步</b>
+        <p class="small muted" style="margin:0">学习进度会保存到你自己 GitHub 账号下的一个<b>私密 Gist</b>（只有你能看到），
+          免费、无需注册其他服务。每台设备填一次同一个令牌，之后打开 App、学完单词、切到后台时都会自动同步。</p>
+      </div>
+      <div class="card stack">
+        <b>第一次设置（约 2 分钟）</b>
+        <ol class="small" style="margin:0;padding-left:20px;line-height:1.8">
+          <li>点下面的按钮，登录 GitHub（没有账号可免费注册）。</li>
+          <li>页面已自动勾选 <b>gist</b> 权限；“Expiration”建议选 <b>No expiration</b>，然后点最下面的 <b>Generate token</b>。</li>
+          <li>复制生成的令牌（以 <code>ghp_</code> 开头），回到这里粘贴，点“开始同步”。</li>
+          <li>在其他设备上打开单词伙伴，用<b>同一个令牌</b>再做一次第 3 步。</li>
+        </ol>
+        <a class="btn gray" href="https://github.com/settings/tokens/new?scopes=gist&description=WordBuddy%20%E5%8D%95%E8%AF%8D%E4%BC%99%E4%BC%B4%E5%90%8C%E6%AD%A5" target="_blank" rel="noopener">🔑 去 GitHub 生成令牌</a>
+        <input id="sync-token" type="password" autocomplete="off" placeholder="粘贴令牌：ghp_..." aria-label="GitHub 令牌" data-test="sync-token" value="${h(S.syncToken || '')}">
+        ${S.syncError ? `<div class="notice err">${h(S.syncError)}</div>` : ''}
+        <button class="btn" data-act="syncConnect" ${S.syncBusy ? 'disabled' : ''} data-test="sync-connect">${S.syncBusy ? '正在连接…' : '开始同步'}</button>
+      </div>
+      <p class="tiny muted">令牌只保存在这台设备上，用来读写那个 Gist。你的 AI 密钥不会上传。这台设备上现有的数据：${counts}。</p>
+    </div>`;
+  }
+  const ago = c.lastSync ? relativeAgo(c.lastSync) : '还没有';
+  return `${topbar('云同步', '#/learn')}
+    <div class="stack">
+      <div class="card stack center" data-test="sync-status">
+        <div style="font-size:48px">${SyncMgr.busy ? '🔄' : c.lastError ? '⚠️' : '✅'}</div>
+        <b>${SyncMgr.busy ? '正在同步…' : c.lastError ? '最近一次同步没有成功' : '已开启自动同步'}</b>
+        <div class="small muted">上次成功同步：${ago}</div>
+        ${c.lastError ? `<div class="notice err">${h(c.lastError)}</div>` : ''}
+        <button class="btn" data-act="syncNow" ${SyncMgr.busy ? 'disabled' : ''} data-test="sync-now">立即同步</button>
+      </div>
+      <div class="card stack">
+        <b>同步的内容</b>
+        <div class="small muted">${counts}</div>
+        <div class="small muted">提醒时间也会同步；AI 密钥和同步令牌只留在本机。</div>
+        ${c.gistId ? `<a class="link" href="https://gist.github.com/${h(c.gistId)}" target="_blank" rel="noopener">在 GitHub 上查看同步数据</a>` : ''}
+      </div>
+      <div class="card stack">
+        <b>在其他设备上开启</b>
+        <div class="small muted">在另一台设备上打开单词伙伴 → 学习页右上角“☁️ 同步”，粘贴同一个令牌。两边的进度会自动合并，不会互相覆盖。</div>
+      </div>
+      <button class="btn gray" data-act="syncOff" data-test="sync-off">关闭这台设备的同步</button>
+      <p class="tiny muted center">关闭后本机数据保留，只是不再上传和下载。</p>
+    </div>`;
+}
+
+function relativeAgo(ts) {
+  const d = Date.now() - ts;
+  if (d < 60_000) return '刚刚';
+  if (d < 3_600_000) return `${Math.round(d / 60_000)} 分钟前`;
+  if (d < 86_400_000) return `${Math.round(d / 3_600_000)} 小时前`;
+  return new Date(ts).toLocaleString('zh-CN', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' });
 }
 
 // ============ 复习 ============
@@ -915,6 +987,24 @@ const ACTIONS = {
   },
   speakMode: d => { S.speakMode = d.m; render(); },
   addMode: d => { addState().mode = d.m; refresh(); },
+  syncConnect: async () => {
+    const token = document.getElementById('sync-token')?.value || '';
+    S.syncToken = token; S.syncError = ''; S.syncBusy = true; refresh();
+    try {
+      const r = await SyncMgr.connect(token);
+      S.syncBusy = false; S.syncToken = '';
+      toast(r.created ? '已开启同步，数据已上传' : r.pulled ? '已开启同步，已合并其他设备的进度' : '已开启同步');
+    } catch (e) { S.syncBusy = false; S.syncError = e.message; }
+    refresh();
+  },
+  syncNow: async () => {
+    const r = await SyncMgr.syncNow({ force: true });
+    toast(r.ok ? (r.pulled ? '已同步，收到了其他设备的新进度' : '已同步') : r.error);
+  },
+  syncOff: () => {
+    if (!confirm('关闭这台设备的同步？本机数据会保留。')) return;
+    SyncMgr.disconnect(); refresh();
+  },
   addLookup: () => addLookup(),
   candToggle: d => { const c = addState().cands[Number(d.i)]; c.sel = !c.sel; refresh(); },
   candSense: d => {
@@ -999,9 +1089,19 @@ function downloadICS(time) {
 
 // ============ 启动 ============
 
+// 同步状态变化或收到其他设备的数据时刷新页面（正在输入或做题的页面不打断）
+const SAFE_TO_REFRESH = new Set(['learn', 'review', 'story', 'speak', 'sync', 'check']);
+SyncMgr.onChange(res => {
+  const view = $app.dataset.view;
+  if (view === 'sync' || (res?.pulled && SAFE_TO_REFRESH.has(view))) refresh();
+  else if (view === 'learn') { const b = document.querySelector('[data-test="cloud"]'); if (b) b.outerHTML = cloudBadge(); }
+  renderTabbar(TAB_OF[view] || 'learn');
+});
+
 export function start() {
   Store.customScenes();          // 先载入“我的单词”，再渲染
   render();
+  SyncMgr.start();
   if ('serviceWorker' in navigator && !/selftest/.test(location.search)) {
     navigator.serviceWorker.register('sw.js').catch(() => {});
   }
@@ -1010,4 +1110,4 @@ export function start() {
   if (due && !location.hash.startsWith('#/run')) setTimeout(() => toast(`🧠 有 ${due} 个单词到了复习时间`), 600);
 }
 
-export const _internals = { S, panels, ACTIONS, render, go, Store, runOCR, addLookup };
+export const _internals = { S, panels, ACTIONS, render, go, Store, runOCR, addLookup, SyncMgr };

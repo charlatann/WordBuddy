@@ -1,10 +1,10 @@
 // 离线缓存
-const CACHE = 'wordbuddy-v2';
+const CACHE = 'wordbuddy-v3';
 const SHELL = [
   './', 'index.html', 'manifest.webmanifest', 'css/app.css',
   'js/main.js', 'js/app.js', 'js/store.js', 'js/speech.js', 'js/data.js',
   'js/core/content.js', 'js/core/text.js', 'js/core/srs.js', 'js/core/scoring.js', 'js/core/generator.js',
-  'js/core/dict.js', 'js/core/scenegen.js', 'js/ocr.js', 'data/dict.json',
+  'js/core/dict.js', 'js/core/scenegen.js', 'js/ocr.js', 'data/dict.json', 'js/core/sync.js', 'js/syncmgr.js',
   'icons/apple-touch-icon.png', 'icons/icon-192.png', 'icons/icon-512.png',
 ];
 

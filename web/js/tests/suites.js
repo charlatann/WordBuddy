@@ -8,6 +8,18 @@ import { setCustom, BUILTIN_SCENES } from '../core/content.js';
 import { useDictionary, resetDictionary, lookup, lemma, extractWords } from '../core/dict.js';
 import { templateScene, validateScene, aiScene, generateScene, parseAIResponse, chunkWords, emojiFor } from '../core/scenegen.js';
 
+import { mergeStates, syncOnce, GistClient, sameData, syncable } from '../core/sync.js';
+import { fakeGitHub } from './fakegithub.js';
+
+// 一台“设备”的本地数据（与 Store 中的结构相同）
+const device = () => ({ progress: {}, custom: [], records: [], tomb: { progress: {}, custom: {} }, shared: { remindTime: '20:00', updatedAt: 0 } });
+const prog = (id, stage, updatedAt, sceneID = sceneByWordID[id]?.id || 'my-x') => ({ ...newProgress(id, sceneID, T0), stage, updatedAt });
+async function syncDevice(dev, gh, token = 'ghp_test') {
+  const r = await syncOnce(syncable(dev), new GistClient(token, gh), dev.gistId);
+  Object.assign(dev, r.merged); dev.gistId = r.gistId;
+  return r;
+}
+
 const DICT_FIXTURE = { w: [
   ['apple', '/ˈæpl/', [['n.', '苹果']]], ['go', '/gəʊ/', [['v.', '去；走']]], ['happy', '/ˈhæpi/', [['adj.', '快乐的']]],
   ['study', '/ˈstʌdi/', [['v.', '学习'], ['n.', '研究']]], ['quickly', '/ˈkwɪkli/', [['adv.', '很快地']]],
@@ -191,6 +203,82 @@ export const suites = [
         t.ok(st && st.steps.filter(x => x.type === 'fill').every(x => contains(x.en, x.answer)), '随机剧场使用自定义单词出错');
       } finally { setCustom([]); }
       t.eq(WORDS.length, 48); t.eq(sceneByID['my-reg'], undefined);
+    }],
+  ]},
+  { name: '云同步（两台设备模拟）', tests: [
+    ['第一台设备创建私密 Gist，第二台自动找到并下载进度', async () => {
+      const gh = fakeGitHub(); const A = device(), B = device();
+      A.progress.coffee = prog('coffee', 2, T0 + 10);
+      const ra = await syncDevice(A, gh);
+      t.ok(ra.created && ra.pushed, '应新建 Gist'); t.eq(Object.keys(gh.gists).length, 1);
+      const rb = await syncDevice(B, gh);
+      t.ok(!rb.created, '第二台不应再建 Gist'); t.eq(B.gistId, A.gistId); t.eq(B.progress.coffee.stage, 2);
+      t.eq(rb.pushed, false, '没有新内容时不应上传');
+    }],
+    ['两台设备离线各学不同的词，同步后都拥有全部进度', async () => {
+      const gh = fakeGitHub(); const A = device(), B = device();
+      await syncDevice(A, gh); await syncDevice(B, gh);
+      A.progress.coffee = prog('coffee', 1, T0 + 100); B.progress.cat = prog('cat', 3, T0 + 200);
+      await syncDevice(A, gh); await syncDevice(B, gh); await syncDevice(A, gh);
+      t.deep(Object.keys(A.progress).sort(), ['cat', 'coffee']); t.deep(Object.keys(B.progress).sort(), ['cat', 'coffee']);
+    }],
+    ['同一个词两边都复习过：保留最后一次复习的结果', async () => {
+      const gh = fakeGitHub(); const A = device(), B = device();
+      A.progress.late = prog('late', 1, T0 + 100); await syncDevice(A, gh); await syncDevice(B, gh);
+      A.progress.late = prog('late', 4, T0 + 500); B.progress.late = prog('late', 0, T0 + 300);
+      await syncDevice(B, gh); await syncDevice(A, gh); await syncDevice(B, gh);
+      t.eq(A.progress.late.stage, 4); t.eq(B.progress.late.stage, 4);
+    }],
+    ['删除“我的单词”会同步到其他设备，旧数据不会“复活”；之后重新添加仍可同步', async () => {
+      const gh = fakeGitHub(); const A = device(), B = device();
+      const sc = { ...templateScene([W('giraffe', 'n.', '长颈鹿')], { id: 'my-g' }), createdAt: T0, updatedAt: T0 + 10 };
+      A.custom = [sc]; A.progress.giraffe = prog('giraffe', 1, T0 + 20, 'my-g');
+      await syncDevice(A, gh); await syncDevice(B, gh);
+      t.eq(B.custom.length, 1); t.ok(B.progress.giraffe);
+      A.custom = []; delete A.progress.giraffe; A.tomb.custom['my-g'] = T0 + 1000; A.tomb.progress.giraffe = T0 + 1000;
+      await syncDevice(A, gh); await syncDevice(B, gh); await syncDevice(A, gh);
+      t.eq(B.custom.length, 0, '另一台设备上应已删除'); t.eq(B.progress.giraffe, undefined); t.eq(A.custom.length, 0, '不应被旧数据复活');
+      B.custom = [{ ...sc, updatedAt: T0 + 2000 }]; B.progress.giraffe = prog('giraffe', 0, T0 + 2000, 'my-g');
+      await syncDevice(B, gh); await syncDevice(A, gh);
+      t.eq(A.custom.length, 1, '重新添加后应同步'); t.eq(A.tomb.custom['my-g'], undefined);
+    }],
+    ['练习记录合并去重，最多保留 200 条', () => {
+      const a = device(), b = device();
+      a.records = Array.from({ length: 150 }, (_, i) => ({ text: 'a' + i, score: 80, date: T0 + i * 2 }));
+      b.records = [...a.records.slice(0, 50), ...Array.from({ length: 100 }, (_, i) => ({ text: 'b' + i, score: 70, date: T0 + i * 2 + 1 }))];
+      const m = mergeStates(a, b);
+      t.eq(m.records.length, 200); t.eq(new Set(m.records.map(r => r.text + r.date)).size, 200);
+      t.ok(m.records[0].date >= m.records.at(-1).date, '应按时间倒序');
+    }],
+    ['提醒时间同步，以最后一次修改为准', () => {
+      const a = device(), b = device();
+      a.shared = { remindTime: '07:30', updatedAt: T0 + 5 }; b.shared = { remindTime: '21:00', updatedAt: T0 + 9 };
+      t.eq(mergeStates(a, b).shared.remindTime, '21:00'); t.eq(mergeStates(b, a).shared.remindTime, '21:00');
+    }],
+    ['令牌错误、没有 Gist 权限时给出明确提示', async () => {
+      const gh = fakeGitHub('ghp_good');
+      let err = null;
+      try { await syncDevice(device(), gh, 'ghp_bad'); } catch (e) { err = e; }
+      t.eq(err?.kind, 'auth'); t.ok(/令牌无效/.test(err.message));
+      const noScope = async (url, opt = {}) => ({ ok: (opt.method || 'GET') === 'GET', status: (opt.method || 'GET') === 'GET' ? 200 : 404, json: async () => [] });
+      err = null;
+      try { await syncDevice(device(), noScope); } catch (e) { err = e; }
+      t.eq(err?.kind, 'scope'); t.ok(/gist/.test(err.message));
+      err = null;
+      try { await syncDevice(device(), async () => { throw new TypeError('Load failed'); }); } catch (e) { err = e; }
+      t.eq(err?.kind, 'offline');
+    }],
+    ['云端 Gist 被删除后自动重新创建', async () => {
+      const gh = fakeGitHub(); const A = device();
+      A.progress.coffee = prog('coffee', 1, T0); await syncDevice(A, gh);
+      delete gh.gists[A.gistId];
+      const r = await syncDevice(A, gh);
+      t.ok(r.created, '应重新创建'); t.eq(Object.keys(gh.gists).length, 1);
+    }],
+    ['合并结果与字段顺序无关，重复同步结果稳定', () => {
+      const a = device(); a.progress.cat = prog('cat', 1, T0); a.progress.coffee = prog('coffee', 2, T0);
+      const b = device(); b.progress.coffee = a.progress.coffee; b.progress.cat = a.progress.cat;
+      t.ok(sameData(a, b)); const m = mergeStates(a, b); t.ok(sameData(m, mergeStates(m, m)));
     }],
   ]},
 ];

@@ -7,6 +7,8 @@ import { Store } from './store.js';
 import { Speech, speak, ttsSupported, voiceCount, recordingSupported, recognitionSupported, pickMime } from './speech.js';
 import { WORDS, sceneByID, STORIES } from './core/content.js';
 import { MIN } from './core/srs.js';
+import { fakeGitHub } from './tests/fakegithub.js';
+import { GIST_FILE } from './core/sync.js';
 
 const CI = /selftest=ci/.test(location.search);
 const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -347,6 +349,66 @@ export async function runSelfTest() {
     expect(sc.words.every(w => !Store.progress(w.id)), '进度没有清除');
     expect(WORDS.length === 48 + Store.customScenes().reduce((n, x) => n + x.words.length, 0), '单词总数不对');
   });
+
+  // ---------- 云同步（使用模拟的 GitHub，不会访问真实账号） ----------
+  const G5 = '云同步';
+  const { SyncMgr } = _internals;
+  const gh = fakeGitHub('ghp_selftest');
+  const realFetch = SyncMgr.fetchImpl;
+  SyncMgr.fetchImpl = gh;
+  SyncMgr.disconnect();
+  const cloud = () => JSON.parse(Object.values(gh.gists)[0]?.files[GIST_FILE].content || 'null');
+
+  await flow(G5, '设置页：令牌错误时提示，正确时开启同步并上传本机进度', async () => {
+    await nav('#/learn');
+    expect(/同步/.test($('[data-test="cloud"]')?.textContent || ''), '学习页右上角缺少同步入口');
+    await tap('[data-test="cloud"]');
+    await waitFor(() => $('[data-test="sync-token"]'), 3000, '没有打开同步设置');
+    await shot('40-云同步-设置');
+    $('[data-test="sync-token"]').value = 'ghp_wrong';
+    await tap('[data-test="sync-connect"]');
+    await waitFor(() => /令牌无效/.test(document.body.textContent), 5000, '错误令牌没有提示');
+    $('[data-test="sync-token"]').value = 'ghp_selftest';
+    await tap('[data-test="sync-connect"]');
+    await waitFor(() => $('[data-test="sync-status"]'), 8000, '开启同步失败');
+    expect(Object.keys(gh.gists).length === 1, '没有创建 Gist');
+    const c = cloud();
+    expect(Object.keys(c.progress).length === Object.keys(Store.exportSync().progress).length, '上传的进度不完整');
+    expect(!JSON.stringify(c).includes('apiKey'), '不应上传 API 密钥');
+    await shot('41-云同步-已开启');
+    return `已上传 ${Object.keys(c.progress).length} 个单词的进度`;
+  });
+
+  await flow(G5, '其他设备学的新词：点“立即同步”后出现在本机', async () => {
+    const c = cloud();
+    c.progress.giraffe = { wordID: 'giraffe', sceneID: 'my-remote', stage: 2, learnedAt: Date.now(), nextReview: Date.now() + 3600e3,
+                           lastReviewed: null, reviewCount: 2, lapseCount: 0, bestScore: null, updatedAt: Date.now() + 5 };
+    c.custom.push({ id: 'my-remote', custom: true, source: 'template', title: '另一台设备加的词', emoji: '🦒', kind: 'dialogue', keyLine: 0,
+      createdAt: Date.now(), updatedAt: Date.now(), words: [{ id: 'giraffe', phonetic: '', pos: 'n.', meaning: '长颈鹿', emoji: '🦒' }],
+      lines: [{ speaker: 'Amy', en: 'Look at the giraffe!', zh: '看那只长颈鹿！' }, { speaker: 'Ben', en: 'It is so tall!', zh: '它好高！' },
+              { speaker: null, en: 'The giraffe smiles.', zh: '长颈鹿笑了。' }] });
+    c.progress.cat = { ...c.progress.giraffe, wordID: 'cat', sceneID: 's10' };
+    Object.values(gh.gists)[0].files[GIST_FILE].content = JSON.stringify(c);
+    await tap('[data-test="sync-now"]');
+    await waitFor(() => Store.progress('giraffe') && Store.progress('cat'), 8000, '没有收到其他设备的进度');
+    await nav('#/learn');
+    expect($('[data-test="scene-my-remote"]'), '另一台设备添加的“我的单词”没有出现');
+    expect(Store.progress('cat').stage === 2, '进度不对');
+  });
+
+  await flow(G5, '本机学习后几秒内自动上传', async () => {
+    Store.learnScene(sceneByID.s5);
+    await waitFor(() => cloud()?.progress?.menu, 15000, '学习后没有自动上传');
+    return '学完“超级辣”后自动上传';
+  });
+
+  await flow(G5, '关闭同步后本机数据保留', async () => {
+    const n = Store.progressList().length;
+    SyncMgr.disconnect();
+    expect(!SyncMgr.enabled(), '没有关闭');
+    expect(Store.progressList().length === n, '关闭同步不应删除本机数据');
+  });
+  SyncMgr.fetchImpl = realFetch;
 
   // ---------- 4. 汇总 ----------
   Store.reset();

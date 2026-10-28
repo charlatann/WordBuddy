@@ -69,4 +69,5 @@ WordBuddy/
 
 - 四大功能与 iOS 版相同；提醒改为打开时提示 + 添加到日历。
 - **我的单词**：首页“添加我要背的单词”，可手动输入或拍照识别（Tesseract.js），自动查离线词典（由 [ECDICT](https://github.com/skywind3000/ECDICT) 生成，`tools/build_dict.py`），并为新单词生成使用场景：默认内置模板；在“场景生成方式”里填入自己的 Anthropic API 密钥后改用 AI 生成。
+- **云同步**：学习页右上角“☁️ 同步”，粘贴一个只有 gist 权限的 GitHub 令牌，进度保存在你自己账号下的私密 Gist（`wordbuddy-sync.json`），多台设备按修改时间自动合并。
 - 测试：`node web/tests/run-node.mjs`；在 Safari 中打开 `index.html?selftest` 运行界面自检；CI 在 iPhone 17 Pro Max / iPad 模拟器的 Safari 中运行（`.github/workflows/web.yml`）。
