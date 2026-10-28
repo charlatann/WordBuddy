@@ -31,7 +31,9 @@ const navRetries = [];
 async function nav(hash) {
   const view = hash.replace(/^#\//, '').split(/[/?]/)[0];
   const appEl = document.getElementById('app');
-  location.hash = hash;
+  // 已经在这个页面时也重新渲染，避免读到旧数据
+  if (location.hash === hash) window.dispatchEvent(new HashChangeEvent('hashchange'));
+  else location.hash = hash;
   try {
     await waitFor(() => appEl.dataset.view === view, 2500);
   } catch {
