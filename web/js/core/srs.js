@@ -31,3 +31,31 @@ export function apply(grade, p, { early = false, now = Date.now() } = {}) {
 export function stageLabel(stage) {
   return stage >= INTERVALS.length ? '已掌握' : `第${stage + 1}轮 · 间隔${LABELS[stage]}`;
 }
+
+/**
+ * 手动标记
+ *  - mastered：直接设为“已掌握”，60 天后才再出现一次
+ *  - due：设为“待复习”，立刻进入复习队列，并从第一个间隔重新开始
+ */
+export function markProgress(p, status, now = Date.now()) {
+  if (status === 'mastered') {
+    p.stage = INTERVALS.length;
+    p.nextReview = now + MASTERED_INTERVAL;
+  } else if (status === 'due') {
+    p.stage = 0;
+    p.nextReview = now;
+  } else {
+    throw new Error('未知的标记：' + status);
+  }
+  p.marked = status;
+  p.markedAt = now;
+  return p;
+}
+
+/** 单词所处的阶段：new 未学 / learning 学习中 / due 待复习 / mastered 已掌握 */
+export function statusOf(p, now = Date.now()) {
+  if (!p) return 'new';
+  if (isDue(p, now)) return 'due';
+  if (isMastered(p)) return 'mastered';
+  return 'learning';
+}

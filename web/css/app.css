@@ -278,3 +278,25 @@ textarea { resize: vertical; min-height: 84px; }
 .chip.sense.on { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); font-weight: 650; }
 .add-card { border: 2px dashed var(--accent-soft); box-shadow: none; }
 label.btn { cursor: pointer; }
+
+/* ---------- 单词进度 ---------- */
+a.stat.tap { text-decoration: none; color: inherit; display: block; transition: transform .1s; }
+a.stat.tap:active { transform: scale(.97); }
+.seg4 { grid-template-columns: repeat(4, 1fr); }
+.seg4 button { font-size: 13px; white-space: nowrap; }
+.stackbar { display: flex; height: 12px; border-radius: 6px; overflow: hidden; background: var(--line); gap: 2px; }
+.stackbar i { display: block; min-width: 4px; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13px; color: var(--text-2); }
+.legend span { display: inline-flex; align-items: center; gap: 5px; }
+.legend i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+.legend b { color: var(--text); }
+.unit-row { display: grid; grid-template-columns: 1fr auto; gap: 4px 8px; font-size: 14px; }
+.track2 { grid-column: 1 / -1; position: relative; height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.track2 i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; }
+.word-row { padding: 12px 0; border-bottom: 1px solid var(--line); }
+.word-row:last-child { border-bottom: 0; }
+.marks { display: inline-flex; gap: 6px; flex: none; }
+.marks.compact { display: flex; justify-content: center; }
+.mark { padding: 5px 10px; border-radius: 99px; font-size: 13px; font-weight: 600; background: var(--card-2); color: var(--text-2); border: 1.5px solid transparent; white-space: nowrap; }
+.mark.on.mastered { background: var(--green-soft); color: var(--green); border-color: var(--green); }
+.mark.on.due { background: var(--orange-soft); color: var(--orange); border-color: var(--orange); }

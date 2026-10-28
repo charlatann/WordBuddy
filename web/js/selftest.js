@@ -6,7 +6,7 @@ import { _internals } from './app.js';
 import { Store } from './store.js';
 import { Speech, speak, ttsSupported, voiceCount, recordingSupported, recognitionSupported, pickMime } from './speech.js';
 import { WORDS, sceneByID, STORIES } from './core/content.js';
-import { MIN } from './core/srs.js';
+import { MIN, statusOf } from './core/srs.js';
 import { fakeGitHub } from './tests/fakegithub.js';
 import { GIST_FILE } from './core/sync.js';
 
@@ -409,6 +409,85 @@ export async function runSelfTest() {
     expect(Store.progressList().length === n, '关闭同步不应删除本机数据');
   });
   SyncMgr.fetchImpl = realFetch;
+
+  // ---------- 单词进度与手动标记 ----------
+  const G6 = '单词进度与标记';
+  const st = id => statusOf(Store.progress(id));
+  const tileNum = k => Number(($(`[data-test="stat-${k}"] b`)?.textContent || '').split('/')[0]);
+
+  await flow(G6, '学习页三个状态都能点开详细进度', async () => {
+    for (const [k, label] of [['learned', '已学'], ['due', '待复习'], ['mastered', '已掌握']]) {
+      await nav('#/learn');
+      const n = tileNum(k);
+      await tap(`[data-test="stat-${k}"]`);
+      await waitFor(() => $(`[data-test="filter-${k}"].on`), 3000, `点“${label}”没有打开对应列表`);
+      const rows = $$('[data-test^="row-"]').length;
+      expect(rows === n, `“${label}”显示 ${n}，列表里有 ${rows} 个`);
+      if (k === 'learned') { expect($('[data-test="overview"]'), '缺少总进度'); await shot('50-单词进度-已学'); }
+    }
+    noHorizontalScroll('单词进度');
+  });
+
+  await flow(G6, '未学的简单词可以直接标为已掌握', async () => {
+    await nav('#/words?f=new');
+    const row = await waitFor(() => $('[data-test^="row-"]'), 3000, '未学列表为空');
+    const id = row.dataset.test.slice(4);
+    await nav('#/learn'); const before = tileNum('mastered');
+    await nav('#/words?f=new');
+    await tap(`[data-test="mark-mastered-${id}"]`);
+    expect(st(id) === 'mastered', `${id} 没有变成已掌握`);
+    expect(!$(`[data-test="row-${id}"]`), '标记后应从“未学”列表移出');
+    await nav('#/learn');
+    expect(tileNum('mastered') === before + 1, '学习页“已掌握”数字没有增加');
+    return id;
+  });
+
+  await flow(G6, '忘了的词标为待复习，马上出现在复习里；再点一次可取消', async () => {
+    const p = Store.progressList().find(x => statusOf(x) === 'learning');
+    expect(p, '没有学习中的词可测');
+    const id = p.wordID;
+    await nav('#/words?f=learned');
+    await tap(`[data-test="mark-due-${id}"]`);
+    expect(st(id) === 'due', '没有变成待复习');
+    expect($(`[data-test="mark-due-${id}"]`).classList.contains('on'), '按钮没有显示为已选中');
+    await shot('51-单词进度-标记');
+    await nav('#/review');
+    expect(Number($('.big-num')?.textContent) >= 1, '复习页没有显示待复习');
+    await nav('#/words?f=due');
+    expect($(`[data-test="row-${id}"]`) && /你标记为待复习/.test($(`[data-test="row-${id}"]`).textContent), '待复习列表里没有它');
+    await tap(`[data-test="mark-due-${id}"]`);
+    expect(st(id) === 'learning', '再点一次应取消待复习');
+    return id;
+  });
+
+  await flow(G6, '复习时觉得太简单，可一键标为已掌握', async () => {
+    const id = Store.progressList().find(x => statusOf(x) === 'learning').wordID;
+    Store.markWord(id, 'due');
+    Store._mutate(s => Object.values(s.progress).forEach(p => { if (p.wordID !== id && statusOf(p) === 'due') p.nextReview = Date.now() + 3600e3; }));
+    await nav('#/run');
+    await tap('[data-test="reveal"]');
+    await tap('[data-test="review-known"]');
+    await waitFor(() => $('[data-test="review-done"]'), 3000, '没有完成复习');
+    expect(st(id) === 'mastered', '没有标为已掌握');
+  });
+
+  await flow(G6, '学新词时可以直接标记“我认识”', async () => {
+    const sc = sceneByID.s12;
+    await nav('#/lesson/' + sc.id);
+    const id = sc.words[0].id;
+    await tap(`[data-test="mark-mastered-${id}"]`);
+    expect(st(id) === 'mastered', '没有标为已掌握');
+    expect(/已掌握/.test($(`[data-test="mark-mastered-${id}"]`).textContent), '按钮状态没有更新');
+    await shot('52-学新词-我认识');
+  });
+
+  await flow(G6, '单词进度页可以搜索', async () => {
+    await nav('#/words?f=learned');
+    const input = $('#words-search');
+    input.value = 'cof'; input.dispatchEvent(new Event('input', { bubbles: true }));
+    await waitFor(() => $$('[data-test^="row-"]').length === 1 && $('[data-test="row-coffee"]'), 3000, '搜索结果不对');
+    S.words.query = '';
+  });
 
   // ---------- 4. 汇总 ----------
   Store.reset();

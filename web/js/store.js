@@ -1,5 +1,6 @@
 // 本地存储（localStorage）：学习进度、练习记录、设置
-import { newProgress, apply } from './core/srs.js';
+import { newProgress, apply, markProgress } from './core/srs.js';
+import { sceneByWordID } from './core/content.js';
 import { setCustom } from './core/content.js';
 import { syncable } from './core/sync.js';
 
@@ -51,7 +52,24 @@ export const Store = {
     const p = read().progress[wordID];
     if (!p) return null;
     apply(grade, p, opts);
+    delete p.marked;
     touch(p);
+    write();
+    return p;
+  },
+
+  /** 用户手动标记：'mastered' 已掌握（太简单，不再安排复习）/ 'due' 待复习（忘了，马上复习） */
+  markWord(wordID, status, now = Date.now()) {
+    const s = read();
+    let p = s.progress[wordID];
+    if (!p) {
+      const scene = sceneByWordID[wordID];
+      if (!scene) return null;
+      p = s.progress[wordID] = newProgress(wordID, scene.id, now);
+    }
+    markProgress(p, status, now);
+    delete s.tomb.progress[wordID];
+    touch(p, now);
     write();
     return p;
   },
@@ -62,6 +80,7 @@ export const Store = {
     if (!p) return;
     if (correct) { if (p.nextReview <= now) apply('good', p, { now }); }
     else { p.stage = Math.max(0, p.stage - 1); p.nextReview = Math.min(p.nextReview, now + 10 * 60_000); }
+    delete p.marked;
     touch(p, now);
     write();
   },

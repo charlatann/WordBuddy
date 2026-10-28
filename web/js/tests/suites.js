@@ -1,7 +1,7 @@
 // 逻辑测试用例：Node 和 iPhone Safari 中运行同一套
 import { UNITS, STORIES, SCENES, WORDS, wordByID, sceneByID, sceneByWordID, speakersOf, voiceIndex, linesContaining } from '../core/content.js';
 import { tokenMatches, contains, blank, highlight } from '../core/text.js';
-import { INTERVALS, LABELS, MASTERED_INTERVAL, interval, newProgress, apply, isMastered, stageLabel, MIN, HOUR } from '../core/srs.js';
+import { INTERVALS, LABELS, MASTERED_INTERVAL, interval, newProgress, apply, isMastered, stageLabel, MIN, HOUR, markProgress, statusOf } from '../core/srs.js';
 import { normalize, align, combinedScore, evaluate, level } from '../core/scoring.js';
 import { remix } from '../core/generator.js';
 import { setCustom, BUILTIN_SCENES } from '../core/content.js';
@@ -279,6 +279,34 @@ export const suites = [
       const a = device(); a.progress.cat = prog('cat', 1, T0); a.progress.coffee = prog('coffee', 2, T0);
       const b = device(); b.progress.coffee = a.progress.coffee; b.progress.cat = a.progress.cat;
       t.ok(sameData(a, b)); const m = mergeStates(a, b); t.ok(sameData(m, mergeStates(m, m)));
+    }],
+  ]},
+  { name: '手动标记单词状态', tests: [
+    ['标为已掌握：直接进入已掌握，60 天内不再复习', () => {
+      const p = newProgress('coffee', 's1', T0);
+      markProgress(p, 'mastered', T0);
+      t.ok(isMastered(p)); t.eq(p.nextReview - T0, MASTERED_INTERVAL); t.eq(statusOf(p, T0 + 1000), 'mastered'); t.eq(p.marked, 'mastered');
+      t.eq(statusOf(p, T0 + MASTERED_INTERVAL), 'due', '60 天后应再出现一次');
+    }],
+    ['标为待复习：立刻到期，并从第一个间隔重新开始', () => {
+      const p = newProgress('coffee', 's1', T0);
+      for (let i = 0; i < 6; i++) apply('good', p, { now: T0 });
+      markProgress(p, 'due', T0 + 10);
+      t.eq(statusOf(p, T0 + 10), 'due'); t.eq(p.stage, 0);
+      apply('good', p, { now: T0 + 20 }); t.eq(p.stage, 1); t.eq(p.nextReview - (T0 + 20), 30 * MIN);
+    }],
+    ['四种状态的判定', () => {
+      t.eq(statusOf(null), 'new');
+      const p = newProgress('cat', 's10', T0);
+      t.eq(statusOf(p, T0), 'learning'); t.eq(statusOf(p, T0 + 5 * MIN), 'due');
+      let err = null; try { markProgress(p, 'oops'); } catch (e) { err = e; } t.ok(err, '未知标记应报错');
+    }],
+    ['手动标记会同步到其他设备', async () => {
+      const gh = fakeGitHub(); const A = device(), B = device();
+      A.progress.cat = prog('cat', 2, T0 + 10); await syncDevice(A, gh); await syncDevice(B, gh);
+      markProgress(B.progress.cat, 'mastered', T0 + 500); B.progress.cat.updatedAt = T0 + 500;
+      await syncDevice(B, gh); await syncDevice(A, gh);
+      t.ok(isMastered(A.progress.cat)); t.eq(A.progress.cat.marked, 'mastered');
     }],
   ]},
 ];

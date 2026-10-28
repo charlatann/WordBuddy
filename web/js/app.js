@@ -1,7 +1,7 @@
 import { UNITS, STORIES, SCENES, WORDS, wordByID, sceneByID, sceneByWordID, KIND_LABEL, CUSTOM_UNIT, isKnownWord,
          voiceIndex, linesContaining, keyPhrase } from './core/content.js';
 import { highlight, blank, escapeHTML as h, shuffle, relativeCN } from './core/text.js';
-import { INTERVALS, LABELS, interval, isMastered, isDue } from './core/srs.js';
+import { INTERVALS, LABELS, interval, isMastered, isDue, statusOf } from './core/srs.js';
 import { evaluate, level } from './core/scoring.js';
 import { remix } from './core/generator.js';
 import { loadDictionary, lookup, extractWords, normalizeWord } from './core/dict.js';
@@ -28,9 +28,9 @@ export function go(hash) { location.hash = hash; }
 
 const VIEWS = {
   learn: viewLearn, lesson: viewLesson, review: viewReview, run: viewReviewRun,
-  story: viewStory, play: viewPlay, speak: viewSpeak, practice: viewPractice, check: viewCheck, add: viewAdd, sync: viewSync,
+  story: viewStory, play: viewPlay, speak: viewSpeak, practice: viewPractice, check: viewCheck, add: viewAdd, sync: viewSync, words: viewWords,
 };
-const TAB_OF = { learn: 'learn', lesson: 'learn', add: 'learn', sync: 'learn', review: 'review', run: 'review', story: 'story', play: 'story',
+const TAB_OF = { learn: 'learn', lesson: 'learn', add: 'learn', sync: 'learn', words: 'learn', review: 'review', run: 'review', story: 'story', play: 'story',
                  speak: 'speak', practice: 'speak', check: 'speak' };
 
 export function render({ keepScroll = false } = {}) {
@@ -135,17 +135,17 @@ function sceneCard(s, learned) {
 }
 
 function viewLearn() {
-  const learned = Store.learnedIDs();
-  const list = Store.progressList();
+  const learned = new Set([...Store.learnedIDs()].filter(id => wordByID[id]));
+  const list = Store.progressList().filter(p => wordByID[p.wordID]);
   const due = list.filter(p => isDue(p)).length;
   const next = SCENES.find(s => !s.words.every(w => learned.has(w.id)));
   return `
     <div class="row" style="align-items:flex-end"><h1 class="page-title">学新词</h1><span class="spacer"></span>
       ${cloudBadge()}</div>
     <div class="stats">
-      <div class="card stat"><div>📘</div><b>${learned.size}/${WORDS.length}</b><span>已学单词</span></div>
-      <div class="card stat"><div>⏰</div><b>${due}</b><span>待复习</span></div>
-      <div class="card stat"><div>⭐️</div><b>${list.filter(isMastered).length}</b><span>已掌握</span></div>
+      <a class="card stat tap" href="#/words?f=learned" data-test="stat-learned"><div>📘</div><b>${learned.size}/${WORDS.length}</b><span>已学单词 ›</span></a>
+      <a class="card stat tap" href="#/words?f=due" data-test="stat-due"><div>⏰</div><b>${due}</b><span>待复习 ›</span></a>
+      <a class="card stat tap" href="#/words?f=mastered" data-test="stat-mastered"><div>⭐️</div><b>${list.filter(p => statusOf(p) === 'mastered').length}</b><span>已掌握 ›</span></a>
     </div>
     <div style="height:16px"></div>
     ${next ? `
@@ -202,6 +202,7 @@ function viewLesson([id]) {
         <div class="phon">${h(w.phonetic)}  ${h(w.pos)}</div>
         <div class="mean">${h(w.meaning)}</div>
         <div class="btns">${sayBtn(w.id, { size: 'lg' })}${sayBtn(w.id, { slow: true, size: 'lg' })}</div>
+        <div style="margin-top:14px">${markButtons(w.id, { compact: true })}</div>
       </div>
       ${ex ? `<div class="card"><div class="tiny muted" style="margin-bottom:6px">场景预告</div>
         <div class="row"><div class="spacer">${highlight(ex.en, [w.id])}<div class="small muted">${h(ex.zh)}</div></div>${sayBtn(ex.en, { size: 'sm' })}</div></div>` : ''}
@@ -455,6 +456,99 @@ async function regenScene(id) {
   toast(error ? `AI 生成失败，已用模板生成：${error}` : '已换成新场景');
 }
 
+// ============ 单词进度（详细列表 + 手动标记） ============
+
+const STATUS_META = {
+  learned: { label: '已学', emoji: '📘' }, due: { label: '待复习', emoji: '⏰' },
+  mastered: { label: '已掌握', emoji: '⭐️' }, new: { label: '未学', emoji: '🆕' },
+};
+
+function markButtons(id, { compact = false } = {}) {
+  const st = statusOf(Store.progress(id));
+  const b = (status, text) => `<button class="mark ${st === status ? 'on ' + status : ''}" data-act="mark" data-id="${h(id)}" data-s="${status}"
+      aria-pressed="${st === status}" data-test="mark-${status}-${h(id)}">${text}</button>`;
+  return `<div class="marks ${compact ? 'compact' : ''}">
+    ${b('mastered', st === 'mastered' ? '⭐️ 已掌握' : compact ? '⭐️ 我认识，标为已掌握' : '⭐️ 已掌握')}
+    ${compact && st !== 'due' ? '' : b('due', st === 'due' ? '⏰ 待复习' : '⏰ 待复习')}</div>`;
+}
+
+function viewWords(_, q) {
+  const f = STATUS_META[q.f] ? q.f : 'learned';
+  const now = Date.now();
+  const W = S.words ||= { query: '' };
+  const all = WORDS.map(w => ({ w, p: Store.progress(w.id) })).map(x => ({ ...x, st: statusOf(x.p, now) }));
+  const count = k => (k === 'learned' ? all.filter(x => x.p).length : all.filter(x => x.st === k).length);
+  let list = all.filter(x => (f === 'learned' ? x.p : x.st === f));
+  if (W.query) {
+    const qq = W.query.toLowerCase();
+    list = list.filter(x => x.w.id.includes(qq) || (x.w.meaning || '').includes(W.query));
+  }
+  if (f === 'due') list.sort((a, b) => a.p.nextReview - b.p.nextReview);
+  else if (f === 'learned') list.sort((a, b) => (b.p.learnedAt || 0) - (a.p.learnedAt || 0));
+  else if (f === 'mastered') list.sort((a, b) => a.w.id.localeCompare(b.w.id));
+
+  // 概览：未学 / 学习中 / 待复习 / 已掌握
+  const parts = [['mastered', '已掌握', 'var(--green)'], ['learning', '学习中', 'var(--accent)'], ['due', '待复习', 'var(--orange)'], ['new', '未学', 'var(--line)']]
+    .map(([k, label, color]) => ({ k, label, color, n: all.filter(x => x.st === k).length }));
+  const overview = `<div class="card stack" data-test="overview">
+      <div class="row"><b>总进度</b><span class="spacer"></span><span class="small muted">共 ${all.length} 个单词</span></div>
+      <div class="stackbar">${parts.filter(x => x.n).map(x => `<i style="flex:${x.n};background:${x.color}" title="${x.label} ${x.n}"></i>`).join('')}</div>
+      <div class="legend">${parts.map(x => `<span><i style="background:${x.color}"></i>${x.label} <b>${x.n}</b></span>`).join('')}</div>
+    </div>`;
+
+  const units = f === 'learned' ? `<div class="card stack">
+      <b>各单元进度</b>
+      ${[...UNITS, ...(CUSTOM_UNIT.scenes.length ? [CUSTOM_UNIT] : [])].map(u => {
+        const ws = u.scenes.flatMap(sc => sc.words);
+        const lv = ws.filter(w => Store.progress(w.id)).length, mv = ws.filter(w => statusOf(Store.progress(w.id), now) === 'mastered').length;
+        return `<div class="unit-row"><span>${u.emoji} ${h(u.id === 'my' ? u.title : `第${u.id}单元 · ${u.title}`)}</span>
+          <span class="tiny muted">已学 ${lv}/${ws.length} · 掌握 ${mv}</span>
+          <div class="track2"><i style="width:${ws.length ? lv / ws.length * 100 : 0}%;background:var(--accent-soft)"></i><i style="width:${ws.length ? mv / ws.length * 100 : 0}%;background:var(--green)"></i></div></div>`;
+      }).join('')}
+    </div>` : '';
+
+  const hint = {
+    learned: '点“已掌握”把太简单的词移出复习；点“待复习”把忘了的词马上加入复习。',
+    due: '这些词到了复习时间，或被你标为待复习。',
+    mastered: '已掌握的词 60 天后才会再出现一次。觉得忘了，点“待复习”即可重新复习。',
+    new: '还没学过的词。已经认识的可以直接标为“已掌握”，学习时就不会再出现在复习里。',
+  }[f];
+
+  const rows = list.map(({ w, p, st }) => {
+    const sc = sceneByWordID[w.id];
+    const info = !p ? `${sc.emoji} ${h(sc.title)}`
+      : st === 'due' ? (p.marked === 'due' ? '你标记为待复习' : '到复习时间了')
+      : st === 'mastered' ? (p.marked === 'mastered' ? '你标记为已掌握' : `已掌握 · ${relativeCN(p.nextReview, now)}再看一眼`)
+      : `第 ${p.stage + 1} 轮 · ${relativeCN(p.nextReview, now)}复习`;
+    return `<div class="word-row" data-test="row-${h(w.id)}">
+      <div class="row">
+        <span style="font-size:26px">${w.emoji}</span>
+        <div class="spacer" style="min-width:0"><b style="font-size:18px">${h(w.id)}</b> <span class="tiny muted">${h(w.phonetic || '')}</span>
+          <div class="small muted">${h(w.pos || '')} ${h(w.meaning)}</div></div>
+        ${sayBtn(w.id, { size: 'sm' })}
+      </div>
+      <div class="row" style="margin-top:8px;align-items:center">
+        ${p ? `<span class="dots">${INTERVALS.map((_, i) => `<i class="${i < p.stage ? 'on' : ''}"></i>`).join('')}</span>` : ''}
+        <span class="tiny" style="color:${st === 'due' ? 'var(--orange)' : 'var(--text-2)'}">${info}</span>
+        <span class="spacer"></span>${markButtons(w.id)}
+      </div>
+    </div>`;
+  }).join('');
+
+  return `${topbar('单词进度', '#/learn')}
+    <div class="seg seg4">${['learned', 'due', 'mastered', 'new'].map(k =>
+      `<button class="${f === k ? 'on' : ''}" data-act="wordsFilter" data-f="${k}" data-test="filter-${k}">${STATUS_META[k].label} ${count(k)}</button>`).join('')}</div>
+    <div class="stack">
+      ${overview}
+      ${units}
+      <input id="words-search" type="text" placeholder="搜索单词或中文" value="${h(W.query)}" autocomplete="off" aria-label="搜索单词">
+      <p class="tiny muted" style="margin:0 2px">${hint}</p>
+      ${f === 'due' && list.length ? `<a class="btn orange" href="#/run" style="text-decoration:none" data-test="words-review">▶︎ 复习这 ${list.length} 个词</a>` : ''}
+      <div class="card" style="padding:4px 16px" data-test="word-list">${rows || `<p class="muted center" style="padding:20px 0">${W.query ? '没有找到匹配的单词' : {
+        learned: '还没有学过的单词，去学习页学一课吧。', due: '暂时没有要复习的单词 🎉', mastered: '还没有已掌握的单词。', new: '所有单词都学过了 🎉' }[f]}</p>`}</div>
+    </div>`;
+}
+
 // ============ 云同步 ============
 
 function cloudBadge() {
@@ -562,14 +656,9 @@ function viewReview() {
         <div class="chips">${LABELS.map((l, i) => `<span class="chip" style="background:rgba(91,79,224,${0.06 + i * 0.035})">${l} · ${list.filter(p => p.stage === i).length}词</span>`).join('')}
           <span class="chip" style="background:var(--green-soft)">已掌握 · ${list.filter(isMastered).length}词</span></div>
       </div>
-      <div class="card"><b>我的单词本（${list.length}）</b>
-        ${list.map(p => { const w = wordByID[p.wordID]; return `
-          <div class="list-row"><span style="font-size:24px">${w.emoji}</span>
-            <div class="spacer"><b>${h(w.id)}</b><div class="tiny muted">${h(w.meaning)}</div></div>
-            <div style="text-align:right"><span class="dots">${INTERVALS.map((_, i) => `<i class="${i < p.stage ? 'on' : ''}"></i>`).join('')}</span>
-              <div class="tiny" style="color:${isDue(p, now) ? 'var(--orange)' : 'var(--text-2)'}">${isDue(p, now) ? '待复习' : relativeCN(p.nextReview, now)}</div></div>
-            ${sayBtn(w.id, { size: 'sm' })}</div>`; }).join('')}
-      </div>`;
+      <a class="card row" href="#/words?f=learned" style="text-decoration:none;color:inherit" data-test="to-words">
+        <span style="font-size:26px">📒</span><div class="spacer"><b>我的单词本（${list.length}）</b>
+        <div class="tiny muted">查看每个单词的进度，标记已掌握或待复习</div></div><span class="muted">›</span></a>`;
   }
   return `<h1 class="page-title">复习</h1>
     <div class="stack"><div class="card center stack" style="padding:24px">${top}</div>${rest}</div>`;
@@ -623,7 +712,8 @@ function viewReviewRun(_, q) {
         <button class="grade forgot" data-act="grade" data-g="forgot">忘记了<small>从头再来</small></button>
         <button class="grade hard" data-act="grade" data-g="hard">有点模糊<small>原间隔再来</small></button>
         <button class="grade good" data-act="grade" data-g="good">记住了<small>${nextLabel}</small></button>
-      </div>` : '<button class="btn orange" data-act="reveal" data-test="reveal">显示答案</button>'}
+      </div>
+      <button class="link center" data-act="reviewKnown" data-test="review-known">⭐️ 太简单了，标为已掌握（不再安排复习）</button>` : '<button class="btn orange" data-act="reveal" data-test="reveal">显示答案</button>'}
   </div>`;
 }
 
@@ -987,6 +1077,27 @@ const ACTIONS = {
   },
   speakMode: d => { S.speakMode = d.m; render(); },
   addMode: d => { addState().mode = d.m; refresh(); },
+  wordsFilter: d => { history.replaceState(null, '', `#/words?f=${d.f}`); render(); },
+  mark: d => {
+    const before = statusOf(Store.progress(d.id));
+    // 再点一次已选中的标记 = 取消：已掌握 → 按计划复习；待复习 → 恢复为学习中（5 分钟后复习）
+    if (before === d.s) {
+      if (d.s === 'mastered') Store.markWord(d.id, 'due');
+      else Store.grade(d.id, 'hard');
+    } else Store.markWord(d.id, d.s);
+    const w = d.id;
+    toast(before === d.s
+      ? (d.s === 'mastered' ? `已取消 ${w} 的“已掌握”，加入待复习` : `已取消 ${w} 的“待复习”，5 分钟后再复习`)
+      : d.s === 'mastered' ? `⭐️ ${w} 已标为已掌握，不再安排复习` : `⏰ ${w} 已加入待复习`);
+    refresh();
+  },
+  reviewKnown: () => {
+    const R = S.review;
+    Store.markWord(R.ids[R.i], 'mastered');
+    R.tally.good++; R.i++; R.revealed = false; R.showScene = false;
+    render();
+    if (R.ids[R.i]) speak(R.ids[R.i]);
+  },
   syncConnect: async () => {
     const token = document.getElementById('sync-token')?.value || '';
     S.syncToken = token; S.syncError = ''; S.syncBusy = true; refresh();
@@ -1064,6 +1175,16 @@ document.addEventListener('input', e => {
     }
   }
   if (el.id === 'add-text' && S.add) S.add.text = el.value;
+  if (el.id === 'words-search') {
+    (S.words ||= {}).query = el.value.trim();
+    clearTimeout(S.wordsTimer);
+    S.wordsTimer = setTimeout(() => {
+      const pos = el.selectionStart;
+      refresh();
+      const again = document.getElementById('words-search');
+      if (again) { again.focus(); try { again.setSelectionRange(pos, pos); } catch { /* */ } }
+    }, 250);
+  }
 });
 document.addEventListener('change', e => {
   if (e.target.dataset?.act === 'photo' && e.target.files?.[0]) { runOCR(e.target.files[0]); e.target.value = ''; return; }

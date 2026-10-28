@@ -1,5 +1,5 @@
 // 离线缓存
-const CACHE = 'wordbuddy-v3';
+const CACHE = 'wordbuddy-v4';
 const SHELL = [
   './', 'index.html', 'manifest.webmanifest', 'css/app.css',
   'js/main.js', 'js/app.js', 'js/store.js', 'js/speech.js', 'js/data.js',
